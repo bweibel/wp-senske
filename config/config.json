@@ -1,1 +1,16 @@
-{}
+{
+  "theme": {
+    "slug": "senske",
+    "name": "Senske",
+    "author": "Smartz",
+    "PHPNamespace": "WP_Rig\\WP_Rig"
+  },
+  "dev": {
+    "browserSync": {
+      "live": true,
+      "proxyURL": "senske.local",
+      "bypassPort": "8181",
+      "https": false
+    }
+  }
+}
