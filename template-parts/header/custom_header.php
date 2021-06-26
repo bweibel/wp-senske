@@ -7,10 +7,6 @@
 
 namespace WP_Rig\WP_Rig;
 
-if ( ! has_header_image() ) {
-	return;
-}
-
 ?>
 <figure class="header-image">
 	<?php the_header_image_tag(); ?>

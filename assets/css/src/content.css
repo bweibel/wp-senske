@@ -76,12 +76,12 @@
 .page-header,
 .entry-header,
 .entry-footer,
-.site-info,
 .post-navigation,
 .page-navigation,
 .comments-area {
 	margin-top: 1.5em;
 	margin-bottom: 1.5em;
+	
 }
 
 .page-content > *,
@@ -90,7 +90,6 @@
 .page-header,
 .entry-header,
 .entry-footer,
-.site-info,
 .post-navigation,
 .page-navigation,
 .comments-area {

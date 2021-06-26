@@ -74,13 +74,15 @@
 .site {
 	margin: 0 auto;
 	max-width: 100%;
+	display: grid;
 }
 
 @media (--sidebar-query) {
 
 	.has-sidebar .site {
-		margin: 0 1em;
+		margin: 0;
 		display: grid;
+
 		grid-template-columns: 3fr 1fr;
 		grid-gap: 2rem;
 		justify-content: center;
@@ -94,11 +96,14 @@
 	.site-main {
 		grid-column: 1;
 		min-width: 0;
+		max-width: 60em;
 	}
 
 	.primary-sidebar {
 		grid-column: 2;
 		min-width: 0;
+		max-width: 20em;
+		margin-top: 140px;
 	}
 }
 
@@ -197,6 +202,36 @@ select {
 
 .site-header {
 	padding-bottom: 1em;
+	box-shadow: 0px 0px 6px #3333;
+}
+
+.top-bar {
+	background-color: var(--color-theme-primary);
+	padding: .5em;
+}
+
+.top-bar .links {
+	display: flex;
+	justify-content: end;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	max-width: 1200px;
+margin: auto;
+}
+
+.top-bar .links li {
+	margin: 0 .5em;
+}
+
+.top-bar .links a {
+	color: var(--color-theme-white);
+	text-decoration: none;
+	font-size: .8em;
+}
+
+.top-bar .links .phone {
+	font-weight: bold;
 }
 
 .header-image {
@@ -214,8 +249,10 @@ select {
 }
 
 .site-branding {
-	text-align: center;
-	padding: 60px 0 1.75em;
+	/* text-align: center; */
+	/* padding: 60px 0 1.75em; */
+	max-width: 1200px;
+margin: -30px auto auto auto;
 }
 
 .site-title {
@@ -378,11 +415,23 @@ select {
 --------------------------------------------------------------*/
 .main-navigation {
 	display: block;
-	margin: 0 auto 2em;
+	margin: -60px 0 -10px 206px;
 	padding: 0 1em;
-	max-width: var(--content-width);
-	font-family: var(--highlight-font-family);
+	/* max-width: var(--content-width); */
+	max-width: 60em;
+	font-family: var(--global-font-family);
 	font-stretch: condensed;
+	font-weight: bold;
+}
+
+#menu-item-43 {
+	background-color: var(--color-theme-yellow);
+	color: var(--color-theme-white);
+}
+
+#menu-item-43 a{
+	color: var(--color-theme-white);
+	padding: .5em;
 }
 
 .main-navigation a {
@@ -568,13 +617,24 @@ select {
 --------------------------------------------------------------*/
 .site-footer {
 	margin: 1em 0 0;
-	padding: 2em 0;
-	font-family: var(--highlight-font-family);
+	padding: 2em 0 0;
+	font-family: var(--global-font-family);
 	font-stretch: condensed;
+	background-color: var(--color-theme-primary);
+	color: var(--color-theme-white);
+	padding-top: 20px;
+	color: var(--color-theme-white);
+}
+
+.site-footer h4 {
+	color: var(--color-theme-white);
 }
 
 .site-info {
 	text-align: center;
+	background-color: var(--color-theme-darkgreen);
+	font-size: .8em;
+	padding: .5em;
 }
 
 /*--------------------------------------------------------------
