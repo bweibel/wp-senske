@@ -81,7 +81,7 @@
 .comments-area {
 	margin-top: 1.5em;
 	margin-bottom: 1.5em;
-	
+
 }
 
 .page-content > *,
@@ -195,6 +195,10 @@
 	margin-right: 1.5rem;
 	padding-left: 0;
 	padding-right: 0;
+}
+
+.flex-row {
+	display: flex;
 }
 
 @media (--content-query) {

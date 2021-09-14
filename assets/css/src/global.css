@@ -25,6 +25,8 @@
 @import "_typography.css";
 @import "_elements.css";
 @import "_links.css";
+@import "_buttons.css";
+
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -96,7 +98,7 @@
 	.site-main {
 		grid-column: 1;
 		min-width: 0;
-		max-width: 60em;
+		/* max-width: 60em; */
 	}
 
 	.primary-sidebar {
@@ -418,7 +420,7 @@ margin: -30px auto auto auto;
 	margin: -60px 0 -10px 206px;
 	padding: 0 1em;
 	/* max-width: var(--content-width); */
-	max-width: 60em;
+	max-width: 80em;
 	font-family: var(--global-font-family);
 	font-stretch: condensed;
 	font-weight: bold;
@@ -502,7 +504,7 @@ margin: -30px auto auto auto;
 	.main-navigation .menu {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
+		justify-content: end;
 	}
 }
 

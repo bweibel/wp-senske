@@ -6,13 +6,13 @@
  **/
 
 :root {
-	--content-width: 45rem;
+	--content-width: 80rem;
 	--dropdown-symbol-width: 0.7em;
 
 	/* Typography */
 	--global-font-family: "Montserrat", sans-serif;
 	--highlight-font-family: "EB Garamond", serif;
-	--global-font-size: 20;
+	--global-font-size: 16;
 	--global-font-line-height: 1.4;
 
 	/* Custom editor font sizes */
@@ -30,19 +30,20 @@
 	--color-link-active: var(--color-theme-yellow);
 	--color-quote-border: #000;
 	--color-quote-citation: #6c7781;
-	--color-link-menu:var(--color-theme-mediumgrey);
+	--color-link-menu: var(--color-theme-mediumgrey);
 
 	/* Custom editor colors */
 	--color-theme-primary: var(--color-theme-green);
 	--color-theme-secondary: var(--color-theme-darkgreen);
+	--color-theme-highlight: var(--color-theme-yellow);
 	--color-theme-red: #c0392b;
 	--color-theme-green: #098751;
 	--color-theme-darkgreen: #043b23;
-	--color-theme-blue: #2980b9;
-	--color-theme-yellow: #f1c40f;
+	--color-theme-yellow: #f5ab34;
+	--color-theme-yellow-dark: #dd8d0d;
 	--color-theme-black: #1c2833;
 	--color-theme-darkgrey: #505050;
 	--color-theme-mediumgrey: #707070;
-	--color-theme-grey: #95a5a6;
-	--color-theme-white: #ecf0f1;
+	--color-theme-white: #ffffff;
+	--color-theme-off-white: #f7faf5;
 }
