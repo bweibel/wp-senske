@@ -73,8 +73,8 @@
 	max-width: var(--content-width);
 }
 
-.page-header,
-.entry-header,
+/* .page-header, */
+/* .entry-header, */
 .entry-footer,
 .post-navigation,
 .page-navigation,
@@ -88,7 +88,7 @@
 .entry-content > *,
 .entry-summary > *,
 .page-header,
-.entry-header,
+/* .entry-header, */
 .entry-footer,
 .post-navigation,
 .page-navigation,
@@ -101,6 +101,11 @@
 }
 
 @media (--content-query) {
+
+	.entry-content {
+		padding-right: 1.5rem;
+		padding-left: 1.5rem;
+	}
 
 	.entry-content > ul,
 	.entry-content > ol {
@@ -120,6 +125,14 @@
 	.comments-area {
 		padding-left: 0;
 		padding-right: 0;
+	}
+
+	.entry-title-singular,
+	.page-title {
+		max-width: var(--content-width);
+		margin: auto;
+		padding-right: 0;
+		padding-left: 0;
 	}
 }
 
