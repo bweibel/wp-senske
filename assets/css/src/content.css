@@ -81,7 +81,6 @@
 .comments-area {
 	margin-top: 1.5em;
 	margin-bottom: 1.5em;
-
 }
 
 .page-content > *,
@@ -91,17 +90,18 @@
 .entry-footer,
 .post-navigation,
 .page-navigation,
-.comments-area{
+.comments-area,
+.entry-meta {
 	margin-left: auto;
 	margin-right: auto;
 	padding-right: 1.5rem;
 	padding-left: 1.5rem;
-	/* max-width: var(--content-width); */
 }
 
 @media (--content-query) {
 
-	.entry-content {
+	.entry-content
+	 {
 		padding-right: 1.5rem;
 		padding-left: 1.5rem;
 	}
