@@ -21,9 +21,9 @@
 }
 
 @media (--sidebar-query) {
-
-	.primary-sidebar {
-		padding: 0;
-		padding-right: 2em;
+	.sidebar {
+		padding: 1em 0;
+		position: sticky;
+		top: 0;
 	}
 }
