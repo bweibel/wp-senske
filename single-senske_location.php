@@ -25,5 +25,4 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-location' );
 		?>
 	</main><!-- #primary -->
 <?php
-// get_sidebar();
 get_footer();

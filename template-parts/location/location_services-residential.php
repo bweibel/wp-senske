@@ -21,9 +21,9 @@ $phone_pretty = '(509) 374-5000';
 	</header>
 
 	<ul class="service-cards">
-		<?php get_template_part( 'template-parts/services/service_card', 'image'); ?>
-		<?php get_template_part( 'template-parts/services/service_card', 'image'); ?>
-		<?php get_template_part( 'template-parts/services/service_card', 'image'); ?>
+		<?php get_template_part( 'template-parts/services/service_card', 'image' ); ?>
+		<?php get_template_part( 'template-parts/services/service_card', 'image' ); ?>
+		<?php get_template_part( 'template-parts/services/service_card', 'image' ); ?>
 	</ul>
 </section>
 

@@ -33,7 +33,7 @@ hr {
     background-color: var(--color-theme-yellow);
     max-width: 10em;
     height: 3px;
-	margin: 1rem auto;
+	/* margin: 1rem auto; */
 }
 
 /* stylelint-enable */

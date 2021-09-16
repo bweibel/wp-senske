@@ -11,8 +11,8 @@ resources,
 	margin: auto;
 }
 
-
 @media (--content-query) {
+
 	.location-info {
 		display: flex;
 		flex-flow: row wrap;
@@ -20,7 +20,7 @@ resources,
 	}
 
 	.location-info .location-content,
-	.location-info .location-card  {
+	.location-info .location-card {
 		margin: 1rem;
 	}
 
@@ -33,9 +33,7 @@ resources,
 		flex-basis: 20em;
 		order: 1;
 	}
-
 }
-
 
 /* Location Content */
 .location-content .location-header {
@@ -62,14 +60,13 @@ resources,
 	margin-bottom: 2rem;
 }
 
-
-
 .location-list {
 	list-style: none;
 	padding: none;
 }
 
 @media (--content-query) {
+
 	.location-list {
 		display: flex;
 		flex-flow: column wrap;
@@ -83,10 +80,10 @@ resources,
 	flex-direction: column; */
 	text-align: center;
 	background-color: var(--color-theme-off-white);
-	box-shadow: 0 0 6px rgba(51,51,51,.2);
+	box-shadow: 0 0 6px rgba(51, 51, 51, 0.2);
 }
 
-.location-info .location-card h2{
+.location-info .location-card h2 {
 	font-family: var(--global-font);
 	font-weight: 300;
 	font-size: 1.2em;
@@ -101,7 +98,6 @@ resources,
 	font-size: 1.4em;
 }
 
-
 .location-info .location-card .map {
 	background-color: var(--color-theme-white);
 	min-height: 20em;
@@ -115,8 +111,8 @@ resources,
 }
 
 .yotpo .star-clickable .text-m {
-    font-size: .8em;
-    margin: 0;
+	font-size: 0.8em;
+	margin: 0;
 }
 
 .yotpo.bottomLine .yotpo-bottomline .yotpo-stars {
@@ -161,8 +157,7 @@ resources,
 	padding-bottom: 2em;
 	margin-bottom: 1rem;
 	max-width: 30em;
-	box-shadow: 0 0 6px rgba(51,51,51,.2);
-
+	box-shadow: 0 0 6px rgba(51, 51, 51, 0.2);
 }
 
 .program-cards .card .popular {
@@ -172,7 +167,7 @@ resources,
 	text-transform: uppercase;
 	font-weight: 600;
 	font-size: 1.5em;
-	padding: .5em;
+	padding: 0.5em;
 	display: none;
 }
 
@@ -184,13 +179,13 @@ resources,
 }
 
 .program-cards .card .icon {
-    display: inline-block;
-    vertical-align: middle;
-    padding: .5em;
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0.5em;
 }
 
 .program-cards .card .program-category {
-    font-size: 1.4em;
+	font-size: 1.4em;
 	color: var(--color-theme-green);
 }
 
@@ -214,7 +209,7 @@ resources,
 
 .program-cards .card .pricing .small-price {
 	color: var(--color-theme-green);
-	font-size: .3em;
+	font-size: 0.3em;
 	vertical-align: super;
 }
 
@@ -229,7 +224,6 @@ resources,
 	padding: 1rem;
 }
 
-
 .services-cta > header {
 	margin: 2rem auto;
 }
@@ -240,14 +234,13 @@ resources,
 	margin-bottom: 0;
 }
 
-
 .services-cta > header h3 {
 	font-size: 2.5em;
 	color: var(--color-theme-darkgreen);
 	margin: 0;
 }
 
-.service-cards{
+.service-cards {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-around;
@@ -255,7 +248,7 @@ resources,
 
 .service-cards .card {
 	background: var(--color-theme-off-white);
-	box-shadow: 0 0 6px rgba(51,51,51,.2);
+	box-shadow: 0 0 6px rgba(51, 51, 51, 0.2);
 	margin: 2rem auto;
 	flex-basis: 20em;
 }
@@ -267,12 +260,11 @@ resources,
 	background: var(--color-theme-white);
 	border: transparent;
 	border-radius: 50%;
-	box-shadow: 0 0 6px rgba(51,51,51,.2);
+	box-shadow: 0 0 6px rgba(51, 51, 51, 0.2);
 	width: 4em;
 	height: 4em;
 	margin-top: -2em;
 }
-
 
 .service-cards .card .service-category {
 	font-size: 1.8em;
@@ -326,7 +318,7 @@ resources,
 	background: var(--color-theme-white);
 	border: transparent;
 	border-radius: 50%;
-	box-shadow: 0 0 6px rgba(51,51,51,.2);
+	box-shadow: 0 0 6px rgba(51, 51, 51, 0.2);
 	width: 6em;
 	height: 6em;
 	flex-shrink: 0;
@@ -343,22 +335,21 @@ resources,
 }
 
 .services-list .services-item:hover .icon {
-	opacity: .8;
+	opacity: 0.8;
 }
 
-.services-list .services-item .icon img{
+.services-list .services-item .icon img {
 	display: inline-block;
 	width: 100%;
 	height: 100%;
 }
 
-.services-list .services-item  .service-title {
+.services-list .services-item .service-title {
 	color: var(--color-theme-green);
 	font-size: 1.5em;
 	font-family: var(--global-font);
 	margin: 0;
 }
-
 
 .resources {
 	margin-bottom: 5rem;
@@ -385,7 +376,6 @@ resources,
 	max-width: 60em;
 	margin: 4rem auto;
 }
-
 
 .feedback {
 	margin-bottom: 5rem;

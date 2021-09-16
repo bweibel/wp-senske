@@ -2,6 +2,10 @@
 # Comments
 --------------------------------------------------------------*/
 
+.comments-area {
+	max-width: calc(var(--content-width) / 2);
+}
+
 .comment-content a {
 	word-wrap: break-word;
 }

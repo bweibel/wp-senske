@@ -28,7 +28,6 @@
 @import "_buttons.css";
 @import "_acf-blocks.css";
 
-
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -91,7 +90,6 @@
 
 .site-main {
 	grid-area: main;
-
 }
 
 .site-footer {
@@ -99,10 +97,9 @@
 }
 
 @media (--content-query) {
-
 	.site {
 		display: grid;
-		grid-template-columns: 1fr minmax(0, var(--content-width) ) 1fr;
+		grid-template-columns: 1fr minmax(0, var(--content-width)) 1fr;
 		grid-template-areas:
 			"header header header"
 			". main  ."
@@ -115,15 +112,12 @@
 	.primary-sidebar {
 		grid-area: sidebar;
 	}
-
-
 }
 
 @media (--sidebar-query) {
-
 	.has-sidebar .site {
 		display: grid;
-		grid-template-columns: 1fr minmax(0, var(--content-width) ) 300px 1fr;
+		grid-template-columns: 1fr minmax(0, var(--content-width)) 300px 1fr;
 		grid-template-areas:
 			"header header header header"
 			". main sidebar ."
@@ -132,11 +126,9 @@
 		min-height: 100vh;
 	}
 
-
 	.primary-sidebar {
 		grid-area: sidebar;
 	}
-
 }
 
 /*--------------------------------------------------------------
@@ -234,33 +226,62 @@ select {
 
 .site-header {
 	display: grid;
-	padding-bottom: 1em;
+	grid-template-columns: 1fr minmax(0, calc(var(--content-width) / 4)) minmax(
+			0,
+			calc(3 * var(--content-width) / 4)
+		) 1fr;
+	grid-template-areas: "top top top top" ". branding nav .";
+	column-gap: 1em;
 	box-shadow: 0px 0px 6px #3333;
+	position: sticky;
+	top: 0;
+	background: var(--color-theme-white);
+}
+
+.sticky .site-header {
 }
 
 .top-bar {
+	grid-area: top;
+	padding: 1rem;
 	background-color: var(--color-theme-primary);
-	padding: .5em;
+	transition: 0.25s padding;
+}
+
+.sticky .top-bar {
+	padding: 0.5rem 1rem;
+}
+
+.site-branding {
+	grid-area: branding;
+	margin-top: -2rem;
+}
+
+.main-navigation {
+	max-width: 60em;
+	grid-area: nav;
+	align-items: center;
+	align-self: stretch;
 }
 
 .top-bar .links {
+	max-width: var(--content-width);
 	display: flex;
 	justify-content: end;
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	max-width: 1200px;
-margin: auto;
+	margin: auto;
 }
 
 .top-bar .links li {
-	margin: 0 .5em;
+	margin: 0 0.5em;
 }
 
 .top-bar .links a {
 	color: var(--color-theme-white);
 	text-decoration: none;
-	font-size: .8em;
+	font-size: 0.8em;
 }
 
 .top-bar .links .phone {
@@ -279,13 +300,6 @@ margin: auto;
 .custom-logo-link {
 	display: inline-block;
 	margin: 0 auto 1em;
-}
-
-.site-branding {
-	/* text-align: center;
-	/* padding: 60px 0 1.75em; */
-	/* max-width: 1200px;
-	margin: -30px auto auto auto; */
 }
 
 .site-title {
@@ -339,14 +353,12 @@ margin: auto;
 }
 
 @media (--narrow-menu-query) {
-
 	.nav--toggle-small.nav--toggled-on .menu {
 		display: block;
 	}
 }
 
 @media (--wide-menu-query) {
-
 	.nav--toggle-small .menu-toggle {
 		display: none;
 	}
@@ -448,10 +460,9 @@ margin: auto;
 --------------------------------------------------------------*/
 .main-navigation {
 	display: block;
-	margin: -60px 0 -10px 206px;
+	/* margin: -60px 0 -10px 206px; */
 	padding: 0 1em;
 	/* max-width: var(--content-width); */
-	max-width: 80em;
 	font-family: var(--global-font-family);
 	font-stretch: condensed;
 	font-weight: bold;
@@ -462,9 +473,9 @@ margin: auto;
 	color: var(--color-theme-white);
 }
 
-#menu-item-43 a{
+#menu-item-43 a {
 	color: var(--color-theme-white);
-	padding: .5em;
+	padding: 0.5em;
 }
 
 .main-navigation a {
@@ -497,7 +508,6 @@ margin: auto;
 }
 
 @media (--wide-menu-query) {
-
 	.main-navigation ul li a {
 		padding: 0.4em 0.5em;
 	}
@@ -546,9 +556,9 @@ margin: auto;
 .site-main .posts-navigation,
 .site-main .post-navigation,
 .site-main .pagination {
-	border-bottom: 1px solid var(--border-color-dark);
+	/* border-bottom: 1px solid var(--border-color-dark); */
 	margin: 0 auto 2em;
-	max-width: var(--content-width);
+	max-width: calc(var(--content-width) / 2);
 	overflow: hidden;
 	padding: 0 1.5rem 2em;
 	font-family: var(--highlight-font-family);
@@ -556,7 +566,6 @@ margin: auto;
 }
 
 @media (--content-query) {
-
 	.site-main .comment-navigation,
 	.site-main .posts-navigation,
 	.site-main .post-navigation,
@@ -666,8 +675,8 @@ margin: auto;
 .site-info {
 	text-align: center;
 	background-color: var(--color-theme-darkgreen);
-	font-size: .8em;
-	padding: .5em;
+	font-size: 0.8em;
+	padding: 0.5em;
 }
 
 /*--------------------------------------------------------------
@@ -678,7 +687,6 @@ margin: auto;
 .infinite-scroll .posts-navigation,
 .infinite-scroll .pagination,
 .infinite-scroll.neverending .site-footer {
-
 	/* Theme Footer (when set to scrolling) */
 	display: none;
 }
