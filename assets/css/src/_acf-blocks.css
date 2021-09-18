@@ -14,6 +14,7 @@
 		display: flex;
 		flex-direction: row;
 	}
+
 	.column-container .column:first-child,
 	.column-container .column:last-child {
 		margin-left: 0;
@@ -26,34 +27,131 @@
 }
 
 .column-container .column,
-.column-container .column .size-1{
+.column-container .column .size-1 {
 	flex-grow: 1;
+	flex-basis: min-content;
 }
 
-.column-container .column,
-.column-container .column .size-2{
+.column-container .column .size-2 {
 	flex-grow: 2;
 }
 
-.column-container .column,
 .column-container .column .size-3 {
 	flex-grow: 3;
 }
 
 
-.column-container .column,
 .column-container .column .size-4 {
 	flex-grow: 4;
 }
 
 
-.column-container .column,
 .column-container .column .size-5 {
 	flex-grow: 5;
 }
 
 
-.column-container .column,
 .column-container .column .size-6 {
 	flex-grow: 6;
+}
+
+
+/*--------------------------------------------------------------
+## Various Special Page content components
+--------------------------------------------------------------*/
+
+.cta-grid {
+	max-width: var(--content-width);
+	margin: 1rem auto;
+	/* padding: .5rem; */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+@media (--content-query) {
+	.cta-grid {
+		flex-direction: row;
+	}
+}
+
+.cta-box {
+	padding: 1em;
+	margin-bottom: 1rem;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	min-height: 300px;
+	background-size: cover;
+	background-position: center;
+	color: var(--color-theme-white);
+	width: 100%;
+	position: relative;
+}
+
+.cta-box > * {
+	z-index: 1;
+}
+
+.cta-box::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background: black;
+	opacity: 0.2;
+	z-index: 0;
+}
+
+@media (--content-query) {
+	.cta-box {
+		flex-direction: column;
+	}
+	.cta-box:first-child {
+		margin-right: .5em;
+	}
+	.cta-box:last-child {
+		margin-left: .5em;
+	}
+	.cta-box:only-child {
+		margin: auto;
+	}
+}
+
+.cta-box.careers {
+	background-image: url(../images/Crux-Careers-Header-web-safe.jpg);
+}
+
+.cta-box.tasting-room {
+	background-image: url(../images/Tap-List.jpg);
+}
+
+.cta-box.events {
+	background-image: url(../images/Crux_Events.jpg);
+}
+
+.cta-box.kegs {
+	background-image: url(../images/kegs-to-go_header.jpg);
+}
+
+.cta-box.blog {
+	background-image: url(../images/Crux-Blog-header.jpg);
+}
+
+.cta-box.food-carts {
+	background-image: url(../images/pizza-cart_header.jpg);
+}
+
+.collapse-box {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height .5s;
+}
+
+.collapse-box.open{
+	max-height: 1000vh;
 }

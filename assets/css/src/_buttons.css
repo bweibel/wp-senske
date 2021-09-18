@@ -23,22 +23,44 @@ input[type="submit"] {
 	background-color: var(--color-theme-yellow);
 	padding: 0.6em 1em;
 	margin: 0.5em;
-	box-shadow: 2px 2px 6px rgba(51, 51, 51, 0.2);
+	transition: background-color 0.2s, box-shadow 0.2s;
+	box-shadow: var(--global-drop-shadow);
+}
+
+.button.button-green,
+.button:visited.button-green,
+.button:active.button-green,
+button.button-green,
+input[type="button"].button-green,
+input[type="reset"].button-green,
+input[type="submit"].button-green {
+	background-color: var(--color-theme-green);
+
 }
 
 .button:hover,
-.button-navy:active,
-.woocommerce .newsletter a.button:hover,
-.woocommerce .newsletter input.button:hover,
+.button:focus,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
 	background-color: var(--color-theme-yellow-dark);
-	box-shadow: 4px 4px 6px rgba(51, 51, 51, 0.2);
-	transition: background-color 0.2s;
+	box-shadow: var(--global-drop-shadow-raised);
+	transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.button:hover.button-green,
+.button:focus.button-green,
+input[type="button"]:hover.button-green,
+input[type="reset"]:hover.button-green,
+input[type="submit"]:hover.button-green {
+	background-color: var(--color-theme-darkgreen);
 }
 
 .button:active {
 	transform: translateY(2px);
-	box-shadow: 0 0 2px rgba(51, 51, 51, 0.2);
+	box-shadow: var(--global-drop-shadow-lowered);
+}
+
+.button:focus {
+	outline-color: var(--color-theme-yellow-dark);
 }

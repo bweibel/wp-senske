@@ -8,11 +8,6 @@
 
 namespace WP_Rig\WP_Rig;
 
-?>
-
-
-<?php
-
 if ( ! $args['row_group'] ){
 	$row_group = 'page_blocks';
 }
