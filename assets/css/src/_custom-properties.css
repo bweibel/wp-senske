@@ -31,6 +31,7 @@
 	--color-quote-border: #000;
 	--color-quote-citation: #6c7781;
 	--color-link-menu: var(--color-theme-mediumgrey);
+	--color-dropshadow: #1c283333;
 
 	/* Custom editor colors */
 	--color-theme-primary: var(--color-theme-green);
@@ -46,4 +47,9 @@
 	--color-theme-mediumgrey: #707070;
 	--color-theme-white: #fff;
 	--color-theme-off-white: #f7faf5;
+
+	/* Extras */
+	--global-drop-shadow: 2px 2px 6px var(--color-dropshadow);
+	--global-drop-shadow-raised: 4px 4px 10px var(--color-dropshadow);
+	--global-drop-shadow-lowered: 0 0 2px var(--color-dropshadow);
 }
