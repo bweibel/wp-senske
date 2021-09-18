@@ -7,7 +7,6 @@
 
 namespace WP_Rig\WP_Rig;
 
-
 if ( post_password_required() || ! post_type_supports( $support_slug, 'thumbnail' ) || ! has_post_thumbnail() ) {
 	return;
 }

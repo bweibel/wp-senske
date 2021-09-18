@@ -13,14 +13,14 @@ namespace WP_Rig\WP_Rig;
 	<?php
 	get_template_part( 'template-parts/content/entry_header', get_post_type() );
 
-	// Search
+	// Search.
 	if ( is_search() ) {
 		get_template_part( 'template-parts/content/entry_summary', get_post_type() );
 	} else {
 		// Standard Content.
 		get_template_part( 'template-parts/content/entry_content', get_post_type() );
 		// Additional Page Content (ACF).
-		get_template_part( 'template-parts/acf/flexible', get_post_type(), array( 'row_group' => 'page_blocks') );
+		get_template_part( 'template-parts/acf/flexible', get_post_type(), array( 'row_group' => 'page_blocks' ) );
 	}
 
 	get_template_part( 'template-parts/content/entry_footer', get_post_type() );

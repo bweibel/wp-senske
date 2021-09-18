@@ -2,7 +2,7 @@
 .services-cta,
 .residential-services,
 .commercial-services,
-resources,
+.resources,
 .feedback,
 .yotpo {
 	max-width: var(--content-width);
@@ -38,7 +38,6 @@ resources,
 /* Location Content */
 .location-content .location-header {
 	text-align: center;
-	/* padding: 1rem; */
 	margin-top: 2rem;
 }
 
@@ -76,8 +75,6 @@ resources,
 
 /* Card */
 .location-info .location-card {
-	/* display: flex;
-	flex-direction: column; */
 	text-align: center;
 	background-color: var(--color-theme-off-white);
 	box-shadow: 0 0 6px rgba(51, 51, 51, 0.2);
@@ -169,9 +166,6 @@ resources,
 	font-size: 1.5em;
 	padding: 0.5em;
 	display: none;
-}
-
-.program-cards .card:nth-child(2) {
 }
 
 .program-cards .card:nth-child(2) .popular {

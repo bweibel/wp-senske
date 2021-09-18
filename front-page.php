@@ -21,7 +21,6 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-front-page' );
 		while ( have_posts() ) {
 			the_post();
 			get_template_part( 'flexible_hero.php' );
-			// get_template_part( 'template-parts/content/entry', get_post_type() );
 		}
 		?>
 	</main><!-- #primary -->
