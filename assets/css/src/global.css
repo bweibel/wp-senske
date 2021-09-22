@@ -375,16 +375,11 @@ select {
 	width: 100%;
 	display: block;
 	margin: 0.3rem auto;
-	background-color: var(--color-theme-orange);
-	border-radius: 1rem;
+	background-color: var(--color-theme-green);
 	pointer-events: none;
 	opacity: 1;
 	transition: opacity .2s, height 0.2s, width 0.2s, transform 0.2s;
 	transform-origin: center;
-}
-
-.nav--toggle-small .menu-toggle .menu-icon span{
-	background-color: var(--color-theme-green);
 }
 
 .nav--toggled-on .menu-toggle .menu-icon span:nth-child(2) {
@@ -393,7 +388,7 @@ select {
 
 .nav--toggled-on .menu-toggle .menu-icon span:nth-child(1) {
 	transform: translateY(1rem) rotate(45deg);
-}
+}https://meet.google.com/tor-mfdw-erw?hs=146
 
 .nav--toggled-on .menu-toggle .menu-icon span:nth-child(3) {
 	transform: translateY(-1rem) rotate(-45deg);

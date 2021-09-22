@@ -44,8 +44,8 @@ class Component implements Component_Interface {
 			apply_filters(
 				'wp_rig_custom_logo_args',
 				array(
-					'height'      => 320,
-					'width'       => 80,
+					'height'      => 100,
+					'width'       => 320,
 					'flex-width'  => false,
 					'flex-height' => false,
 				)
