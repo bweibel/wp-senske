@@ -1,3 +1,53 @@
 /**
  * Custom styles for the front-page.php template.
  */
+.hero {
+	display: grid;
+	grid-template-columns: 1fr minmax(min-content, auto ) 1fr;
+	align-content: center;
+	justify-content: center;
+	background: var(--color-theme-secondary);
+	padding: 4rem 1em;
+	height: auto;
+	min-height: 60vh;
+}
+
+.hero > * {
+	grid-column: 2/2;
+	justify-self: center;
+}
+
+.hero h1,
+.hero h2,
+.hero h3,
+.hero h4,
+.hero h5,
+.hero p {
+	color: var(--color-theme-white);
+	text-align: center;
+	text-shadow: 0rem 0rem 1rem var(--color-dropshadow-heavy);
+	margin: .5rem auto;
+}
+
+.main-title {
+	font-size: 3.5em;
+	line-height: 1.2;
+	font-weight: 400;
+}
+
+.secondary-title {
+	font-size: 1.2em;
+	font-family: var(--font-theme-secondary);
+	font-weight: 300;
+}
+
+@media (--content-query) {
+	.main-title {
+		font-size: 5em;
+	}
+
+	.secondary-title {
+		font-size: 1.4em;
+	}
+
+}
