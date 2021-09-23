@@ -32,7 +32,7 @@ if ( have_rows( 'cta_blocks' ) ) :
 					'link'=> $button['button_link'],
 					'color' => $button['button_color']
 				);
-				get_template_part( '/template-parts/content/button', '', $args );
+				get_template_part( '/template-parts/component/button', '', $args );
 			endif;
 
 			?>

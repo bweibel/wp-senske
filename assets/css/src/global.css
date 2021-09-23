@@ -77,6 +77,7 @@
 	grid-template-areas:
 		"header"
 		"main"
+		"sidebar"
 		"footer";
 	margin: 0 auto;
 	max-width: 100%;
@@ -95,30 +96,15 @@
 	grid-area: footer;
 }
 
-@media (--content-query) {
-
-	.site {
-		display: grid;
-		grid-template-columns: 1fr minmax(0, var(--content-width)) 1fr;
-		grid-template-areas:
-			"header header header"
-			". main  ."
-			". sidebar ."
-			"footer footer footer";
-		column-gap: 1em;
-		min-height: 100vh;
-	}
-
-	.primary-sidebar {
-		grid-area: sidebar;
-	}
+.primary-sidebar {
+	grid-area: sidebar;
 }
 
 @media (--sidebar-query) {
 
 	.has-sidebar .site {
 		display: grid;
-		grid-template-columns: 1fr minmax(0, var(--content-width)) 300px 1fr;
+		grid-template-columns: 1fr minmax(0, var(--content-width)) min-content 1fr;
 		grid-template-areas:
 			"header header header header"
 			". main sidebar ."
@@ -127,9 +113,6 @@
 		min-height: 100vh;
 	}
 
-	.primary-sidebar {
-		grid-area: sidebar;
-	}
 }
 
 /*--------------------------------------------------------------
@@ -219,6 +202,7 @@ textarea:focus {
 
 select {
 	border: 1px solid var(--border-color-light);
+	padding: .2em;
 }
 
 /*--------------------------------------------------------------
@@ -388,7 +372,7 @@ select {
 
 .nav--toggled-on .menu-toggle .menu-icon span:nth-child(1) {
 	transform: translateY(1rem) rotate(45deg);
-}https://meet.google.com/tor-mfdw-erw?hs=146
+}
 
 .nav--toggled-on .menu-toggle .menu-icon span:nth-child(3) {
 	transform: translateY(-1rem) rotate(-45deg);

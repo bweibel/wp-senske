@@ -32,6 +32,7 @@
 	--color-quote-citation: #6c7781;
 	--color-link-menu: var(--color-theme-mediumgrey);
 	--color-dropshadow: #1c283333;
+	--color-dropshadow-heavy: #000;
 
 	/* Custom editor colors */
 	--color-theme-primary: var(--color-theme-green);

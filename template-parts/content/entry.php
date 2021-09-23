@@ -14,7 +14,7 @@ namespace WP_Rig\WP_Rig;
 	get_template_part( 'template-parts/content/entry_header', get_post_type() );
 
 	// Search.
-	if ( is_search() ) {
+	if ( is_search() || !is_singular( get_post_type() ) ) {
 		get_template_part( 'template-parts/content/entry_summary', get_post_type() );
 	} else {
 		// Standard Content.

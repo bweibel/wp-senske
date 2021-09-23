@@ -6,7 +6,8 @@
 
 .button,
 .button:visited,
-.button:active {
+.button:active,
+.entry-content .button {
 	display: inline-block;
 	background: none;
 	cursor: pointer;
