@@ -3,7 +3,8 @@
 --------------------------------------------------------------*/
 
 .widget-title {
-	font-size: 1.25em;
+	font-size: 1.5em;
+	border-bottom: .1em solid var(--color-theme-yellow);
 }
 
 /* Make sure select elements fit in widgets. */
@@ -18,7 +19,8 @@
 }
 
 .widget li {
-	line-height: 1.8;
+	line-height: 1.4;
+	margin-bottom: .5rem;
 }
 
 .widget_archive ul,
@@ -37,6 +39,12 @@
 .widget select {
 	max-width: 100%;
 	text-overflow: ellipsis;
+}
+
+.widget .post-date {
+	font-size: .8em;
+	display: block;
+	color: var(--color-theme-darkgreen);
 }
 
 /* Categories widget */
@@ -109,6 +117,7 @@
 	font-size: 1em;
 	line-height: 1.4;
 }
+
 
 .rss-date,
 .widget_rss cite {

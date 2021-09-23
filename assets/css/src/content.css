@@ -41,6 +41,10 @@
 	width: 100%;
 }
 
+.entry-header {
+	text-align: center;
+}
+
 .site-main > * {
 	grid-column: 2;
 }
@@ -119,6 +123,10 @@
 }
 
 @media (--content-query) {
+
+	.entry-header {
+		text-align: left;
+	}
 
 	.entry-content,
 	.entry-summary {

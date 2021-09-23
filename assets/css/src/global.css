@@ -211,7 +211,7 @@ select {
 
 .site-header {
 	display: grid;
-	grid-template-columns: 1fr minmax(0, calc(var(--content-width) / 4)) minmax(0, calc(3 * var(--content-width) / 4)) 1fr;
+	grid-template-columns: 1fr minmax(0,calc(var(--content-width)/5)) minmax(0,calc(4*var(--content-width)/5)) 1fr;
 	grid-template-areas: "top top top top" ". branding nav .";
 	column-gap: 1em;
 	position: sticky;
@@ -228,7 +228,9 @@ select {
 }
 
 @media (--wide-menu-query) {
-	border-top: none;
+	.site-header{
+		border-top: none;
+	}
 }
 
 .top-bar {
@@ -276,7 +278,7 @@ select {
 
 @media (--wide-menu-query) {
 	.site-branding {
-		margin-top: -2rem;
+		margin-top: -2.2rem;
 	}
 }
 
@@ -303,7 +305,29 @@ select {
 
 .custom-logo-link {
 	display: inline-block;
-	margin: 0 auto 1em;
+	margin: 1em auto 1em;
+	max-width: 100%;
+	transition: 0.25s max-width, .25s margin, .25s
+}
+
+.sticky .custom-logo-link {
+	margin: .5rem auto .5rem;
+	max-width: 10rem;
+}
+
+@media (--wide-menu-query) {
+	.custom-logo-link {
+		margin: 0 auto 1em;
+		transition: 0.25s max-width, .25s margin, .25s transform;
+	}
+
+	.custom-logo-link:hover{
+		transform: scale(1.05);
+	}
+
+	.sticky .custom-logo-link {
+		max-width: 10em;
+	}
 }
 
 .site-title {

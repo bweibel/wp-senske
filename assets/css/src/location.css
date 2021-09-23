@@ -25,8 +25,9 @@
 	}
 
 	.location-info .location-content {
-		flex-basis: 50em;
+		flex-basis: 30em;
 		order: 2;
+		flex-grow: 2;
 	}
 
 	.location-info .location-card {
@@ -47,6 +48,7 @@
 	border-bottom: none;
 	margin: 0;
 	padding: 0;
+	text-align: center;
 }
 
 .location-content .location-header .location-subheader {
