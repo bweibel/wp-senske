@@ -51,7 +51,7 @@ $price_cents = $price_arr[1];
 			<span class="small"><?php echo $program_fields['price_text']; ?></span>
 		</div>
 
-		<a href="#">Learn More</a>
+		<a href="<?php echo get_permalink($program) ?>">Learn More</a>
 	<?php
 	endif;
 	?>

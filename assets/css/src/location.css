@@ -185,25 +185,37 @@
 	flex-basis: 20em;
 }
 
+.service-cards .card .card-image {
+	background-color: var(--color-theme-darkgreen);
+	height: 200px;
+	overflow: hidden;
+}
+
 .service-cards .card .icon {
 	display: inline-block;
 	vertical-align: middle;
-	padding: 0.5em;
+	padding: 1.2em;
 	background: var(--color-theme-white);
 	border: transparent;
 	border-radius: 50%;
 	box-shadow: 0 0 6px rgba(51, 51, 51, 0.2);
-	width: 4em;
-	height: 4em;
+	width: 5em;
+	height: 5em;
 	margin-top: -2em;
+	overflow: hidden;
+}
+
+.service-cards .card .icon svg * {
+	fill: var(--color-theme-green);
 }
 
 .service-cards .card .service-category {
-	font-size: 1.8em;
+	font-size: 1.4em;
 	font-family: var(--global-font);
 	color: var(--color-theme-green);
 	margin: 0.5em auto;
 	text-transform: uppercase;
+	padding: 0 1rem;
 }
 
 .service-cards .card .entry-content {

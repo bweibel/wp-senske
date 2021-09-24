@@ -6,45 +6,66 @@
  */
 
 namespace WP_Rig\WP_Rig;
+use WP_Query;
 
 $location_name = get_field('short_title');
 $location_name_full = get_field('full_title');
 $phone = get_field('phone_number');
-$phone_pretty = '(509) 374-5000';
+// $phone_pretty = '(509) 374-5000';
 $hours = get_field('hours');
 
 $services = get_field('services');
 
+$post_type = $senske_services;
 $taxonomy = 'service_category';
 
 $residential_bundles_slug = 'residential-service-bundles';
 $individual_services_slug = 'individual-services';
 $commercial_services_slug = 'commercial-services';
 
-$residential_bundles = array();
-$individual_services = array();
-$commercial_services = array();
+$residential_bundles_query  = array(
+	'post_type' => 'senske_services',
+	'tax_query' => array(
+		array(
+			'taxonomy' => $taxonomy,
+			'field' => 'slug',
+			'terms' => $residential_bundles_slug,
+		)
+	)
+);
 
-foreach ($services as $service ) {
-	$service_cats = get_the_terms( $service->ID, $taxonomy);
-	foreach ($service_cats as $service_cat ) {
+$individual_services_query  = array(
+	'post_type' => 'senske_services',
+	'tax_query' => array(
+		array(
+			'taxonomy' => $taxonomy,
+			'field' => 'slug',
+			'terms' => $individual_services_slug,
+		)
+	)
+);
 
-		if(  $service_cat->slug == $residential_bundles_slug ){
-			array_push( $residential_bundles, $service );
-		}
-		if(  $service_cat->slug == $individual_services_slug ){
-			array_push( $individual_services, $service );
-		}
-		if(  $service_cat->slug == $commercial_services_slug ){
-			array_push( $commercial_services, $service );
-		}
-	}
-}
+$commercial_services_query  = array(
+	'post_type' => 'senske_services',
+	'tax_query' => array(
+		array(
+			'taxonomy' => $taxonomy,
+			'field' => 'slug',
+			'terms' => $commercial_services_slug,
+		)
+	)
+);
+
+$residential_bundles  = get_posts( $residential_bundles_query );
+$individual_services  = get_posts( $individual_services_query );
+$commercial_services  = get_posts( $commercial_services_query );
+
 
 ?>
 
 	<section class="location-info">
 		<section class="location-content">
+
 			<?php
 			get_template_part( 'template-parts/location/location_header' );
 			get_template_part( 'template-parts/content/entry_content', get_post_type() );
@@ -65,15 +86,15 @@ foreach ($services as $service ) {
 		</aside>
 	</section>
 
-	<?php get_template_part( 'template-parts/location/location_program_cta', '', array( 'programs'=>$residential_bundles) ); ?>
-	<?php get_template_part( 'template-parts/location/location_services-residential', '', array( 'programs'=>$residential_bundles) ); ?>
+	<?php get_template_part( 'template-parts/location/location_program_cta', '', array( 'programs' => $residential_bundles ) ); ?>
+	<?php get_template_part( 'template-parts/location/location_services-residential', '', array( 'programs' => $residential_bundles ) ); ?>
 	<section class="residential-services services">
 		<header>
 			<h3>Individual Residental Services Offered in <?php echo $location_name_full; ?></h3>
 			<hr>
 		</header>
-		<?php get_template_part( 'template-parts/services/service_list' ); ?>
-	</section>
+		<?php get_template_part( 'template-parts/services/service_list', 'location', array( 'services' => $individual_services ) ); ?>
+	</services>
 
 	<section class="commercial-services services">
 		<header>
@@ -82,7 +103,7 @@ foreach ($services as $service ) {
 			<hr>
 		</header>
 		<img src="http://senske.local/wp-content/uploads/chippers-green-lawn-feature.jpg" alt="">
-		<?php get_template_part( 'template-parts/services/service_list', 'commercial' ); ?>
+		<?php get_template_part( 'template-parts/services/service_list', 'location', array( 'services' => $commercial_services ) ); ?>
 	</section>
 
 	<section class="resources">
@@ -93,7 +114,8 @@ foreach ($services as $service ) {
 		</header>
 		<div class="entry-content">
 			<h4>Lawn & Tree Diseases and Weeds common for <?php echo $location_name; ?></h4>
-			<p>Our Lawn care services reflect our Sit sunt reprehenderit incididunt minim consectetur amet sit. Occaecat anim nostrud officia laboris fugiat sit in. Reprehenderit occaecat velit incididunt voluptate minim pariatur. Ad velit do duis cillum ipsum fugiat ipsum minim eu nisi enim tempor.</p>
+			<p>Our lawn care services reflect our commitment to quality in all aspects of lawn care and lawn maintenance. Lawn maintenance services are available year-round or seasonally. Please visit the Senske Lawn Care Library and Tree Resources to learn more.</p>
+
 		</div>
 	</section>
 

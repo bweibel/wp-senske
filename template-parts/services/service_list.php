@@ -7,17 +7,25 @@
 
 namespace WP_Rig\WP_Rig;
 
+
+$services = $args['services'];
 ?>
-
-
 <ul class="services-list">
-	<?php get_template_part( 'template-parts/services/service_item' ); ?>
-	<?php get_template_part( 'template-parts/services/service_item' ); ?>
-	<?php get_template_part( 'template-parts/services/service_item' ); ?>
-	<?php get_template_part( 'template-parts/services/service_item' ); ?>
-	<?php get_template_part( 'template-parts/services/service_item' ); ?>
-	<?php get_template_part( 'template-parts/services/service_item' ); ?>
-</ul>
+	<?php
+	if ($services) :
+		foreach ( $services as $service ) :
+			$args = array(
+				'service'      => $service,
+				'full_content' => false,
+			);
 
+		?>
+
+		<?php get_template_part( 'template-parts/services/service_item', '', $args ); ?>
+		<?php
+		endforeach;
+	endif;
+	?>
+</ul>
 
 

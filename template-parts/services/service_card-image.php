@@ -24,14 +24,10 @@ $image = get_the_post_thumbnail($service);
 
 <article <?php post_class( 'service card' ); ?>>
 	<header>
-		<?php echo $image ;?>
-		<?php if( $icon_url ) : ?>
-			<div class="icon">
-				<?php echo file_get_contents( $icon_url ); ?>
-			</div>
-		<?php else : ?>
-			<div class="icon"></div>
-		<?php endif; ?>
+		<div class="card-image">
+			<?php echo $image;?>
+		</div>
+		<?php get_template_part( 'template-parts/services/service_icon', '', array('icon_url' => $icon_url ) ); ?>
 		<h4 class="service-category"><?php echo $title ?></h4>
 	</header>
 	<div class="entry-content">

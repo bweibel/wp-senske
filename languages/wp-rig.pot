@@ -340,7 +340,3 @@ msgstr ""
 #: template-parts/header/navigation.php:18
 msgid "Open menu"
 msgstr ""
-
-#: template-parts/header/navigation.php:19
-msgid "Menu"
-msgstr ""
