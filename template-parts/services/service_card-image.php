@@ -7,16 +7,35 @@
 
 namespace WP_Rig\WP_Rig;
 
+// If we're passed an ID, use that
+if ( $args ) {
+	$service = $args['service'];
+	$service_fields = get_fields( $service );
+} else {
+	$service = $post;
+}
+
+$title = $service->post_title;
+$icon_url = $service_fields['icon']['url'];
+$content =  get_the_content('', false, $service);
+$image = get_the_post_thumbnail($service);
+
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'service card' ); ?>>
+<article <?php post_class( 'service card' ); ?>>
 	<header>
-		<img src="http://senske.local/wp-content/uploads/chippers-green-lawn-feature.jpg" class="service-image" alt="">
-		<img class="icon" src="http://senske.local/wp-content/uploads/senske-tree-care-program.svg" alt="">
-		<h4 class="service-category">Tree Service</h4>
+		<?php echo $image ;?>
+		<?php if( $icon_url ) : ?>
+			<div class="icon">
+				<?php echo file_get_contents( $icon_url ); ?>
+			</div>
+		<?php else : ?>
+			<div class="icon"></div>
+		<?php endif; ?>
+		<h4 class="service-category"><?php echo $title ?></h4>
 	</header>
 	<div class="entry-content">
-		<p>Ullamco Lorem aliqua sint laboris non est aliqua duis sunt excepteur. Dolor commodo qui sint id laboris id eu consectetur est ex consectetur occaecat. Incididunt tempor cupidatat ex magna sit sunt. Pariatur magna Lorem mollit ad reprehenderit sunt labore.</p>
+			<?php echo $content; ?>
 	</div>
 </article>
 <?php

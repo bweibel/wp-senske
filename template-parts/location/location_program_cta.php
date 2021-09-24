@@ -7,19 +7,28 @@
 
 namespace WP_Rig\WP_Rig;
 
-$background = 'http://senske.local/wp-content/uploads/grass.jpg';
+
+$programs = $args['programs'];
+
 ?>
 
-<section class="programs-cta" style="background-image: url(<?php echo $background; ?>)">
+<section class="programs-cta fullwidth" style="">
 	<header>
 		<h3>We'll Take Care of You</h3>
 		<hr>
 	</header>
-	<ul class="program-cards">
-		<?php get_template_part( 'template-parts/services/program_card' ); ?>
-		<?php get_template_part( 'template-parts/services/program_card' ); ?>
-		<?php get_template_part( 'template-parts/services/program_card' ); ?>
-	</ul>
+	<div class="program-cards">
+		<?php
+		foreach( $programs as $program ){
+			$args= array(
+				'program'      => $program,
+				'full_content' =>true,
+				'el_tag'           => 'li'
+			);
+			get_template_part( 'template-parts/services/program_card', '', $args );
+		}
+		?>
+	</div>
 
 	<a href="#" class="button">Request an Estimate</a>
 </section>

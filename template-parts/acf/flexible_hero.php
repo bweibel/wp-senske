@@ -7,7 +7,7 @@
 
 namespace WP_Rig\WP_Rig;
 
-// If we're passed an ID, use that
+// If we're passed an ID, use that.
 if ( $args ) {
 	$hero = $args['hero'];
 } else {

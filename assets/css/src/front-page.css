@@ -1,6 +1,9 @@
 /**
  * Custom styles for the front-page.php template.
  */
+
+@import "_program-cards.css";
+
 .hero {
 	display: grid;
 	grid-template-columns: 1fr minmax(min-content, auto ) 1fr;
@@ -29,13 +32,13 @@
 	margin: .5rem auto;
 }
 
-.main-title {
+.hero .main-title {
 	font-size: 3.5em;
 	line-height: 1.2;
 	font-weight: 400;
 }
 
-.secondary-title {
+.hero .secondary-title {
 	font-size: 1.2em;
 	font-family: var(--font-theme-secondary);
 	font-weight: 300;
@@ -50,4 +53,62 @@
 		font-size: 1.4em;
 	}
 
+}
+
+/* Services/Map */
+.home-section.services-map {
+	display: grid;
+	column-gap: 2rem;
+}
+
+@media (--content-query){
+	.home-section.services-map {
+		display: grid;
+		grid-template-columns: 6fr 4fr;
+		column-gap: 2rem;
+	}
+}
+
+.tab-header {
+	position: relative;
+    text-align: center;
+    background: var(--color-theme-green);
+	height: 3rem;
+	margin-top: -3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.tab-header__heading {
+	margin: 0;
+	position: relative;
+	color: var(--color-theme-white);
+}
+
+
+
+.service-plan-cards {
+}
+
+.find-location {
+	text-align: center;
+}
+
+.find-location .map {
+	background-color: var(--color-theme-off-white);
+	min-height: 400px;
+}
+
+
+/* icon */
+.program-cards .icon  {
+	max-width: 8em;
+	padding: 1em;
+	border-radius: 50%;
+	box-shadow: var(--global-drop-shadow);
+}
+
+.program-cards .icon svg .cls-1 {
+	fill: var(--color-theme-green);
 }

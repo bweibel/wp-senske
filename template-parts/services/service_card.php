@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying a locations content
+ * Template part for displaying a service Card
  *
  * @package wp_rig
  */
@@ -9,17 +9,15 @@ namespace WP_Rig\WP_Rig;
 
 // If we're passed an ID, use that
 if ( $args ) {
-	$service_plan = $args['plan_id'];
+	$service = $args['service'];
+	$service_fields = get_fields( $service );
 } else {
-	$service_plan = $post;
+	$service = $post;
 }
 
-$title = get_the_title( $service_plan );
-$icon = get_field($service_plan, 'icon');
+$title = $service->post_title;
 
-$price = 49.95;
-$price_dollars = 49;
-$price_cents = 95;
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'service card' ); ?>>

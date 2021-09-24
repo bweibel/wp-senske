@@ -27,6 +27,9 @@ class Component implements Component_Interface {
 		return 'shortcodes';
 	}
 
+	/**
+	 * Initialize Shortcodes
+	 */
 	public function initialize() {
 		add_shortcode( 'button', array( $this, 'handle_button_shortcode' ) );
 	}
@@ -35,7 +38,7 @@ class Component implements Component_Interface {
 		// normalize attribute keys, lowercase
 		$atts = array_change_key_case( (array) $atts, CASE_LOWER );
 
-		$button_link  = '#';
+		$button_link  = $atts['link'];
 		$button_color = $atts['color'];
 
 		$button_class = 'button';

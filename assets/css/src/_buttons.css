@@ -22,6 +22,7 @@
 	margin: 0.5em;
 	transition: background-color 0.2s, box-shadow 0.2s;
 	box-shadow: var(--global-drop-shadow);
+
 }
 
 .button.button-green,
@@ -35,7 +36,9 @@
 .button:focus {
 	background-color: var(--color-theme-yellow-dark);
 	box-shadow: var(--global-drop-shadow-raised);
-	transition: transform 0.1s, box-shadow 0.1s;
+	transition: transform 0s, box-shadow 0.1s;
+	text-decoration: none;
+	color: var(--color-theme-white);
 }
 
 .button:hover.button-green,

@@ -42,9 +42,7 @@ class Component implements Social_Media {
 			'social_media',
 			apply_filters(
 				'wp_rig_social_media_args',
-				array(
-
-				)
+				array()
 			)
 		);
 	}

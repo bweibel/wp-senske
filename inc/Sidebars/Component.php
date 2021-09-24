@@ -75,18 +75,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				'after_title'   => '</h3>',
 			)
 		);
-
-		// register_sidebar(
-		// 	array(
-		// 		'name'          => esc_html__( 'Sidebar', 'wp-rig' ),
-		// 		'id'            => static::PRIMARY_SIDEBAR_SLUG,
-		// 		'description'   => esc_html__( 'Add widgets here.', 'wp-rig' ),
-		// 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		// 		'after_widget'  => '</section>',
-		// 		'before_title'  => '<h3 class="widget-title">',
-		// 		'after_title'   => '</h3>',
-		// 	)
-		// );
 	}
 
 	/**
@@ -99,7 +87,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		if ( $this->is_primary_sidebar_active() ) {
 			global $template;
 
-			if ( in_array( basename( $template ), array( 'single.php', 'archive.php', 'category.php' ) ) ) {
+			if ( in_array( basename( $template ), array( 'single.php', 'archive.php', 'category.php', 'home.php' ) ) ) {
 				$classes[] = 'has-sidebar';
 			}
 		}

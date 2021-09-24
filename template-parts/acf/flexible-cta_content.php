@@ -16,15 +16,15 @@ namespace WP_Rig\WP_Rig;
 if ( have_rows( 'cta_blocks' ) ) :
 
 	// Loop through rows.
-	while ( have_rows('cta_blocks') ) : the_row();
+	while ( have_rows( 'cta_blocks') ) : the_row();
 		?>
 			<?php
-			// Case: Generic WYSIWYG Content
+			// Case: Generic WYSIWYG Content.
 			if ( get_row_layout() == 'generic_content' ) :
 				the_sub_field( 'content' );
 			endif;
 
-			// Case: Generic WYSIWYG Content
+			// Case: Generic WYSIWYG Content.
 			if ( get_row_layout() == 'button' ) :
 				$button = get_sub_field( 'button' );
 				$args = array(
@@ -32,7 +32,7 @@ if ( have_rows( 'cta_blocks' ) ) :
 					'link'=> $button['button_link'],
 					'color' => $button['button_color']
 				);
-				get_template_part( '/template-parts/component/button', '', $args );
+				get_template_part( '/template-parts/components/button', '', $args );
 			endif;
 
 			?>

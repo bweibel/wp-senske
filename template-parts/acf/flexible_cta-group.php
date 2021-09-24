@@ -15,12 +15,12 @@ namespace WP_Rig\WP_Rig;
 	if ( have_rows( 'cta_boxes' ) ) :
 		// Loop through rows.
 		while ( have_rows('cta_boxes') ) : the_row();
-			// Case: CTA Box
+			// Case: CTA Box.
 			if ( get_row_layout() == 'cta_box' ) :
 				get_template_part( '/template-parts/acf/cta-box/cta-box' );
 		endif;
 
-		// End loop.
+			// End loop.
 	endwhile;
 		// No value.
 	else :

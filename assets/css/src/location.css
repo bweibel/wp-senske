@@ -1,3 +1,9 @@
+/**
+ * Custom styles for the Single Location template.
+ */
+
+@import "_program-cards.css";
+
 .location-info,
 .services-cta,
 .residential-services,
@@ -138,79 +144,9 @@
 	margin-bottom: 0;
 }
 
-.program-cards {
-	list-style: none;
-	padding: 0;
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
-	margin: 3rem auto;
-	align-items: center;
-}
-
-.program-cards .card {
-	background-color: var(--color-theme-white);
-	flex-basis: 20em;
-	flex-shrink: 1;
-	flex-grow: 1;
-	padding-bottom: 2em;
-	margin-bottom: 1rem;
-	max-width: 30em;
-	box-shadow: 0 0 6px rgba(51, 51, 51, 0.2);
-}
-
-.program-cards .card .popular {
-	background-color: var(--color-theme-green);
-	color: var(--color-theme-white);
-	font-family: var(--highlight-font-family);
-	text-transform: uppercase;
-	font-weight: 600;
-	font-size: 1.5em;
-	padding: 0.5em;
-	display: none;
-}
-
-.program-cards .card:nth-child(2) .popular {
-	display: block;
-}
-
-.program-cards .card .icon {
-	display: inline-block;
-	vertical-align: middle;
-	padding: 0.5em;
-}
-
-.program-cards .card .program-category {
-	font-size: 1.4em;
-	color: var(--color-theme-green);
-}
-
-.program-cards .card .program-title {
-	font-size: 3em;
-	max-width: 8em;
+.programs-cta .program-cards {
+	max-width: var(--content-width);
 	margin: 2rem auto;
-	line-height: 1;
-}
-
-.program-cards .card .pricing {
-	margin-bottom: 2rem;
-}
-
-.program-cards .card .pricing .price {
-	font-family: var(--highlight-font-family);
-	font-weight: 600;
-	color: var(--color-theme-green);
-	font-size: 3.5em;
-}
-
-.program-cards .card .pricing .small-price {
-	color: var(--color-theme-green);
-	font-size: 0.3em;
-	vertical-align: super;
-}
-
-.program-cards .card .pricing .small {
-	display: block;
 }
 
 /* services-cta */

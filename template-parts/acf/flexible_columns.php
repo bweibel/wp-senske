@@ -21,7 +21,7 @@ namespace WP_Rig\WP_Rig;
 				?>
 				<div class="column">
 					<?php
-					// Case: Generic WYSIWYG Content
+					// Case: Generic WYSIWYG Content.
 					if ( get_row_layout() == 'generic_content' ) :
 						the_sub_field( 'content' );
 					endif;

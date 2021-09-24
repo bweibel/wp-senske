@@ -17,4 +17,4 @@ if ( $button_color ) {
 }
 ?>
 
-<a href="<?php echo $button_link ?>" class="<?php echo $button_class ?>"><?php echo $button_text; ?></a>
+<a href="<?php echo $button_link; ?>" class="<?php echo $button_class; ?>"><?php echo $button_text; ?></a>

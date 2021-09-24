@@ -210,12 +210,10 @@
 --------------------------------------------------------------*/
 .alignleft {
 	float: left;
-	margin-right: 1.5rem;
 }
 
 .alignright {
 	float: right;
-	margin-left: 1.5rem;
 }
 
 img.alignleft,
@@ -229,10 +227,18 @@ img.alignright {
 
 	img.alignleft {
 		float: left;
+		margin-right: 1.5rem;
 	}
+
 
 	img.alignright {
 		float: right;
+		margin-left: 1.5rem;
+	}
+
+	img.alignleft,
+	img.alignright {
+		margin-bottom: 1rem;
 	}
 }
 
