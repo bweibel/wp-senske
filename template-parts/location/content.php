@@ -175,9 +175,24 @@ $yotpo_id = get_field('yotpo_id');
 
 					</div>
 					<div class="manager-image">
-						<?php $image = get_sub_field( 'manager_image' );	?>
-						<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+						<?php
+						$image = get_sub_field( 'manager_image' );
+						if( $image ):
 
+							// Image variables.
+							$url = $image['url'];
+							$title = $image['title'];
+							$alt = $image['alt'];
+							$caption = $image['caption'];
+
+							// Thumbnail size attributes.
+							$size = 'thumbnail';
+							$thumb = $image['sizes'][ $size ];
+							$width = $image['sizes'][ $size . '-width' ];
+							$height = $image['sizes'][ $size . '-height' ];
+						?>
+						<img src="<?php echo esc_url( $thumb ); ?>" alt="<?php echo esc_attr( $alt ); ?>" />
+						<?php endif; ?>
 					</div>
 				</div>
 
