@@ -10,7 +10,7 @@ namespace WP_Rig\WP_Rig;
 ?>
 
 
-<section class="services-cta">
+<section class="services-cta location-section">
 	<header>
 		<h3>Residential Services in </h3>
 	</header>

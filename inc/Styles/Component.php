@@ -319,6 +319,13 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return 'single-senske_location.php' === basename( $template );
 				},
 			),
+			'wp-rig-location' => array(
+				'file' => 'services.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'page-services.php' === basename( $template );
+				},
+			),
 		);
 
 		/**

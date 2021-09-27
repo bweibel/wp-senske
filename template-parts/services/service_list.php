@@ -9,6 +9,8 @@ namespace WP_Rig\WP_Rig;
 
 
 $services = $args['services'];
+$location_link = $args['location_link'];
+
 ?>
 <ul class="services-list">
 	<?php
@@ -17,12 +19,9 @@ $services = $args['services'];
 			$args = array(
 				'service'      => $service,
 				'full_content' => false,
+				'location_link' => $location_link,
 			);
-
-		?>
-
-		<?php get_template_part( 'template-parts/services/service_item', '', $args ); ?>
-		<?php
+			get_template_part( 'template-parts/services/service_item', '', $args );
 		endforeach;
 	endif;
 	?>

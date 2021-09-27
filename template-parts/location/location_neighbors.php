@@ -13,17 +13,18 @@ $location_name_full = get_field('full_title');
 $communities = get_field('communities');
 
 ?>
-
-<p class="highlight">Serving <?php echo $location_name_full; ?> and surrounding areas. Our Senske branch location in <?php echo $location_name; ?> allows us to better serve our neighbors in the following communities:</p>
-<ul class="location-list">
-	<?php
-	if ( $communities ) :
-		foreach ( $communities as $community ) :
-			echo '<li>' . $community['community'] . '</li>';
-		endforeach;
-	endif;
-	?>
-</ul>
+<div class="entry-content">
+	<p class="highlight">Serving <?php echo $location_name_full; ?> and surrounding areas. Our Senske branch location in <?php echo $location_name; ?> allows us to better serve our neighbors in the following communities:</p>
+	<ul class="location-list">
+		<?php
+		if ( $communities ) :
+			foreach ( $communities as $community ) :
+				echo '<li>' . $community['community'] . '</li>';
+			endforeach;
+		endif;
+		?>
+	</ul>
+</div>
 <?php
 
 ?>

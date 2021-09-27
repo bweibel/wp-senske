@@ -9,23 +9,29 @@ namespace WP_Rig\WP_Rig;
 
 
 $programs = $args['programs'];
+$title = $args['title'];
+
 
 ?>
 
-<section class="programs-cta fullwidth" style="">
+<section class="programs-cta fullwidth location-section" style="">
 	<header>
-		<h3>We'll Take Care of You</h3>
+		<h3><?php echo $title;?></h3>
 		<hr>
 	</header>
 	<div class="program-cards">
 		<?php
-		foreach( $programs as $program ){
-			$args= array(
-				'program'      => $program,
-				'full_content' =>true,
-				'el_tag'           => 'li'
-			);
-			get_template_part( 'template-parts/services/program_card', '', $args );
+		if( $programs ) {
+			foreach( $programs as $program ) {
+				$args= array(
+					'program'      => $program,
+					'full_content' => true,
+					'el_tag'           => 'li',
+				);
+				get_template_part( 'template-parts/services/program_card', '', $args );
+			}
+		} else {
+			echo "NOPE";
 		}
 		?>
 	</div>

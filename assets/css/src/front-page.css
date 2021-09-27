@@ -13,6 +13,9 @@
 	padding: 4rem 1em;
 	height: auto;
 	min-height: 60vh;
+	max-height: 600px;
+	background-size: cover;
+	background-position: center;
 }
 
 .hero > * {
@@ -55,6 +58,17 @@
 
 }
 
+header h4 {
+	margin-bottom: 0;
+	font-family: var(--global-font);
+	font-weight: 300;
+}
+
+header h3 {
+	margin: 0;
+	font-size: 2em;
+}
+
 /* Services/Map */
 .home-section.services-map {
 	display: grid;
@@ -74,10 +88,16 @@
     text-align: center;
     background: var(--color-theme-green);
 	height: 3rem;
-	margin-top: -3rem;
+	margin-top: 1rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+@media (--content-query){
+	.tab-header {
+		margin-top: -3rem;
+	}
 }
 
 .tab-header__heading {
@@ -88,7 +108,42 @@
 
 
 
-.service-plan-cards {
+.service-plan-cards,
+.service-extra,
+.service-plans-content {
+	grid-column: 1;
+}
+
+.service-plans-content {
+	padding: 0 1rem;
+}
+
+.service-plans-content header hr {
+	margin: 0;
+}
+
+.find-location {
+	display: none;
+}
+
+@media (--content-query){
+	.find-location {
+		display: block;
+		grid-column: 2;
+		grid-row: 1/-1;
+	}
+}
+
+.service-extra {
+	display: flex;
+	gap: 1rem;
+	padding: 1em;
+}
+
+.service-extra .icon {
+	box-shadow: var(--global-drop-shadow);
+	width: 5rem;
+	height: 5rem;
 }
 
 .find-location {
@@ -96,9 +151,11 @@
 }
 
 .find-location .map {
+	grid-column: 2;
 	background-color: var(--color-theme-off-white);
 	min-height: 400px;
 }
+
 
 
 /* icon */

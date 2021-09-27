@@ -1,6 +1,7 @@
 <?php
 /**
- * The template for displaying location pages
+ * Template Name: Services Page
+ * The template for displaying all pages
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -11,7 +12,7 @@ namespace WP_Rig\WP_Rig;
 
 get_header();
 
-wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-location' );
+wp_rig()->print_styles( 'wp-rig-content' );
 
 ?>
 	<main id="primary" class="site-main">
@@ -20,7 +21,7 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-location' );
 		while ( have_posts() ) {
 			the_post();
 
-			get_template_part( 'template-parts/location/content', 'location' );
+			get_template_part( 'template-parts/services/content', 'services' );
 		}
 		?>
 	</main><!-- #primary -->

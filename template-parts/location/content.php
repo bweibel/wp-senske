@@ -19,53 +19,11 @@ $services = get_field('services');
 $post_type = $senske_services;
 $taxonomy = 'service_category';
 
-$residential_bundles_slug = 'residential-service-bundles';
-$individual_services_slug = 'individual-services';
-$commercial_services_slug = 'commercial-services';
-
-$residential_bundles_query  = array(
-	'post_type' => 'senske_services',
-	'tax_query' => array(
-		array(
-			'taxonomy' => $taxonomy,
-			'field' => 'slug',
-			'terms' => $residential_bundles_slug,
-		)
-	)
-);
-
-$individual_services_query  = array(
-	'post_type' => 'senske_services',
-	'tax_query' => array(
-		array(
-			'taxonomy' => $taxonomy,
-			'field' => 'slug',
-			'terms' => $individual_services_slug,
-		)
-	)
-);
-
-$commercial_services_query  = array(
-	'post_type' => 'senske_services',
-	'tax_query' => array(
-		array(
-			'taxonomy' => $taxonomy,
-			'field' => 'slug',
-			'terms' => $commercial_services_slug,
-		)
-	)
-);
-
-$residential_bundles  = get_posts( $residential_bundles_query );
-$individual_services  = get_posts( $individual_services_query );
-$commercial_services  = get_posts( $commercial_services_query );
-
+$yotpo_id = get_field('yotpo_id');
 
 ?>
-
-	<section class="location-info">
+	<section class="location-info ">
 		<section class="location-content">
-
 			<?php
 			get_template_part( 'template-parts/location/location_header' );
 			get_template_part( 'template-parts/content/entry_content', get_post_type() );
@@ -81,64 +39,159 @@ $commercial_services  = get_posts( $commercial_services_query );
 			<a class="phone" href="tel:<?php echo $phone; ?>" ><?php echo $phone; ?></a>
 			<?php the_field('hours'); ?>
 			<?php the_field('address'); ?>
-			<div class="yotpo bottomLine" data-yotpo-product-id="SKU/PDP_Kennewick"></div>
-			<a href="" class="button">Request your free estimate</a>
+			<div class="yotpo bottomLine" data-yotpo-product-id="SKU/<?php echo $yotpo_id; ?>"></div>
+			<a href="/request-estimate/" class="button">Request your free estimate</a>
 		</aside>
 	</section>
 
-	<?php get_template_part( 'template-parts/location/location_program_cta', '', array( 'programs' => $residential_bundles ) ); ?>
-	<?php get_template_part( 'template-parts/location/location_services-residential', '', array( 'programs' => $residential_bundles ) ); ?>
-	<section class="residential-services services">
-		<header>
-			<h3>Individual Residental Services Offered in <?php echo $location_name_full; ?></h3>
-			<hr>
-		</header>
-		<?php get_template_part( 'template-parts/services/service_list', 'location', array( 'services' => $individual_services ) ); ?>
-	</services>
+	<?php
+	//
+	// Programs CTA.
+	//
+	$programs_cta = get_field( 'programs_cta' );
+	if ( $programs_cta ) {
+		$args = array(
+			'programs' => $programs_cta['programs'],
+			'title'    => $programs_cta['title'],
+			'sub_title' => $programs_cta['sub_title'],
+		);
+		get_template_part( 'template-parts/location/location_program_cta', '', $args );
+	}
+	?>
+	<?php
+	//
+	// Residential Services.
+	//
+	$services_residential = get_field( 'services_residential' );
+	if ( $services_residential ) {
+		$args = array(
+			'services' => $services_residential['services'],
+			'title'    => $services_residential['title'],
+			'sub_title' => $services_residential['sub_title'],
+		);
 
-	<section class="commercial-services services">
-		<header>
-			<h4 class="small">Senske Professional Packages</h4>
-			<h3>Commercial Services to Protect Spokane Businesses</h3>
-			<hr>
-		</header>
-		<img src="http://senske.local/wp-content/uploads/chippers-green-lawn-feature.jpg" alt="">
-		<?php get_template_part( 'template-parts/services/service_list', 'location', array( 'services' => $commercial_services ) ); ?>
-	</section>
+		get_template_part( 'template-parts/location/location_services-residential', '', $args );
+	}
+	?>
+	<?php
+	//
+	// Individual Residential Services.
+	//
+	?>
+	<?php if ( have_rows( 'services_individual' ) ) : ?>
+		<?php while ( have_rows( 'services_individual' ) ) : the_row(); ?>
+		<section class="individual-services services location-section">
+			<header>
+				<?php if ( get_sub_field('sub_title') ) : ?>
+				<h4 class="small"><?php echo get_sub_field('sub_title') ?></h4>
+				<?php endif; ?>
+				<h3><?php echo get_sub_field('title') . ' ' . $location_name_full; ?></h3>
+				<hr>
+			</header>
+			<?php the_sub_field('content'); ?>
 
-	<section class="resources">
-		<header>
-			<h4 class="small">Do You See These in Your Yard?</h4>
-			<h3><?php echo $location_name; ?> Lawn Diseases, Weeds, and Pests to Look Out for</h3>
-			<hr>
-		</header>
-		<div class="entry-content">
-			<h4>Lawn & Tree Diseases and Weeds common for <?php echo $location_name; ?></h4>
-			<p>Our lawn care services reflect our commitment to quality in all aspects of lawn care and lawn maintenance. Lawn maintenance services are available year-round or seasonally. Please visit the Senske Lawn Care Library and Tree Resources to learn more.</p>
+			<?php
+			$args = array(
+				'services' => get_sub_field('services'),
+				'title'    => get_sub_field('title'),
+				'sub_title' => get_sub_field('sub_title'),
+			);
 
-		</div>
-	</section>
+			get_template_part( 'template-parts/services/service_list', 'location', $args );
+			?>
+		</section>
+		<?php endwhile; ?>
+	<?php endif; ?>
 
-	<section class="feedback">
-		<header>
-			<h4>We Appreciate Feedback</h4>
-			<h3>Your Words Matter to Us</h3>
-			<hr>
-		</header>
-		<div class="manager">
-			<div class="manager-info">
-				<h4><?php echo $location_name_full; ?> Branch Manager</h4>
-				<h3 class="manager-name">{Manager Name}</h3>
-				<p>Id ut qui laboris sit non ut sit non sunt officia. Nulla magna quis magna eiusmod reprehenderit ad Lorem voluptate enim aliqua proident ipsum. Nisi pariatur enim quis ad amet dolore incididunt aute veniam pariatur sint amet id. Consequat pariatur consectetur enim adipisicing ea ipsum proident occaecat ipsum pariatur labore veniam nostrud. Dolor minim in pariatur aliquip laboris non velit occaecat qui esse. Amet labore minim ullamco dolor do.</p>
-			</div>
-			<div class="manager-headshot">
-				<img src="" alt="Image">
-			</div>
-		</div>
-	</section>
+	<?php
+	//
+	// Individual Commercial Services.
+	//
+	?>
+	<?php if ( have_rows( 'services_commercial' ) ) : ?>
+		<?php while ( have_rows( 'services_commercial' ) ) : the_row(); ?>
+		<section class="commercial-services services location-section">
+			<header>
+				<?php if ( get_sub_field('sub_title') ) : ?>
+				<h4 class="small"><?php echo get_sub_field('sub_title') ?></h4>
+				<?php endif; ?>
+				<h3><?php echo get_sub_field('title') . ' ' . $location_name_full; ?></h3>
+				<hr>
+			</header>
+			<?php the_sub_field('content'); ?>
+			<?php
+
+			$args = array(
+				'services' => get_sub_field('services'),
+				'title'    => get_sub_field('title'),
+				'sub_title' => get_sub_field('sub_title'),
+			);
+
+			get_template_part( 'template-parts/services/service_list', 'location', $args );
+			?>
+		</section>
+		<?php endwhile; ?>
+	<?php endif; ?>
+
+	<?php if ( have_rows( 'resources' ) ) : ?>
+		<?php while ( have_rows( 'resources' ) ) : the_row(); ?>
+		<section class="resources location-section">
+			<header>
+				<?php if ( get_sub_field('sub_title') ) : ?>
+					<h4 class="small"><?php echo get_sub_field('sub_title') ?></h4>
+				<?php endif; ?>
+					<h3><?php echo get_sub_field('title'); ?></h3>
+				<hr>
+			</header>
+			<?php the_sub_field('content'); ?>
+			<?php
+				get_template_part( 'template-parts/location/location_resources_list', '', array( 'location_name' => $location_name ) );
+
+			?>
+		</section>
+		<?php endwhile; ?>
+	<?php endif; ?>
+
+	<?php if ( have_rows( 'branch_manager' ) ) : ?>
+		<?php while ( have_rows( 'branch_manager' ) ) : the_row(); ?>
+		<section class="feedback location-section">
+			<header>
+				<?php if ( get_sub_field('subtitle') ) : ?>
+				<h4 class="small"><?php echo get_sub_field('subtitle') ?></h4>
+				<?php endif; ?>
+				<h3><?php echo get_sub_field('title'); ?></h3>
+				<hr>
+			</header>
+
+			<?php
+				$managers = get_sub_field('manager');
+				if ( $managers ) :
+					foreach ( $managers as $post ) :
+					setup_postdata( $post );
+				?>
+				<div class="manager">
+					<div class="manager-info">
+						<h4><?php echo $location_name; ?> Branch Manager</h4>
+						<?php
+						the_title( '<h3 class="manager-name">', '</h3>' );
+						the_content( );
+						?>
+
+					</div>
+					<div class="manager-headshot">
+						<?php the_post_thumbnail( );?>
+					</div>
+				</div>
+			<?php
+				endforeach;
+				endif;
+			?>
+		</section>
+		<?php endwhile; ?>
+	<?php endif; ?>
 
 	<div class="yotpo yotpo-main-widget"
-		data-product-id="PDP_Kennewick"
+		data-product-id="<?php echo $yotpo_id; ?>"
 		data-price="Product Price"
 		data-currency="Price Currency"
 		data-name="Product Title"

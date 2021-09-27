@@ -1,0 +1,76 @@
+@import "_custom-properties.css";
+
+/*--------------------------------------------------------------
+# Resource Slider
+--------------------------------------------------------------*/
+.resources-list.slider {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 2rem;
+	padding: 0;
+	margin: 2rem auto 4rem;
+}
+
+@media (--content-query){
+	.resources-list.slider {
+		flex-direction: row;
+	}
+}
+
+.resources-list.slider .resources-item {
+	width: 10em;
+
+	position: relative;
+	overflow: hidden;
+	display: grid;
+	grid-template: "box";
+	min-height: 10em;
+}
+
+.resources-list .resources-item > *,
+.resources-list.slider .resources-item::before {
+	grid-area: box;
+}
+
+.resources-list.slider .resources-item::before {
+	content: "";
+	position: relative;
+	background: #000;
+	opacity: .4;
+	z-index: -1;
+}
+
+.resources-list .resources-item .resource-title {
+	z-index: 1;
+	margin: 0;
+	place-self: center;
+}
+
+.resources-list .resources-item .resource-title a {
+	color: var(--color-theme-white);
+}
+
+.resources-list .resources-item .resource-title a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.resources-list .resources-item img {
+	transition: transform .25s;
+	z-index: -2;
+	height: auto;
+}
+
+.resources-list .resources-item:hover img {
+	transform: scale(1.1);
+}

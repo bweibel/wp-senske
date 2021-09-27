@@ -28,10 +28,10 @@ $image = get_the_post_thumbnail($service);
 			<?php echo $image;?>
 		</div>
 		<?php get_template_part( 'template-parts/services/service_icon', '', array('icon_url' => $icon_url ) ); ?>
-		<h4 class="service-category"><?php echo $title ?></h4>
+		<h4 class="service-category"><?php echo esc_html($title) ?></h4>
 	</header>
 	<div class="entry-content">
-			<?php echo $content; ?>
+			<?php echo esc_html($content); ?>
 	</div>
 </article>
 <?php
