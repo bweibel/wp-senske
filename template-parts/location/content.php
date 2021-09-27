@@ -163,29 +163,24 @@ $yotpo_id = get_field('yotpo_id');
 				<hr>
 			</header>
 
-			<?php
-				$managers = get_sub_field('manager');
-				if ( $managers ) :
-					foreach ( $managers as $post ) :
-					setup_postdata( $post );
-				?>
 				<div class="manager">
 					<div class="manager-info">
 						<h4><?php echo $location_name; ?> Branch Manager</h4>
 						<?php
-						the_title( '<h3 class="manager-name">', '</h3>' );
-						the_content( );
+						echo '<h3 class="manager-name">' . get_sub_field( 'manager_name' ) . '</h3>';
+
+						echo get_sub_field( 'manager_content');
+
 						?>
 
 					</div>
-					<div class="manager-headshot">
-						<?php the_post_thumbnail( );?>
+					<div class="manager-image">
+						<?php $image = get_sub_field( 'manager_image' );	?>
+						<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+
 					</div>
 				</div>
-			<?php
-				endforeach;
-				endif;
-			?>
+
 		</section>
 		<?php endwhile; ?>
 	<?php endif; ?>

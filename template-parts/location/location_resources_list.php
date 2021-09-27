@@ -17,21 +17,7 @@ if ( have_rows( 'resource_list' ) ) :
 	while ( have_rows( 'resource_list') ) : the_row();
 		?>
 			<?php
-			// // Case: Generic WYSIWYG Content.
-			// if ( get_row_layout() == 'generic_content' ) :
-			// 	the_sub_field( 'content' );
-			// endif;
 
-			// // Case: Generic WYSIWYG Content.
-			// if ( get_row_layout() == 'button' ) :
-			// 	$button = get_sub_field( 'button' );
-			// 	$args = array(
-			// 		'text' => $button['button_text'],
-			// 		'link'=> $button['button_link'],
-			// 		'color' => $button['button_color']
-			// 	);
-			// 	get_template_part( '/template-parts/components/button', '', $args );
-			// endif;
 
 				echo '<h4>' . get_sub_field('title') . ' ' . $location_name . '</h4>';
 				the_sub_field('content');

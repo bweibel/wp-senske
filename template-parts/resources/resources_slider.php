@@ -10,10 +10,12 @@ namespace WP_Rig\WP_Rig;
 
 $resources = $args['resources'];
 
+
 ?>
 <ul class="resources-list slider">
 	<?php
 	if ($resources) :
+
 		foreach ( $resources as $resource ) :
 			$args = array(
 				'resource'      => $resource,
