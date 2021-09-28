@@ -8,6 +8,7 @@
 namespace WP_Rig\WP_Rig;
 
 use InvalidArgumentException;
+use phpDocumentor\Reflection\Types\Resource_;
 
 /**
  * Main class for the theme.
@@ -152,7 +153,11 @@ class Theme {
 			new Customizer\Component(),
 			new Styles\Component(),
 			new Shortcodes\Component(),
-			new ContactFormTweaks\Component()
+			new ContactFormTweaks\Component(),
+			new Google_Map\Component(),
+			new Flexslider\Component(),
+			new Resource_Slider\Component()
+
 		);
 
 		if ( defined( 'JETPACK__VERSION' ) ) {

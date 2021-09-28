@@ -326,6 +326,13 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return 'page-services.php' === basename( $template );
 				},
 			),
+			'wp-rig-flexslider' => array(
+				'file' => 'flexslider.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'singe-senske_location.php' === basename( $template );
+				},
+			),
 		);
 
 		/**

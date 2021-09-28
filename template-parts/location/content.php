@@ -8,10 +8,11 @@
 namespace WP_Rig\WP_Rig;
 use WP_Query;
 
+
+
 $location_name = get_field('short_title');
 $location_name_full = get_field('full_title');
 $phone = get_field('phone_number');
-// $phone_pretty = '(509) 374-5000';
 $hours = get_field('hours');
 
 $services = get_field('services');
@@ -31,9 +32,7 @@ $yotpo_id = get_field('yotpo_id');
 			?>
 		</section>
 		<aside class="location-card">
-			<div class="map">
-				{MAP}
-			</div>
+			<?php get_template_part( 'template-parts/components/googlemap', '', array() );?>
 			<hr>
 			<h2>Senske <?php echo $location_name; ?> Lawn Care</h2>
 			<a class="phone" href="tel:<?php echo $phone; ?>" ><?php echo $phone; ?></a>
@@ -143,11 +142,12 @@ $yotpo_id = get_field('yotpo_id');
 					<h3><?php echo get_sub_field('title'); ?></h3>
 				<hr>
 			</header>
-			<?php the_sub_field('content'); ?>
-			<?php
-				get_template_part( 'template-parts/location/location_resources_list', '', array( 'location_name' => $location_name ) );
 
-			?>
+			<div class="entry-content">
+				<?php the_sub_field('content'); ?>
+			</div>
+			<?php get_template_part( 'template-parts/location/location_resources_list', '', array( 'location_name' => $location_name ) );?>
+
 		</section>
 		<?php endwhile; ?>
 	<?php endif; ?>
@@ -186,7 +186,7 @@ $yotpo_id = get_field('yotpo_id');
 							$caption = $image['caption'];
 
 							// Thumbnail size attributes.
-							$size = 'thumbnail';
+							$size = 'medium';
 							$thumb = $image['sizes'][ $size ];
 							$width = $image['sizes'][ $size . '-width' ];
 							$height = $image['sizes'][ $size . '-height' ];

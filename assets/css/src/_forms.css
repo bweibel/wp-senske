@@ -40,7 +40,6 @@ textarea {
 /* stylelint-enable */
 
 /* stylelint-disable */
-button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -54,7 +53,7 @@ input[type="submit"] {
 	color: var(--color-theme-white);
 	border: 0.2em solid var(--color-theme-white);
 	background-color: var(--color-theme-yellow);
-	padding: 0.6em 1em;
+	padding: 0.6em .5em;
 	margin: 0.5em;
 	transition: background-color 0.2s, box-shadow 0.2s;
 	box-shadow: var(--global-drop-shadow);
@@ -62,7 +61,6 @@ input[type="submit"] {
 }
 /* stylelint-enable */
 
-button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
@@ -73,8 +71,7 @@ input[type="submit"]:hover {
 	color: var(--color-theme-white);
 }
 
-button:active,
-button:focus,
+
 input[type="button"]:active,
 input[type="button"]:focus,
 input[type="reset"]:active,
@@ -129,50 +126,4 @@ textarea:focus {
 select {
 	border: 3px solid var(--border-color-light);
 	padding: .5em;
-}
-
-.button,
-.button:visited,
-.button:active,
-.entry-content .button {
-	display: inline-block;
-	background: none;
-	cursor: pointer;
-	text-transform: uppercase;
-	text-decoration: none;
-	font-weight: 600;
-	text-align: center;
-	color: var(--color-theme-white);
-	border: 0.2em solid var(--color-theme-white);
-	background-color: var(--color-theme-yellow);
-	padding: 0.6em 1em;
-	margin: 0.5em;
-	transition: background-color 0.2s, box-shadow 0.2s;
-	box-shadow: var(--global-drop-shadow);
-
-}
-
-
-
-.button:hover,
-.button:focus {
-	background-color: var(--color-theme-yellow-dark);
-	box-shadow: var(--global-drop-shadow-raised);
-	transition: transform 0s, box-shadow 0.1s;
-	text-decoration: none;
-	color: var(--color-theme-white);
-}
-
-.button:hover.button-green,
-.button:focus.button-green {
-	background-color: var(--color-theme-darkgreen);
-}
-
-.button:active {
-	transform: translateY(2px);
-	box-shadow: var(--global-drop-shadow-lowered);
-}
-
-.button:focus {
-	outline-color: var(--color-theme-yellow-dark);
 }

@@ -342,7 +342,8 @@
 	background-color: var(--color-theme-green);
 }
 
-.commercial-services .services-item .icon svg * {
+.commercial-services .services-item .icon svg *,
+.commercial-services .services-item:hover .icon svg * {
 	fill: var(--color-theme-white);
 }
 
