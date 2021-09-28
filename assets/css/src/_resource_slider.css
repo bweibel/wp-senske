@@ -35,12 +35,17 @@
 	grid-area: box;
 }
 
-.resources-list.slider .resources-item::before {
-	content: "";
-	position: relative;
+.resources-list .resources-item::before {
 	background: #000;
 	opacity: .4;
 	z-index: -1;
+	grid-area: box;
+	content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .resources-list .resources-item .resource-title {
@@ -54,12 +59,7 @@
 }
 
 .resources-list .resources-item .resource-title a::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+
 }
 
 
@@ -69,6 +69,7 @@
 	z-index: -2;
 	height: auto;
 	width: 100%;
+	background: green;
 }
 
 .resources-list .resources-item:hover img {
