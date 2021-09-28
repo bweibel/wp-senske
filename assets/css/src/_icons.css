@@ -29,3 +29,22 @@
 .green.icon svg * {
 	fill: var(--color-theme-white);
 }
+
+.entry-title-singular .icon,
+.page-title .icon {
+	width: 1.5em;
+	height: 1.5em;
+	padding: 0;
+	vertical-align: baseline;
+text-align: center;
+	margin: auto;
+	display: block;
+}
+
+@media (--content-query){
+	.entry-title-singular .icon,
+	.page-title .icon {
+		display: inline-block;
+
+	}
+}

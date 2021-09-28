@@ -19,6 +19,15 @@ wp_rig()->print_styles( 'wp-rig-sidebar', 'wp-rig-widgets' );
 <aside id="secondary" class="primary-sidebar widget-area">
 	<div class="sidebar">
 		<h2 class="screen-reader-text"><?php esc_attr_e( 'Asides', 'wp-rig' ); ?></h2>
-		<?php wp_rig()->display_primary_sidebar(); ?>
+		<?php
+		if ( get_post_type( ) === 'senske_location' ) {
+			wp_rig()->display_services_sidebar();
+			?>
+			<a href="/pricing-service-plans/" class="button button-green">< All Senske Services</a>
+			<?php
+		} else {
+			wp_rig()->display_primary_sidebar();
+		}
+		?>
 	</div>
 </aside><!-- #secondary -->

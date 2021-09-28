@@ -29,6 +29,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 
 	const PRIMARY_SIDEBAR_SLUG = 'sidebar-1';
 	const RESOURCES_SIDEBAR_SLUG = 'sidebar-resources';
+	const SERVICES_SIDEBAR_SLUG = 'sidebar-services';
 	const BLOG_SIDEBAR_SLUG = 'sidebar-blog';
 
 
@@ -60,6 +61,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		return array(
 			'is_primary_sidebar_active' => array( $this, 'is_primary_sidebar_active' ),
 			'display_primary_sidebar'   => array( $this, 'display_primary_sidebar' ),
+			'display_services_sidebar'   => array( $this, 'display_services_sidebar' ),
 		);
 	}
 
@@ -83,6 +85,18 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			array(
 				'name'          => esc_html__( 'Resources Sidebar', 'wp-rig' ),
 				'id'            => static::RESOURCES_SIDEBAR_SLUG,
+				'description'   => esc_html__( 'Add widgets here.', 'wp-rig' ),
+				'before_widget' => '<section id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</section>',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>',
+			)
+		);
+
+		register_sidebar(
+			array(
+				'name'          => esc_html__( 'Services Sidebar', 'wp-rig' ),
+				'id'            => static::SERVICES_SIDEBAR_SLUG,
 				'description'   => esc_html__( 'Add widgets here.', 'wp-rig' ),
 				'before_widget' => '<section id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</section>',
@@ -123,6 +137,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			'category.php',
 			'search.php',
 			'single-location_service.php',
+			'single-senske_services.php',
 		);
 
 		if ( $this->is_primary_sidebar_active() ) {
@@ -150,5 +165,12 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 */
 	public function display_primary_sidebar() {
 		dynamic_sidebar( static::PRIMARY_SIDEBAR_SLUG );
+	}
+
+	/**
+	 * Displays the primary sidebar.
+	 */
+	public function display_services_sidebar() {
+		dynamic_sidebar( static::SERVICES_SIDEBAR_SLUG );
 	}
 }

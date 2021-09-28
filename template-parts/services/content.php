@@ -13,8 +13,6 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-location' );
 $post_type = 'senske_services';
 $taxonomy = 'service_category';
 
-
-
 	the_title('<h1>', '</h1>');
 ?>
 
