@@ -29,7 +29,7 @@ $sub_title = $args['sub_title'];
 			$args= array(
 				'service'      => $service,
 				'full_content' => true,
-				'el_tag'       => 'li'
+				'el_tag'       => 'li',
 			);
 			get_template_part( 'template-parts/services/service_card', 'image', $args );
 		}

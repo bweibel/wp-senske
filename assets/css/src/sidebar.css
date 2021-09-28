@@ -10,7 +10,15 @@
 	margin-right: auto;
 }
 
+.sidebar .widget_search {
+    min-width: 20em;
+}
 
+.sidebar h2,
+.sidebar h3,
+.sidebar h4 {
+	margin-bottom: 0;
+}
 
 @media (--content-query) {
 
@@ -24,4 +32,5 @@
 		position: sticky;
 		top: 80px;
 	}
+
 }

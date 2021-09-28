@@ -142,6 +142,7 @@
 	justify-items: center;
 	align-content: center;
 	gap: 1rem;
+	cursor: pointer;
 }
 
 @media (--content-query) {

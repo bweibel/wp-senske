@@ -654,6 +654,7 @@
 		display: flex;
 		justify-content: space-between;
 		flex-direction: row;
+		align-items: flex-start;
 	}
 }
 
@@ -662,6 +663,7 @@
 }
 
 .site-footer .footer-content .find {
+	padding-left: 1em;
 }
 
 @media (--content-query) {
@@ -669,6 +671,9 @@
 	border-right: .2rem solid var(--color-theme-darkgreen);
 	padding-right: 3rem;
 }
+}
+.site-footer .footer-content .services-list {
+	display: block;
 }
 
 .site-footer .footer-content .services-list,
@@ -687,6 +692,8 @@
 }
 
 @media (--content-query) {
+
+
 	.site-footer .footer-content .locations-list {
 		display: flex;
 		gap: 2em;
@@ -729,6 +736,21 @@
 	background-color: var(--color-theme-darkgreen);
 	font-size: 0.8em;
 	padding: 0.5em;
+}
+
+.site-info a{
+	color: var(--color-theme-white);
+}
+
+/*--------------------------------------------------------------
+# Page Elements
+--------------------------------------------------------------*/
+
+
+.primary-sidebar .location-card {
+	min-width: 20em;
+	position: sticky;
+	top: 70px
 }
 
 /*--------------------------------------------------------------

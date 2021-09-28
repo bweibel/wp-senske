@@ -28,6 +28,9 @@ use function dynamic_sidebar;
 class Component implements Component_Interface, Templating_Component_Interface {
 
 	const PRIMARY_SIDEBAR_SLUG = 'sidebar-1';
+	const RESOURCES_SIDEBAR_SLUG = 'sidebar-resources';
+	const BLOG_SIDEBAR_SLUG = 'sidebar-blog';
+
 
 	/**
 	 * Gets the unique identifier for the theme component.
@@ -66,8 +69,32 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	public function action_register_sidebars() {
 		register_sidebar(
 			array(
-				'name'          => esc_html__( 'Sidebar', 'wp-rig' ),
+				'name'          => esc_html__( 'Global Sidebar', 'wp-rig' ),
 				'id'            => static::PRIMARY_SIDEBAR_SLUG,
+				'description'   => esc_html__( 'Add widgets here.', 'wp-rig' ),
+				'before_widget' => '<section id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</section>',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>',
+			)
+		);
+
+		register_sidebar(
+			array(
+				'name'          => esc_html__( 'Resources Sidebar', 'wp-rig' ),
+				'id'            => static::RESOURCES_SIDEBAR_SLUG,
+				'description'   => esc_html__( 'Add widgets here.', 'wp-rig' ),
+				'before_widget' => '<section id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</section>',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>',
+			)
+		);
+
+		register_sidebar(
+			array(
+				'name'          => esc_html__( 'Blog Sidebar', 'wp-rig' ),
+				'id'            => static::BLOG_SIDEBAR_SLUG,
 				'description'   => esc_html__( 'Add widgets here.', 'wp-rig' ),
 				'before_widget' => '<section id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</section>',
@@ -84,10 +111,24 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 * @return array Filtered body classes.
 	 */
 	public function filter_body_classes( array $classes ) : array {
+		$has_sidebar = array(
+			'single.php',
+			'archive.php',
+			'category.php',
+			'home.php',
+			'single-senske_resource.php',
+			'404.php',
+			'500.php',
+			'archive.php',
+			'category.php',
+			'search.php',
+			'single-location_service.php',
+		);
+
 		if ( $this->is_primary_sidebar_active() ) {
 			global $template;
 
-			if ( in_array( basename( $template ), array( 'single.php', 'archive.php', 'category.php', 'home.php', 'single-senske_resource.php' ) ) ) {
+			if ( in_array( basename( $template ), $has_sidebar  ) ) {
 				$classes[] = 'has-sidebar';
 			}
 		}

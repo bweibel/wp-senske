@@ -120,5 +120,9 @@
     "lint": "eslint assets/js/src/",
     "lint:gulp": "eslint gulp/",
     "lint:gulp:fix": "eslint --fix gulp/"
+  },
+  "dependencies": {
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.26.0"
   }
 }

@@ -17,4 +17,5 @@ namespace WP_Rig\WP_Rig;
 		the_privacy_policy_link( '<span class="sep"> | </span>' );
 	}
 	?>
+	<span class="sep"> | </span><span><a href="/site-map">Site Map</a></span>
 </div><!-- .site-info -->

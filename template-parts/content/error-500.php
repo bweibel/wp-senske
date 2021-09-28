@@ -7,6 +7,9 @@
 
 namespace WP_Rig\WP_Rig;
 
+$theme = get_template_directory_uri();
+
+
 ?>
 <section class="error">
 	<header class="page-header">
@@ -14,6 +17,9 @@ namespace WP_Rig\WP_Rig;
 			<?php esc_html_e( 'Oops! Something went wrong.', 'wp-rig' ); ?>
 		</h1>
 	</header><!-- .page-header -->
+
+	<img src="<?php echo $theme . '/assets/images/mole.jpg'?>" alt="">
+
 
 	<div class="page-content">
 		<?php

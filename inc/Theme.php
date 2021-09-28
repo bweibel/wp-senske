@@ -156,7 +156,9 @@ class Theme {
 			new ContactFormTweaks\Component(),
 			new Google_Map\Component(),
 			new Flexslider\Component(),
-			new Resource_Slider\Component()
+			new Resource_Slider\Component(),
+			new Services_List\Component(),
+			new Footer_Options\Component(),
 
 		);
 

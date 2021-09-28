@@ -7,11 +7,19 @@
 
 namespace WP_Rig\WP_Rig;
 
+$theme = get_template_directory_uri();
+
+
 ?>
 <section class="error">
 	<?php get_template_part( 'template-parts/content/page_header' ); ?>
 
 	<div class="page-content">
+		<img src="<?php echo $theme . '/assets/images/mole.jpg'?>" alt="">
+
+		<h2 class="page-title">I knew I shoulda taken that left turn at Albuquerque!</h2>
+
+
 		<p>
 			<?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'wp-rig' ); ?>
 		</p>
@@ -41,9 +49,6 @@ namespace WP_Rig\WP_Rig;
 		</div><!-- .widget -->
 
 		<?php
-		/* translators: %1$s: smiley */
-		$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'wp-rig' ), convert_smilies( ':)' ) ) . '</p>';
-		the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
 
 		the_widget( 'WP_Widget_Tag_Cloud' );
 		?>

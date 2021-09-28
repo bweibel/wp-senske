@@ -8,8 +8,6 @@
 namespace WP_Rig\WP_Rig;
 use WP_Query;
 
-
-
 $location_name = get_field('short_title');
 $location_name_full = get_field('full_title');
 $phone = get_field('phone_number');
@@ -23,6 +21,7 @@ $taxonomy = 'service_category';
 $yotpo_id = get_field('yotpo_id');
 
 ?>
+
 	<section class="location-info ">
 		<section class="location-content">
 			<?php
@@ -31,17 +30,9 @@ $yotpo_id = get_field('yotpo_id');
 			get_template_part( 'template-parts/location/location_neighbors' );
 			?>
 		</section>
-		<aside class="location-card">
-			<?php get_template_part( 'template-parts/components/googlemap', '', array() );?>
-			<hr>
-			<h2>Senske <?php echo $location_name; ?> Lawn Care</h2>
-			<a class="phone" href="tel:<?php echo $phone; ?>" ><?php echo $phone; ?></a>
-			<?php the_field('hours'); ?>
-			<?php the_field('address'); ?>
-			<div class="yotpo bottomLine" data-yotpo-product-id="SKU/<?php echo $yotpo_id; ?>"></div>
-			<a href="/request-estimate/" class="button">Request your free estimate</a>
-		</aside>
+		<?php get_template_part( 'template-parts/location/location_card', 'location'); ?>
 	</section>
+
 
 	<?php
 	//
@@ -67,6 +58,7 @@ $yotpo_id = get_field('yotpo_id');
 			'services' => $services_residential['services'],
 			'title'    => $services_residential['title'],
 			'sub_title' => $services_residential['sub_title'],
+			'location_link' => $post->ID,
 		);
 
 		get_template_part( 'template-parts/location/location_services-residential', '', $args );
@@ -94,6 +86,7 @@ $yotpo_id = get_field('yotpo_id');
 				'services' => get_sub_field('services'),
 				'title'    => get_sub_field('title'),
 				'sub_title' => get_sub_field('sub_title'),
+				'location_link' => $post->ID,
 			);
 
 			get_template_part( 'template-parts/services/service_list', 'location', $args );
