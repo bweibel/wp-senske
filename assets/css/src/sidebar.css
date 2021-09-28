@@ -22,6 +22,6 @@
 	.sidebar {
 		padding: 1em 0;
 		position: sticky;
-		top: 0;
+		top: 80px;
 	}
 }

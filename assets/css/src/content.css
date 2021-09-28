@@ -45,6 +45,15 @@
 	text-align: center;
 }
 
+.single .entry-header .post-thumbnail {
+	overflow: hidden;
+	max-height: clamp(400px, 50vh, 600px);
+	display: grid;
+	grid-template: "container";
+	place-items: center;
+	place-content: center;
+}
+
 .site-main > * {
 	grid-column: 2;
 }
@@ -162,7 +171,8 @@
 		padding-left: 0;
 	}
 
-	.entry-title-singular {
+	.entry-title-singular,
+	.entry-meta  {
 		padding-left: 1.5rem;
 		text-align: left;
 	}
@@ -171,9 +181,6 @@
 		margin-left: 1.5rem;
 	}
 
-	.entry-meta {
-		text-align: left;
-	}
 }
 
 /* Align .more-link with the content. */
