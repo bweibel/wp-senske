@@ -401,12 +401,14 @@
 .feedback .manager {
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: space-around;
+	justify-content: center;
+	gap: 1em;
 }
 
-.feedback .manager .manager-headshot {
+.feedback .manager .manager-image {
 	background: var(--color-theme-off-white);
-	flex-basis: 30em;
+	flex-shrink: 1;
+	align-self: center;
 }
 
 .feedback .manager .manager-info {
