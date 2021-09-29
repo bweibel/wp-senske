@@ -63,6 +63,7 @@
 
 .entry-header .icon {
 	margin: auto;
+	padding: 0;
 }
 
 
@@ -147,7 +148,7 @@
 	.entry-header {
 		text-align: left;
 		display: grid;
-		grid-template-columns: min-content auto;
+		grid-template-columns: minmax(1em, min-content) auto;
 		grid-template-areas: "image image" "icon title" "icon underline";
 		justify-content: flex-start;
 	}
@@ -155,6 +156,8 @@
 	.entry-header .icon {
 		margin: auto;
 		grid-area: icon;
+		padding: 0;
+		min-width: 1em;
 	}
 
 	.entry-header hr,
@@ -166,6 +169,7 @@
 	.entry-header .entry-title-singular,
 	.entry-header .entry-title	{
 		grid-area: title;
+		padding: 0;
 	}
 
 	.entry-content,
@@ -211,7 +215,11 @@
 	}
 
 	.single .entry-header hr {
-		margin-left: 1.5rem;
+		margin-left: 0;
+	}
+
+	.single .entry-header .entry-meta {
+		padding-left: 0;
 	}
 
 }

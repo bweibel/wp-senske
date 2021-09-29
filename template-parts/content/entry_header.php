@@ -17,7 +17,7 @@ namespace WP_Rig\WP_Rig;
 	}
 
 	if ( ! is_front_page() ) {
-		if (get_post_type() == 'senske_services' || get_post_type() == 'location_service') {
+		if (get_post_type() == 'senske_services' || get_post_type() == 'location_service' ) {
 			// Icon Header
 			if ( get_post_type() == 'senske_services' ) {
 				$icon = get_field('icon');
