@@ -753,6 +753,21 @@
 	top: 70px
 }
 
+.locations .locations-list {
+	display: flex;
+	gap: .5em 0;
+	flex-wrap: wrap;
+	flex-direction: column;
+	max-height: 14em;
+}
+
+@media (--content-query){
+	.locations .locations-list {
+		max-height: 10em;
+	}
+}
+
+
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/

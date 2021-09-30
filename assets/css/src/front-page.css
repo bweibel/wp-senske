@@ -156,7 +156,29 @@ header h3 {
 	min-height: 400px;
 }
 
+.grid-container {
+	display: grid;
+	grid-template-areas: "image image" "card card";
+	gap: 1em;
+}
 
+@media (--content-query) {
+	.grid-container {
+		grid-template-areas: "image card" "image card";
+	}
+}
+
+.grid-container .image-box {
+	grid-area: image;
+}
+
+.grid-container .card {
+	padding: 2em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: var(--color-theme-off-white);
+}
 
 /* icon */
 .program-cards .icon  {

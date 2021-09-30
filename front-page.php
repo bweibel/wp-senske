@@ -84,10 +84,7 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-front-page' );
 		<?php endwhile; ?>
 	<?php endif; ?>
 
-
-
 		<?php
-
 
 		if ( $find_location ) :
 
@@ -116,8 +113,35 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-front-page' );
 	// Senske Difference
 	if ( true ) :
 	?>
-	<section class="home-section senske-difference">
+	<section class="home-section senske-difference entry-content">
+		<div class="grid-container">
+			<div class="image-box">
+				<img src="/wp-content/uploads/yakima-lawn-care-senske-services.jpg" alt="">
+			</div>
+			<div class="card">
+				<h4>Manage Your Senske Services</h4>
+				<ul>
+					<li>Pay your bill</li>
+					<li>Add Additional Services</li>
+					<li>Update Your Information</li>
+				</ul>
+				<a href="https://www.lawngateway.com/SenskeLawnTreeCare/Login_New.aspx" class="button">Enter Client Portal</a>
+			</div>
+			<div class="card">
+				<h4>Join Our Family - Work for Senske!</h4>
+				<ul>
+					<li>Solid Career Choice</li>
+					<li>Competitive Pay</li>
+					<li>Flexible Schedules</li>
+				</ul>
+				<a href="" class="button">Apply for a Career</a>
+			</div>
+		</div>
+		<div class="content">
+			<p>Senske was founded on strong, ethical values back in 1947, and operates with those same values today. Our values guide our day-to-day actions within the company and with our customers. We believe we offer the best products, services and programs in the professional lawn, tree and pest control industry. When you invest in any of our services or programs.</p>
 
+			<p>We work with you to make sure you have the best possible result. Senske is founded on services that meet your satisfaction, or we do the job again. How can Senske help you?</p>
+		</div>
 	</section>
 	<?php
 		endif;

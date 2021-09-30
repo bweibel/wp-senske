@@ -13,8 +13,6 @@ wp_enqueue_script('wp-rig-serviceslist');
 $services = $args['services'];
 $location_link = $args['location_link'];
 
-print_r($location_links);
-
 ?>
 
 <ul class="services-list">

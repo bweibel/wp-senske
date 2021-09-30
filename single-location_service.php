@@ -13,12 +13,12 @@ get_header();
 
 wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-location' );
 
-$location = get_field('parent_location');
+$parent_location = get_field( 'parent_location' )[0];
+$parent_service = get_field( 'parent_service' )[0];
+
 
 $yotpo_key = 'F0TPJxIYZcYzPN4sr9IFjlzNs8Inxb9VYjYRYT74';
-
-// print_r($location[0]->ID);
-$yotpo_id = get_field('yotpo_id', $location[0]->ID);
+$yotpo_id = get_field('yotpo_id', $parent_location->ID);
 
 ?>
 
@@ -28,6 +28,7 @@ $yotpo_id = get_field('yotpo_id', $location[0]->ID);
 		while ( have_posts() ) {
 			the_post();
 			get_template_part( 'template-parts/content/entry', get_post_type() );
+			get_template_part( 'template-parts/services/services_location_list', '', array('service' => $parent_service, 'location' => $parent_location) );
 		}
 
 		?>

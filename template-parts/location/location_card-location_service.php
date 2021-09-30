@@ -8,7 +8,7 @@
 namespace WP_Rig\WP_Rig;
 
 
-$location = $args['location'][0];
+$location = $args['location'];
 
 $location_ID = $location->ID;
 $location_name = $location->post_title;
@@ -31,4 +31,3 @@ $location_link = get_permalink($location );
 	<a href="/request-estimate/" class="button">Request your free estimate</a>
 	<a href="<?php echo $location_link ;?>" class="button button-green">< Back to <?php echo esc_html( $location_name );?></a>
 </section>
-

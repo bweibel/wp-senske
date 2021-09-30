@@ -63,7 +63,6 @@
 
 .entry-header .icon {
 	margin: auto;
-	padding: 0;
 }
 
 
@@ -148,7 +147,8 @@
 	.entry-header {
 		text-align: left;
 		display: grid;
-		grid-template-columns: minmax(1em, min-content) auto;
+		width: 100%;
+		grid-template-columns: minmax(1.5em, min-content) 1fr;
 		grid-template-areas: "image image" "icon title" "icon underline";
 		justify-content: flex-start;
 	}
@@ -156,8 +156,7 @@
 	.entry-header .icon {
 		margin: auto;
 		grid-area: icon;
-		padding: 0;
-		min-width: 1em;
+
 	}
 
 	.entry-header hr,

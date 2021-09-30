@@ -33,7 +33,6 @@ $yotpo_id = get_field('yotpo_id');
 		<?php get_template_part( 'template-parts/location/location_card', 'location'); ?>
 	</section>
 
-
 	<?php
 	//
 	// Programs CTA.

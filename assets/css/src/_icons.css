@@ -22,6 +22,10 @@
 	height: 100%;
 }
 
+.icon svg * {
+	fill: var(--color-theme-green);
+}
+
 .green.icon {
 	background-color: var(--color-theme-green);
 }
