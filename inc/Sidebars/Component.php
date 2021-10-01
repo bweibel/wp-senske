@@ -129,7 +129,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			'single.php',
 			'archive.php',
 			'category.php',
-			'home.php',
 			'single-senske_resource.php',
 			'404.php',
 			'500.php',

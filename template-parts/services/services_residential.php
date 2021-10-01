@@ -12,9 +12,10 @@ $services = $args['services'];
 $title = $args['title'];
 $sub_title = $args['sub_title'];
 
+$location = $args['location'];
+
+print_r($location);
 ?>
-
-
 <section class="services-cta location-section">
 	<header>
 		<h4><?php echo $sub_title ; ?></h4>
@@ -28,6 +29,7 @@ $sub_title = $args['sub_title'];
 		foreach( $services as $service ){
 			$args= array(
 				'service'      => $service,
+				'location'     => $location,
 				'full_content' => true,
 				'el_tag'       => 'li'
 			);

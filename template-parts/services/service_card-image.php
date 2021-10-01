@@ -27,7 +27,7 @@ $service_fields = get_fields( $service );
 $icon_url = $service_fields['icon']['url'];
 
 // Location post, handed down from the list
-$location_link = $args['location_link'];
+$location = $args['location'];
 
 // Find the location specific service attached to this generic service
 $args = array(
@@ -48,10 +48,17 @@ $location_service = $location_links[0];
 
 if( $location_service) {
 	$link = get_the_permalink( $location_service );
+	if( get_field( 'short_title', $location_service)) {
+		$title = get_field( 'short_title', $location_service);
+	}
 } else {
 	$link = get_the_permalink( $service );
 }
+
+
 //
+
+print_r( $location_link );
 
 ?>
 
@@ -61,7 +68,13 @@ if( $location_service) {
 			<a href="<?php echo $link;?>"><?php echo $image;?></a>
 		</div>
 		<?php get_template_part( 'template-parts/services/service_icon', '', array('icon_url' => $icon_url ) ); ?>
-		<a href="<?php echo $link;?>"><h4 class="service-category"><?php echo esc_html($title) ?></h4></a>
+		<a href="<?php echo $link;?>">
+		<?php if ( $location ) : ?>
+		<h4 class="service-category"><?php echo esc_html( $location->post_title ) . '<br>' . esc_html($title);?></h4>
+		<?php else : ?>
+		<h4 class="service-category"><?php echo esc_html($title) ?></h4>
+		<?php endif; ?>
+	</a>
 	</header>
 	<div class="entry-content">
 			<?php

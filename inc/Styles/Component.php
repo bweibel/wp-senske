@@ -333,6 +333,13 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return 'singe-senske_location.php' === basename( $template );
 				},
 			),
+			'wp-rig-blog' => array(
+				'file' => 'blog.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'home.php' === basename( $template );
+				},
+			),
 		);
 
 		/**

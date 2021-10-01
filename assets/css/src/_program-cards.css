@@ -34,7 +34,7 @@
 @media (--content-query) {
 	.program-cards .card {
 		/* width: auto; */
-		flex-basis: 25em;
+		flex-basis: 20em;
 		flex-grow: 1;
 	}
 }

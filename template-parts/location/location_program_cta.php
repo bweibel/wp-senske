@@ -30,11 +30,9 @@ $title = $args['title'];
 				);
 				get_template_part( 'template-parts/services/program_card', '', $args );
 			}
-		} else {
-			echo "NOPE";
 		}
 		?>
 	</div>
 
-	<a href="#" class="button">Request an Estimate</a>
+	<a href="/request-estimate/" class="button">Request an Estimate</a>
 </section>

@@ -90,9 +90,9 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-front-page' );
 
 			$button_args = array(
 				'text' => $find_location['button_title'],
-				'link' => $find_location['button_link']['url']
+				'link' => $find_location['button_link']['url'],
 			);
-		?>
+			?>
 			<section class="find-location">
 				<header class="tab-header">
 					<h3 class="tab-header__heading">Find Senske Near Me</h3>
@@ -111,9 +111,15 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-front-page' );
 	endif;
 
 	// Senske Difference
-	if ( true ) :
 	?>
+
 	<section class="home-section senske-difference entry-content">
+	<?php if( have_rows('cta_card') ): ?>
+		<?php while( have_rows('cta_card') ): the_row(); ?>
+		<php get_sub_field( 'title' ); ?>
+			asdfasdf
+		<?php endwhile; ?>
+	<?php endif; ?>
 		<div class="grid-container">
 			<div class="image-box">
 				<img src="/wp-content/uploads/yakima-lawn-care-senske-services.jpg" alt="">
@@ -144,7 +150,6 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-front-page' );
 		</div>
 	</section>
 	<?php
-		endif;
 ?>
 	</main><!-- #primary -->
 <?php

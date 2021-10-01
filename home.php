@@ -16,14 +16,14 @@ namespace WP_Rig\WP_Rig;
 
 get_header();
 
-wp_rig()->print_styles( 'wp-rig-content' );
+wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-blog' );
+
+get_template_part( 'template-parts/content/page_header' );
 
 ?>
 	<main id="primary" class="site-main">
 		<?php
 		if ( have_posts() ) {
-
-			get_template_part( 'template-parts/content/page_header' );
 
 			while ( have_posts() ) {
 				the_post();

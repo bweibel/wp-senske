@@ -6,7 +6,7 @@
  **/
 
 :root {
-	--content-width: 80rem;
+	--content-width: 70rem;
 	--dropdown-symbol-width: 0.7em;
 
 	/* Typography */
@@ -50,7 +50,7 @@
 	--color-theme-off-white: #f7faf5;
 
 	/* Extras */
-	--global-drop-shadow: 2px 2px 6px var(--color-dropshadow);
-	--global-drop-shadow-raised: 4px 4px 10px var(--color-dropshadow);
-	--global-drop-shadow-lowered: 0 0 2px var(--color-dropshadow);
+	--global-drop-shadow: 0 4px 8px var(--color-dropshadow);
+	--global-drop-shadow-raised: 0 6px 12px var(--color-dropshadow);
+	--global-drop-shadow-lowered: 0 0 4px var(--color-dropshadow);
 }

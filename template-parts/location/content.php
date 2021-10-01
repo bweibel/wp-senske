@@ -54,10 +54,10 @@ $yotpo_id = get_field('yotpo_id');
 	$services_residential = get_field( 'services_residential' );
 	if ( $services_residential ) {
 		$args = array(
-			'services' => $services_residential['services'],
-			'title'    => $services_residential['title'],
+			'services'  => $services_residential['services'],
+			'title'     => $services_residential['title'],
 			'sub_title' => $services_residential['sub_title'],
-			'location_link' => $post->ID,
+			'location'  => $post,
 		);
 
 		get_template_part( 'template-parts/location/location_services-residential', '', $args );

@@ -11,7 +11,7 @@ wp_enqueue_script('wp-rig-serviceslist');
 
 
 $services = $args['services'];
-$location_link = $args['location_link'];
+$location = $args['location'];
 
 ?>
 
@@ -22,7 +22,7 @@ $location_link = $args['location_link'];
 			$args = array(
 				'service'      => $service,
 				'full_content' => false,
-				'location_link' => $location_link,
+				'location' => $location,
 			);
 			get_template_part( 'template-parts/services/service_item', '', $args );
 		endforeach;
