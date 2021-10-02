@@ -9,7 +9,6 @@ namespace WP_Rig\WP_Rig;
 
 // Options.
 $full_content = $args['full_content'];
-$popular = $args['popular'];
 
 // Program Data.
 $program = $args['program'];
@@ -19,17 +18,22 @@ $price = $program_fields[ 'price' ];
 $price_text = $program_fields[ 'price_text' ];
 $icon_url = $program_fields['icon']['url'];
 $price = $program_fields['price'];
+$popular = $program_fields['popular'];
 
 $price_arr = explode('.',$price);
 $price_dollars = $price_arr[0];
 $price_cents = $price_arr[1];
 
+$card_class = 'program card';
+if ( $popular ) {
+	$card_class = $card_class . ' popular';
+}
 ?>
 
-<article <?php post_class( 'program card' ); ?>>
+<article <?php post_class( $card_class  ); ?>>
 
 	<?php if ( $popular ) : ?>
-	<div class="popular">Most Popular</div>
+		<div class="popular-tag">Most Popular</div>
 	<?php endif; ?>
 	<header>
 		<?php if( $icon_url ) : ?>

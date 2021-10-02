@@ -39,8 +39,10 @@
 	}
 }
 
+.program-cards .card.popular {
+}
 
-.program-cards .card .popular {
+.program-cards .card .popular-tag {
 	background-color: var(--color-theme-green);
 	color: var(--color-theme-white);
 	font-family: var(--highlight-font-family);
