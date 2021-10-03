@@ -19,7 +19,7 @@ function init() {
 }
 
 function ServicesList ( servieListEL ) {
-	const servicesItems = servieListEL.getElementsByClassName('services-item');
+	const servicesItems = servieListEL.getElementsByClassName('has-info');
 
 	Array.from( servicesItems ).forEach( service => {
 		console.log(service);

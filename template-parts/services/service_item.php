@@ -46,18 +46,26 @@ if( $location_service ) {
 } else {
 	$link = get_the_permalink( $service );
 }
+
+$serivice_class = 'services-item';
+if( $location_service ) {
+	$serivice_class = $serivice_class . ' has-info';
+}
 ?>
 
-<li class="services-item" id=<?php echo $service->ID ?>>
+
+<li class="<?php echo $serivice_class; ?>" id=<?php echo $service->ID; ?>>
 	<?php get_template_part( 'template-parts/services/service_icon', '', array( 'icon_url' => $icon_url ) ); ?>
 	<h4 class="service-title"><?php echo  esc_html( $service->post_title ); ?></h4>
-	<div class="service-info">
-		<?php echo esc_html( get_field( 'excerpt', $location_service) ); ?>
-			<?php if( $location_service ) : ?>
-				<a class="services-link" href="<?php echo esc_html( $link ); ?>" aria-label="Link to Service <?php echo esc_html( $service->post_title ); ?>">Read More ></a>
-			<?php endif; ?>
-	</div>
-	<?php if( $location_service ) : ?>
+	<?php if ( $location_service ) : ?>
+		<div class="service-info">
+			<?php
+			echo esc_html( get_field( 'excerpt', $location_service) );
+			?>
+			<a class="services-link" href="<?php echo esc_html( $link ); ?>" aria-label="Link to Service <?php echo esc_html( $service->post_title ); ?>">Read More ></a>
+		</div>
+	<?php endif; ?>
+	<?php if ( $location_service ) : ?>
 				<span class="indicator">V</span>
 	<?php endif; ?>
 </li>

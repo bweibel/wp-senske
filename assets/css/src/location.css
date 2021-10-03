@@ -279,9 +279,11 @@
 		grid-template-columns: 1fr 9fr;
 		justify-items: flex-start;
 		align-content: stretch;
-		cursor: pointer;
 	}
 
+	.services-list .services-item.has-info {
+		cursor: pointer;
+	}
 }
 
 .services-list .services-item .icon {
@@ -290,11 +292,11 @@
 	transition: .25s box-shadow, .25s background-color;
 }
 
-.services-list .services-item:hover .icon {
+.services-list .services-item.has-info:hover .icon {
 	box-shadow: var(--global-drop-shadow-raised);
 }
 
-.services-list .services-item:hover .icon svg * {
+.services-list .services-item.has-info:hover .icon svg * {
 	fill: var(--color-theme-darkgreen);
 	transition: fill .25s;
 }
@@ -314,12 +316,13 @@
 		text-align: left;
 	}
 
-	.services-list .services-item:hover .service-title {
+	.services-list .services-item.has-info:hover .service-title {
 		color: var(--color-theme-darkgreen);
 	}
 
 
-	.services-list .services-item.open .service-title {
+	.services-list .services-item.open .service-title,
+	.services-list .services-item.open.has-info:hover .service-title {
 		color: var(--color-theme-yellow);
 	}
 }
@@ -350,7 +353,7 @@
 		transition: .25s max-height;
 	}
 
-	.services-list .services-item:hover .service-info {
+	.services-list .services-item.has-info:hover .service-info {
 		opacity: .7;
 	}
 
@@ -361,14 +364,20 @@
 		grid-area: info;
 		display: inline-block;
 		justify-self: center;
-		align-self: flex-end;
+		align-self: flex-start;
+		margin-top: 1.4rem;
 	}
 
-	.services-list .services-item:hover .indicator {
+	.services-list .services-item.has-info:hover .indicator {
 		opacity: 1;
 	}
 
-	.services-list .services-item.open .service-info {
+	.services-list .services-item.has-info.open .indicator {
+		display: none;
+	}
+
+	.services-list .services-item.open .service-info,
+	.services-list .services-item.open:hover .service-info {
 		max-height: 10em;
 		overflow: hidden;
 		opacity: 1;
@@ -404,11 +413,11 @@
 }
 
 .commercial-services .services-item .icon svg *,
-.commercial-services .services-item:hover .icon svg * {
+.commercial-services .services-item.has-info:hover .icon svg * {
 	fill: var(--color-theme-white);
 }
 
-.commercial-services .services-item:hover .icon {
+.commercial-services .services-item.has-info:hover .icon {
 	background-color: var(--color-theme-darkgreen);
 }
 
