@@ -85,7 +85,7 @@ $yotpo_id = get_field('yotpo_id');
 				'services' => get_sub_field('services'),
 				'title'    => get_sub_field('title'),
 				'sub_title' => get_sub_field('sub_title'),
-				'location_link' => $post->ID,
+				'location' => $post,
 			);
 
 			get_template_part( 'template-parts/services/service_list', 'location', $args );
@@ -113,9 +113,10 @@ $yotpo_id = get_field('yotpo_id');
 			<?php
 
 			$args = array(
-				'services' => get_sub_field('services'),
-				'title'    => get_sub_field('title'),
+				'services'  => get_sub_field('services'),
+				'title'     => get_sub_field('title'),
 				'sub_title' => get_sub_field('sub_title'),
+				'location'  => $post,
 			);
 
 			get_template_part( 'template-parts/services/service_list', 'location', $args );
