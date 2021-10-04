@@ -39,7 +39,29 @@
 	}
 }
 
-.program-cards .card.popular {
+/* Getting the popular card to display in the middle/top */
+
+.program-cards .card:not(.popular),
+.program-cards .card:not(.popular):nth-child(2) {
+	order: 1;
+}
+
+.program-cards .card.popular-tag {
+	order: 0;
+}
+
+@media (--content-query) {
+	.program-cards .card.popular {
+		order: 2;
+	}
+
+	.program-cards .card:not(.popular) {
+		order: 1;
+	}
+
+	.program-cards .card:not(.popular):nth-child(2) {
+		order: 3;
+	}
 }
 
 .program-cards .card .popular-tag {
