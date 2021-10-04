@@ -129,10 +129,11 @@
 
 /* programs cta */
 .programs-cta {
+	background-image: url(../images/grass.jpg);
 	background-color: var(--color-theme-darkgreen);
-	background-size: cover;
 	text-align: center;
 	padding: 4rem 2rem;
+
 }
 
 .programs-cta > header h3 {
@@ -325,6 +326,22 @@
 	.services-list .services-item.open.has-info:hover .service-title {
 		color: var(--color-theme-yellow);
 	}
+
+	.services-list .services-item.open .service-title::after {
+		content: ' x';
+		font-weight: 300;
+		font-size: .8em;
+		color: var(--global-font-color);
+		right: 1em;
+		display: block;
+		position: absolute;
+		top: 0.1rem;;
+		padding: .2em;
+	}
+
+	.services-list .services-item.open:hover .service-title::after {
+		color: var(--color-theme-yellow);
+	}
 }
 
 .services-list .services-item .service-info {
@@ -350,11 +367,11 @@
 		padding-bottom: 1rem;
 		z-index: 10;
 		pointer-events: none;
-		transition: .25s max-height;
+		transition: 0.25s max-height;
 	}
 
 	.services-list .services-item.has-info:hover .service-info {
-		opacity: .7;
+		opacity: 0.7;
 	}
 
 	.services-list .services-item .indicator {

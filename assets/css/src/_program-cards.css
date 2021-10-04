@@ -51,16 +51,17 @@
 }
 
 @media (--content-query) {
-	.program-cards .card.popular {
-		order: 2;
-	}
 
 	.program-cards .card:not(.popular) {
 		order: 1;
 	}
 
-	.program-cards .card:not(.popular):nth-child(2) {
+	.program-cards .card:not(.popular):last-child {
 		order: 3;
+	}
+
+	.program-cards .card.popular {
+		order: 2;
 	}
 }
 

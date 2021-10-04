@@ -48,4 +48,3 @@ if ( $service ) {
 </section>
 
 <?php wp_reset_query(); ?>
-
