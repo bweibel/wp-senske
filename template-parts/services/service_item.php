@@ -60,7 +60,11 @@ if( $location_service ) {
 	<?php if ( $location_service ) : ?>
 		<div class="service-info">
 			<?php
-			echo esc_html( get_field( 'excerpt', $location_service) );
+			if ( get_field( 'excerpt', $location_service ) ) {
+				echo esc_html( get_field( 'excerpt', $location_service ) );
+			} else {
+				echo get_the_excerpt( $location_service );
+			}
 			?>
 			<a class="services-link" href="<?php echo esc_html( $link ); ?>" aria-label="Link to Service <?php echo esc_html( $service->post_title ); ?>">Read More ></a>
 		</div>

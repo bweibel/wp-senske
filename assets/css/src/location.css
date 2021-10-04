@@ -378,7 +378,7 @@
 
 	.services-list .services-item.open .service-info,
 	.services-list .services-item.open:hover .service-info {
-		max-height: 10em;
+		max-height: 14em;
 		overflow: hidden;
 		opacity: 1;
 		white-space: normal;
