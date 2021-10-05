@@ -37,16 +37,19 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-front-page' );
 					<h3 class="tab-header__heading">Choose Your Service Plan</h3>
 				</header>
 				<div class="program-cards">
-					<?php
-					$count = 0;
-					foreach( $service_cards as $card ) {
-						$count++;
-						$popular = $count == 2;
-						$service_plan_id = $card['service_plan'][0];
-						// get_template_part('template-parts/services/program_card', 'homepage', array('plan_id' => $service_plan_id, 'popular'=> $popular ) );
-					}
-					?>
-				</div>
+				<?php
+				//
+				// Programs CTA.
+				//
+				$programs_cta = get_field( 'programs' );
+				if ( $programs_cta ) {
+					$args = array(
+						'programs' => $programs_cta,
+					);
+					get_template_part( 'template-parts/location/location_program_cta', 'homepage', $args );
+				}
+				?>
+			</div>
 			</section>
 		<?php endif; ?>
 		<?php if( have_rows('additional_service_content') ): ?>
@@ -66,23 +69,19 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-front-page' );
 		<?php endif; ?>
 
 		<?php if ( have_rows( 'content_group' ) ) : ?>
-		<?php while ( have_rows( 'content_group' ) ) : the_row(); ?>
-		<section class="service-plans-content">
-			<header>
-				<?php if ( get_sub_field('subtitle') ) : ?>
-				<h4 class="small"><?php echo get_sub_field('subtitle') ?></h4>
-				<?php endif; ?>
-				<h3><?php echo get_sub_field('title')  ?></h3>
-				<hr>
-			</header>
-			<?php the_sub_field('content'); ?>
-			<?php
-
-
-			?>
-		</section>
-		<?php endwhile; ?>
-	<?php endif; ?>
+			<?php while ( have_rows( 'content_group' ) ) : the_row(); ?>
+				<section class="service-plans-content">
+					<header>
+						<?php if ( get_sub_field('subtitle') ) : ?>
+						<h4 class="small"><?php echo get_sub_field( 'subtitle' ) ?></h4>
+						<?php endif; ?>
+						<h3><?php echo get_sub_field( 'title' ); ?></h3>
+						<hr>
+					</header>
+					<?php the_sub_field( 'content' ); ?>
+				</section>
+			<?php endwhile; ?>
+		<?php endif; ?>
 
 		<?php
 
@@ -110,47 +109,105 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-front-page' );
 		endif;
 	endif;
 
-	// Senske Difference
-	?>
+	// Senske Difference.
+?>
 
-	<section class="home-section senske-difference entry-content">
-	<?php if( have_rows('cta_card') ): ?>
-		<?php while( have_rows('cta_card') ): the_row(); ?>
-		<php get_sub_field( 'title' ); ?>
-			asdfasdf
+	<section class="home-section senske-difference fullwidth">
+
+		<?php if ( have_rows( 'join_senske' ) ) : ?>
+			<?php while ( have_rows( 'join_senske' ) ) : the_row(); ?>
+				<section class="join-senske-content">
+					<header>
+						<?php if ( get_sub_field('subtitle') ) : ?>
+						<h4 class="small subtitle"><?php echo get_sub_field( 'subtitle' ); ?></h4>
+						<?php endif; ?>
+						<h3 class="title"><?php echo get_sub_field( 'title' ); ?></h3>
+						<hr>
+					</header>
+					<div class="grid-container">
+						<?php
+						if( get_sub_field( 'image' ) ) :
+							$image = get_sub_field('image');
+							$size = 'full';
+							?>
+							<div class="image-box">
+								<?php if( $image ) : ?>
+									<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+								<?php endif; ?>
+							</div>
+						<?php endif; ?>
+						<div class="card">
+							<h4>Manage Your Senske Services</h4>
+							<ul>
+								<li>Pay your bill</li>
+								<li>Add Additional Services</li>
+								<li>Update Your Information</li>
+							</ul>
+							<a href="https://www.lawngateway.com/SenskeLawnTreeCare/Login_New.aspx" class="button">Enter Client Portal</a>
+						</div>
+						<div class="card">
+							<h4>Join Our Family - Work for Senske!</h4>
+							<ul>
+								<li>Solid Career Choice</li>
+								<li>Competitive Pay</li>
+								<li>Flexible Schedules</li>
+							</ul>
+							<a href="" class="button">Apply for a Career</a>
+						</div>
+						<div class="content">
+							<?php the_sub_field( 'content' ); ?>
+						</div>
+					</div>
+				</section>
+			<?php endwhile; ?>
+		<?php endif; ?>
+	</section>
+
+	<?php if ( have_rows( 'questions' ) ) : ?>
+		<?php while ( have_rows( 'questions' ) ) : the_row(); ?>
+		<section class="home-section questions">
+			<header>
+				<?php if ( get_sub_field('sub_title') ) : ?>
+					<h4 class="small subtitle"><?php echo get_sub_field('sub_title') ?></h4>
+				<?php endif; ?>
+					<h3 class="title"><?php echo get_sub_field('title'); ?></h3>
+				<hr>
+			</header>
+
+			<div class="entry-content">
+				<?php the_sub_field('content'); ?>
+			</div>
+
+			<?php
+			$staff_cards = get_sub_field('staff_cards');
+			get_template_part( 'template-parts/frontpage/experts', '', array( 'experts' => $staff_cards ) );
+			?>
+
+		</section>
 		<?php endwhile; ?>
 	<?php endif; ?>
-		<div class="grid-container">
-			<div class="image-box">
-				<img src="/wp-content/uploads/yakima-lawn-care-senske-services.jpg" alt="">
-			</div>
-			<div class="card">
-				<h4>Manage Your Senske Services</h4>
-				<ul>
-					<li>Pay your bill</li>
-					<li>Add Additional Services</li>
-					<li>Update Your Information</li>
-				</ul>
-				<a href="https://www.lawngateway.com/SenskeLawnTreeCare/Login_New.aspx" class="button">Enter Client Portal</a>
-			</div>
-			<div class="card">
-				<h4>Join Our Family - Work for Senske!</h4>
-				<ul>
-					<li>Solid Career Choice</li>
-					<li>Competitive Pay</li>
-					<li>Flexible Schedules</li>
-				</ul>
-				<a href="" class="button">Apply for a Career</a>
-			</div>
-		</div>
-		<div class="content">
-			<p>Senske was founded on strong, ethical values back in 1947, and operates with those same values today. Our values guide our day-to-day actions within the company and with our customers. We believe we offer the best products, services and programs in the professional lawn, tree and pest control industry. When you invest in any of our services or programs.</p>
 
-			<p>We work with you to make sure you have the best possible result. Senske is founded on services that meet your satisfaction, or we do the job again. How can Senske help you?</p>
-		</div>
-	</section>
-	<?php
-?>
+	<?php if ( have_rows( 'advice' ) ) : ?>
+		<?php while ( have_rows( 'advice' ) ) : the_row(); ?>
+		<section class="home-section advice">
+			<header>
+				<?php if ( get_sub_field('subtitle') ) : ?>
+					<h4 class="small subtitle"><?php echo get_sub_field('subtitle') ?></h4>
+				<?php endif; ?>
+					<h3 class="title"><?php echo get_sub_field('title'); ?></h3>
+				<hr>
+			</header>
+			<?php
+			$post = get_sub_field( 'featured_post' )[0];
+			if ( $post ) {
+				get_template_part( 'template-parts/blog/featured_article', '', array( 'article' => $post ) );
+			}
+			?>
+		</section>
+		<?php endwhile; ?>
+	<?php endif; ?>
+		<?php get_template_part( 'template-parts/components/yotpo' ); ?>
+
 	</main><!-- #primary -->
 <?php
 get_footer();

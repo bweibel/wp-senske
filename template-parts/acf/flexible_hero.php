@@ -23,8 +23,8 @@ if ( $args ) {
 	$button = $hero['button'];
 
 	$args = array(
-		'text' => $button['title'],
-		'link'=> $button['link'],
+		'text' => $button['link']['title'],
+		'link'=> $button['link']['url'],
 		'color' => 'yellow'
 	);
 	get_template_part( 'template-parts/components/button', '', $args );

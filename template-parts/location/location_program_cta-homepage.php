@@ -13,25 +13,20 @@ $title = $args['title'];
 
 ?>
 
-<section class="programs-cta fullwidth location-section" style="">
-	<header>
-		<h3><?php echo $title;?></h3>
-		<hr>
-	</header>
+<div class="programs-cta fullwidth location-section" style="">
 	<div class="program-cards">
 		<?php
 		if( $programs ) {
 			foreach( $programs as $program ) {
 				$args= array(
 					'program'      => $program,
-					'full_content' => true,
-					'el_tag'           => 'li',
 				);
-				get_template_part( 'template-parts/services/program_card', '', $args );
+
+
+				get_template_part( 'template-parts/services/program_card', 'homepage', $args );
 			}
 		}
 		?>
 	</div>
 
-	<a href="/request-estimate/" class="button">Request an Estimate</a>
-</section>
+	</div>

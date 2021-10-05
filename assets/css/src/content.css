@@ -466,3 +466,27 @@ img.alignright {
 .has-larger-font-size {
 	font-size: var(--font-size-larger);
 }
+
+/*--------------------------------------------------------------
+## Mobile and Desktop utilities
+--------------------------------------------------------------*/
+
+.mobile-hide {
+	display: none;
+}
+
+.desktop-hide {
+	display: inherit;
+}
+
+@media (--content-query) {
+
+	.mobile-hide {
+		display: inherit;
+	}
+
+	.desktop-hide {
+		display: none;
+	}
+
+}

@@ -9,7 +9,6 @@ namespace WP_Rig\WP_Rig;
 
 $theme = get_template_directory_uri();
 
-
 ?>
 <section class="error">
 	<?php get_template_part( 'template-parts/content/page_header' ); ?>

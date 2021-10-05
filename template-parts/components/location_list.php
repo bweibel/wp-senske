@@ -9,7 +9,7 @@ namespace WP_Rig\WP_Rig;
 
 
 ?>
-<h4>Find a Senske Near Yous</h4>
+<h4>Find a Senske Near You</h4>
 <ul class="locations-list">
 	<li>
 		Colorado
