@@ -49,7 +49,7 @@ class Component implements Component_Interface {
 			return;
 		}
 
-		// Enqueue the navigation script.
+		// Enqueue the slider script.
 		wp_register_script(
 			'wp-rig-flexslider',
 			get_theme_file_uri( 'assets/js/vendor/flexslider/jquery.flexslider-min.js' ),
