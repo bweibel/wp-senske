@@ -78,6 +78,8 @@
 	text-align: center;
 	background-color: var(--color-theme-off-white);
 	box-shadow: 0 0 6px rgba(51, 51, 51, 0.2);
+	display: flex;
+	flex-direction: column;
 }
 
 .location-info .location-card h2 {

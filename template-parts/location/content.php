@@ -193,18 +193,17 @@ $yotpo_id = get_field('yotpo_id');
 		<?php endwhile; ?>
 	<?php endif; ?>
 
-	<div class="yotpo yotpo-main-widget"
-		data-product-id="<?php echo $yotpo_id; ?>"
-		data-price="Product Price"
-		data-currency="Price Currency"
-		data-name="Product Title"
-		data-url="The url of your product page"
-		data-image-url="The product image url">
-	</div>
 
 
-<script type="text/javascript">
-(function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/F0TPJxIYZcYzPN4sr9IFjlzNs8Inxb9VYjYRYT74/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
-</script>
+<div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+  <span itemprop="itemReviewed">Product Title</span> has a rating of
+  <span itemprop="ratingValue">Average Rating Data</span> stars based on
+  <span itemprop="ratingCount">Review Count Data</span> reviews.
+</div>
+
+<div class="yotpo yotpo-main-widget" data-product-id="PDP_Boise" data-name="Boise" data-url="https://www.senske.com/locations/boise/">
+</div>
+
+
 
 <?php
