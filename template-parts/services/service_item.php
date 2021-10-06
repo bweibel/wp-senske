@@ -20,7 +20,7 @@ $location = $args['location'];
 // Find the location specific service attached to this generic service
 $args = array(
 	'numberposts'=> -1,
-	'post_type' => 'location_service',
+	'post_type' => 'page',
 	'meta_query' => array (
 		// The parent service
 		array(

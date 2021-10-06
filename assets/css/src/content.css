@@ -45,7 +45,8 @@
 	text-align: center;
 }
 
-.single .entry-header .post-thumbnail {
+.single .entry-header .post-thumbnail,
+.page-template-page-location_service .entry-header .post-thumbnail {
 	grid-area: image;
 	overflow: hidden;
 	max-height: clamp(400px, 50vh, 600px);

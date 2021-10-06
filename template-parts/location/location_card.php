@@ -7,6 +7,7 @@
 
 namespace WP_Rig\WP_Rig;
 
+$location = $args['location'];
 
 $location_ID = $post->ID;
 $location_name = $location->post_title;

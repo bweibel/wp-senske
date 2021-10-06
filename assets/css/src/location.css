@@ -69,7 +69,7 @@
 @media (--content-query) {
 
 	.location-list {
-		max-height: 8em;
+		max-height: 10em;
 	}
 }
 
@@ -242,7 +242,7 @@
 	font-size: 2.5em;
 }
 
-.services-list {
+.services .services-list {
 	list-style: none;
 	padding: 1rem;
 	margin: 2rem auto;
@@ -255,14 +255,14 @@
 }
 
 @media (--content-query) {
-	.services-list {
+	.services .services-list {
 		gap: 2em;
 		justify-content: space-between;
 		flex-direction: row;
 	}
 }
 
-.services-list .services-item {
+.services .services-list .services-item {
 	display: grid;
 	grid-template-areas: "icon title" "icon info";
 	gap: 1rem;

@@ -30,7 +30,7 @@ $yotpo_id = get_field('yotpo_id');
 			get_template_part( 'template-parts/location/location_neighbors' );
 			?>
 		</section>
-		<?php get_template_part( 'template-parts/location/location_card', 'location'); ?>
+		<?php get_template_part( 'template-parts/location/location_card', 'location', array('location' => $post ) ); ?>
 	</section>
 
 	<?php
