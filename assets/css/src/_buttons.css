@@ -22,7 +22,7 @@
 	margin: 0.5em;
 	transition: background-color 0.2s, box-shadow 0.2s;
 	box-shadow: var(--global-drop-shadow);
-
+	min-width: 20em;
 }
 
 .button.button-green,

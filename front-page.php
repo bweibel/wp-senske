@@ -143,7 +143,7 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-front-page' );
 								<li>Add Additional Services</li>
 								<li>Update Your Information</li>
 							</ul>
-							<a href="https://www.lawngateway.com/SenskeLawnTreeCare/Login_New.aspx" class="button">Enter Client Portal</a>
+							<a href="/my-account/" class="button">Enter Client Portal</a>
 						</div>
 						<div class="card">
 							<h4>Join Our Family - Work for Senske!</h4>
@@ -152,7 +152,7 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-front-page' );
 								<li>Competitive Pay</li>
 								<li>Flexible Schedules</li>
 							</ul>
-							<a href="" class="button">Apply for a Career</a>
+							<a href="/careers/" class="button">Apply for a Career</a>
 						</div>
 						<div class="content">
 							<?php the_sub_field( 'content' ); ?>
