@@ -403,6 +403,30 @@
 	max-width: 25em;
 }
 
+.expert-card .image-box {
+	overflow: hidden;
+	max-height: 200px;
+	display: grid;
+	grid-template-areas: "image" "secondary";
+	position: relative;
+	margin-bottom: 5rem;
+}
+
+.expert-card .image-box .card-image {
+	grid-area: image;
+	justify-self: center;
+	align-self: center;
+}
+
+.expert-card .secondary-image {
+	border-radius: 50%;
+	height: 8em;
+	width: 8em;
+	border: .3rem solid var(--color-theme-white);
+	grid-area: secondary;
+	position: absolute;
+}
+
 .expert-card .expert-title,
 .expert-card .expert-name {
 	margin: 0.5em auto;
