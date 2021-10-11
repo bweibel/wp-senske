@@ -18,26 +18,35 @@ get_header();
 
 wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-blog' );
 
-get_template_part( 'template-parts/content/page_header' );
+// get_template_part( 'template-parts/content/page_header' );
+
+// Featured Blog Post query
 
 ?>
 	<main id="primary" class="site-main">
-		<?php
-		if ( have_posts() ) {
 
-			while ( have_posts() ) {
-				the_post();
+			<?php
+			get_post_type();
+			if ( have_posts() ) :
+			?>
+			<div class="blog-posts">
+				<?php
+				while ( have_posts() ) {
+					the_post();
 
-				get_template_part( 'template-parts/content/entry', get_post_type() );
-			}
+					get_template_part( 'template-parts/content/entry', get_post_type() );
+				}
 
-			if ( ! is_singular() ) {
-				get_template_part( 'template-parts/content/pagination' );
-			}
-		} else {
-			get_template_part( 'template-parts/content/error' );
-		}
-		?>
+				?>
+			</div>
+				<?php
+				if ( ! is_singular() ) {
+					get_template_part( 'template-parts/content/pagination' );
+				} else {
+				get_template_part( 'template-parts/content/error' );
+				}
+			endif;
+			?>
 	</main><!-- #primary -->
 <?php
 get_sidebar();

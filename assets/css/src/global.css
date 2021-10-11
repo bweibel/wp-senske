@@ -642,7 +642,7 @@
 }
 
 .site-footer .footer-content {
-	max-width: var(--content-width);
+	max-width: var(--content-width-wide);
 	margin: 2rem auto;
 	display: flex;
 	flex-direction: column;
@@ -700,6 +700,7 @@
 
 	.site-footer .footer-content .find {
 		padding-left: 4em;
+		padding-right: 1em;
 		border-bottom: none;
 		flex-grow: 2;
 	}
@@ -738,7 +739,7 @@
 @media (--content-query) {
 
 	.site-footer .footer-content .locations-list {
-		max-width: 30em;
+		max-width: 40em;
 	}
 }
 .site-footer .footer-content .locations-list > li {
@@ -779,7 +780,8 @@
 }
 
 .site-info .footer-content {
-	justify-content: space-around;
+	justify-content: space-evenly;
+	align-items: center;
 }
 
 .site-info a{

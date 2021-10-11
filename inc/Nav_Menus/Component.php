@@ -27,6 +27,7 @@ use function wp_nav_menu;
 class Component implements Component_Interface, Templating_Component_Interface {
 
 	const PRIMARY_NAV_MENU_SLUG = 'primary';
+	const MOBILE_NAV_MENU_SLUG = 'mobile';
 
 	/**
 	 * Gets the unique identifier for the theme component.
@@ -66,6 +67,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		register_nav_menus(
 			array(
 				static::PRIMARY_NAV_MENU_SLUG => esc_html__( 'Primary', 'wp-rig' ),
+				static::MOBILE_NAV_MENU_SLUG => esc_html__( 'Mobile', 'wp-rig' ),
 			)
 		);
 	}

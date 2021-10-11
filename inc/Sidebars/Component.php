@@ -138,6 +138,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			'single-location_service.php',
 			'single-senske_services.php',
 			'page-location_service.php',
+			'home.php'
 		);
 
 		if ( $this->is_primary_sidebar_active() ) {

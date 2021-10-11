@@ -31,6 +31,12 @@ wp_rig()->print_styles( 'wp-rig-sidebar', 'wp-rig-widgets' );
 			<a href="/pricing-service-plans/" class="button button-green">< All Senske Services</a>
 
 			<?php
+		}  elseif ( get_post_type() === 'home' ) {
+			wp_rig()->display_services_sidebar();
+			?>
+			<a href="/pricing-service-plans/" class="button button-green">< All Senske Services</a>
+
+			<?php
 		} elseif ( get_post_type() === 'location_service' || get_page_template_slug() === 'page-location_service.php' ) {
 			// Location service
 			$parent_location = get_field('parent_location')[0];
