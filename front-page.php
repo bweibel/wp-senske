@@ -136,24 +136,20 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-front-page' );
 								<?php endif; ?>
 							</div>
 						<?php endif; ?>
-						<div class="card">
-							<h4>Manage Your Senske Services</h4>
-							<ul>
-								<li>Pay your bill</li>
-								<li>Add Additional Services</li>
-								<li>Update Your Information</li>
-							</ul>
-							<a href="/my-account/" class="button">Enter Client Portal</a>
-						</div>
-						<div class="card">
-							<h4>Join Our Family - Work for Senske!</h4>
-							<ul>
-								<li>Solid Career Choice</li>
-								<li>Competitive Pay</li>
-								<li>Flexible Schedules</li>
-							</ul>
-							<a href="/careers/" class="button">Apply for a Career</a>
-						</div>
+						<?php
+						if ( get_sub_field( 'cta_card' ) ) :
+							$cta_cards = get_sub_field( 'cta_card' );
+							foreach ( $cta_cards as $cta_card ) :
+								?>
+								<div class="card">
+									<h4><?php echo $cta_card['title']?></h4>
+									<?php echo $cta_card['content']; ?>
+									<a href="<?php echo $cta_card['button']['url']; ?>" class="button"><?php echo $cta_card['button']['title']; ?></a>
+								</div>
+								<?php
+							endforeach;
+							?>
+						<?php endif; ?>
 						<div class="content">
 							<?php the_sub_field( 'content' ); ?>
 						</div>
