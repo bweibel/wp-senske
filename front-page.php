@@ -1,7 +1,6 @@
 <?php
 /**
  * Render your site front page, whether the front page displays the blog posts index or a static page.
- *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#front-page-display
  *
  * @package wp_rig
