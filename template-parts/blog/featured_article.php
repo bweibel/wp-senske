@@ -29,5 +29,7 @@ $article = $args['article'];
 		?>
 		</a>
 	</div>
+
 	<a href="/blog" class="button">Read Our Blog</a>
+
 </div>

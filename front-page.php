@@ -27,6 +27,7 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-front-page' );
 	$service_cards = get_field('service_card');
 	$find_location = get_field('find_my_location');
 
+
 	if ( $service_cards || $find_location ) :
 		if ( $service_cards ) :
 		?>
@@ -92,11 +93,14 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-front-page' );
 			);
 			?>
 			<section class="find-location">
+
+
 				<header class="tab-header">
 					<h3 class="tab-header__heading">Find Senske Near Me</h3>
 				</header>
 				<div class="map">
 					<?php do_shortcode( '[wpgmza id="1"]' ); ?>
+
 				</div>
 				<?php
 				get_template_part( 'template-parts/components/button', '', $button_args );

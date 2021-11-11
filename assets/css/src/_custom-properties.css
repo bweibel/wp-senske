@@ -33,7 +33,7 @@
 	--color-quote-citation: #6c7781;
 	--color-link-menu: var(--color-theme-mediumgrey);
 	--color-dropshadow: #1c283333;
-	--color-dropshadow-heavy: #000;
+	--color-dropshadow-heavy: #1c2833;
 
 	/* Custom editor colors */
 	--color-theme-primary: var(--color-theme-green);
@@ -52,6 +52,7 @@
 	--color-theme-off-white: #f7faf5;
 
 	/* Extras */
+	--global-text-shadow: 0 4px 8px var(--color-dropshadow-heavy);
 	--global-drop-shadow: 0 4px 8px var(--color-dropshadow);
 	--global-drop-shadow-raised: 0 6px 12px var(--color-dropshadow);
 	--global-drop-shadow-lowered: 0 0 4px var(--color-dropshadow);

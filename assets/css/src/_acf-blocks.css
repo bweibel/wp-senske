@@ -15,6 +15,11 @@
 		display: flex;
 		flex-direction: row;
 	}
+
+	.column-container .column:first-child,
+	.column-container .column:last-child {
+		margin-left: 0;
+	}
 }
 
 
@@ -145,30 +150,6 @@
 	.cta-box:only-child {
 		margin: auto;
 	}
-}
-
-.cta-box.careers {
-	background-image: url(../images/Crux-Careers-Header-web-safe.jpg);
-}
-
-.cta-box.tasting-room {
-	background-image: url(../images/Tap-List.jpg);
-}
-
-.cta-box.events {
-	background-image: url(../images/Crux_Events.jpg);
-}
-
-.cta-box.kegs {
-	background-image: url(../images/kegs-to-go_header.jpg);
-}
-
-.cta-box.blog {
-	background-image: url(../images/Crux-Blog-header.jpg);
-}
-
-.cta-box.food-carts {
-	background-image: url(../images/pizza-cart_header.jpg);
 }
 
 .collapse-box {
