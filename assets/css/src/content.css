@@ -41,6 +41,20 @@
 	width: 100%;
 }
 
+.page-header {
+	background:var(--color-theme-darkgreen);
+	width: 100%;
+	margin-bottom: 2rem;
+	min-height: 5rem;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+
+.page-header.has-background .page-title,
+.page-header.has-background .subtitle {
+	color: var(--color-theme-white);
+}
+
 .entry-header {
 	text-align: center;
 }
@@ -202,7 +216,7 @@
 
 	.page-title {
 		max-width: var(--content-width);
-		margin: 1em auto 0;
+		/* margin: 1em auto 0; */
 		padding-right: 0;
 		padding-left: 0;
 	}

@@ -25,10 +25,16 @@ if ( is_404() ) {
 	<?php
 } elseif ( is_home() && ! is_front_page() ) {
 	?>
-	<header class="page-header">
+	<header class="page-header has-background">
+		<?php
+		$subtitle = get_field( 'subtitle', get_option('page_for_posts') );
+		if( $subtitle ) : ?>
+			<h2 class="subtitle"><?php echo esc_html( $subtitle ); ?></h2>
+		<?php endif; ?>
 		<h1 class="page-title">
 			<?php single_post_title(); ?>
 		</h1>
+		<hr>
 	</header><!-- .page-header -->
 	<?php
 } elseif ( is_search() ) {

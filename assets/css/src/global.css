@@ -78,6 +78,7 @@
 	display: grid;
 	grid-template-areas:
 		"header"
+		"page-header"
 		"main"
 		"sidebar"
 		"footer";
@@ -88,6 +89,10 @@
 
 .site-header {
 	grid-area: header;
+}
+
+.page-header {
+	grid-area: page-header;
 }
 
 .site-main {
@@ -109,6 +114,7 @@
 		grid-template-columns: 1fr minmax(0, var(--content-width)) min-content 1fr;
 		grid-template-areas:
 			"header header header header"
+			"page-header page-header page-header page-header"
 			". main sidebar ."
 			"footer footer footer footer";
 		column-gap: 1em;
@@ -116,7 +122,6 @@
 	}
 
 }
-
 
 
 /*--------------------------------------------------------------
