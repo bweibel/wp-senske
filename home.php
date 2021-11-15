@@ -13,14 +13,28 @@
  */
 
 namespace WP_Rig\WP_Rig;
+use WP_Query;
 
 get_header();
 
 wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-blog' );
 
-// get_template_part( 'template-parts/content/page_header' );
+get_template_part( 'template-parts/content/page_header' );
 
 // Featured Blog Post query
+
+$args = array(
+	'posts_per_page' => 1,
+	'category_name' => 'featured'
+
+);
+$featured_query = new WP_Query( $args );
+
+if( $featured_query->posts ) :
+
+	get_template_part( 'template-parts/blog/featured_article', 'home', array('article' => $featured_query->posts[0]) );
+
+endif;
 
 ?>
 	<main id="primary" class="site-main">
@@ -29,12 +43,21 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-blog' );
 			get_post_type();
 			if ( have_posts() ) :
 			?>
+
+			<header class="blog-header">
+				<h4 class="subtitle">Learn from Senske</h4>
+				<h2 class="blog-heading">Recent Articles</h2>
+				<hr>
+			</header>
+
 			<div class="blog-posts">
+
 				<?php
 				while ( have_posts() ) {
 					the_post();
 
-					get_template_part( 'template-parts/content/entry', get_post_type() );
+					get_template_part( 'template-parts/blog/post_card', get_post_type() );
+
 				}
 
 				?>
