@@ -99,8 +99,7 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
 	color: #666;
-	border: 3px solid var(--border-color-light);
-	/* border-radius: 3px; */
+	border: 2px solid var(--border-color-light);
 	padding: 7px;
 }
 
@@ -124,6 +123,7 @@ textarea:focus {
 }
 
 select {
-	border: 3px solid var(--border-color-light);
-	padding: .5em;
+	border: 2px solid var(--border-color-light);
+	padding: 0.5em;
+	background-color: var(--theme-color-white);
 }

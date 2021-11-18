@@ -36,6 +36,22 @@ hr {
 	/* margin: 1rem auto; */
 }
 
+hr.pull-left {
+	margin-left: 0rem;
+}
+hr.pull-right {
+	margin-right: 0rem;
+}
+
+@media (--content-query) {
+	hr.desktop-left {
+		margin-left: 0rem;
+	}
+	hr.desktop-right {
+		margin-right: 0rem;
+	}
+}
+
 /* stylelint-enable */
 
 ul,

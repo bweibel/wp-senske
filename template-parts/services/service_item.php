@@ -70,7 +70,7 @@ if( $location_service ) {
 		</div>
 	<?php endif; ?>
 	<?php if ( $location_service ) : ?>
-				<span class="indicator">V</span>
+				<span class="indicator"></span>
 	<?php endif; ?>
 </li>
 
