@@ -596,6 +596,7 @@
 	line-height: 1.75;
 	text-align: center;
 	text-decoration: none;
+	font-family: var(--global-font-family);
 }
 
 .pagination a:visited {
@@ -613,6 +614,22 @@
 	min-width: auto;
 	border-color: transparent;
 	text-decoration: underline;
+}
+
+.pagination .prev::after,
+.pagination .next::after {
+	content: '';
+	height: 1em;
+	width: 1em;
+	background: url(../images/triangle.png);
+	display: inline-block;
+	margin-left: .5em;
+	vertical-align: middle;
+	background-size: contain;
+}
+
+.pagination .next::after {
+	transform: rotate(180deg);
 }
 
 .pagination .prev:hover,

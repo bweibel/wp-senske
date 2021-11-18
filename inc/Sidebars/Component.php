@@ -62,6 +62,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			'is_primary_sidebar_active' => array( $this, 'is_primary_sidebar_active' ),
 			'display_primary_sidebar'   => array( $this, 'display_primary_sidebar' ),
 			'display_services_sidebar'   => array( $this, 'display_services_sidebar' ),
+			'display_blog_sidebar'   => array( $this, 'display_blog_sidebar' ),
 		);
 	}
 
@@ -169,9 +170,16 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	}
 
 	/**
-	 * Displays the primary sidebar.
+	 * Displays the services sidebar.
 	 */
 	public function display_services_sidebar() {
 		dynamic_sidebar( static::SERVICES_SIDEBAR_SLUG );
+	}
+
+	/**
+	 * Displays the blog sidebar.
+	 */
+	public function display_blog_sidebar() {
+		dynamic_sidebar( static::BLOG_SIDEBAR_SLUG );
 	}
 }
