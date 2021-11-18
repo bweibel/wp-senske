@@ -17,13 +17,13 @@ $theme = get_template_directory_uri();
 <div class="featured-article">
 	<div class="featured-header">
 		<h2 class="featured-heading">Featured Article</h2>
-		<hr>
+		<hr class="desktop-left">
 	</div>
 
 	<div class="thumbnail">
 		<?php
 			if( get_the_post_thumbnail( $article ) ) {
-				$image = get_the_post_thumbnail( $article, array( 'class' => 'featured-image' ) );
+				$image = get_the_post_thumbnail( $article, 'wp-rig-content', array( 'class' => 'featured-image' ) );
 				print_r( $image );
 				$size = 'full';
 			} else {

@@ -64,7 +64,7 @@ endif;
 			</div>
 				<?php
 				if ( ! is_singular() ) {
-					get_template_part( 'template-parts/content/pagination' );
+					// get_template_part( 'template-parts/content/pagination' );
 				} else {
 				get_template_part( 'template-parts/content/error' );
 				}
