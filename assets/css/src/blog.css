@@ -30,7 +30,7 @@
 	grid-area: featured-article;
 	grid-template-columns: auto;
 	max-width: var(--content-width-wide);
-	margin: 2rem auto 5rem;
+	margin: 1rem auto 5rem;
 	display: grid;
 	gap: 2rem;
 }
@@ -51,6 +51,14 @@
 	flex-grow: 1;
 	flex-shrink: 1;
 	align-self: center;
+	overflow: hidden;
+	overflow: hidden;
+	display: grid;
+	place-content: center;
+}
+
+.featured-article .thumbnail .featured-image {
+
 }
 
 .featured-article .content {
@@ -89,13 +97,10 @@
 	.featured-article .thumbnail {
 		grid-area: thumbnail;
 		height: 350px;
-		overflow: hidden;
-		display: grid;
-		place-content: center;
 	}
 
 	.featured-article .thumbnail .featured-image {
-		max-width: none;
+		max-width: 150vw;
 	}
 
 	.featured-article .content {

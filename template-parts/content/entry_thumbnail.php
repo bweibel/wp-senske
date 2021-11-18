@@ -23,8 +23,10 @@ if ( post_password_required() || ! post_type_supports( $support_slug, 'thumbnail
 
 if ( is_singular( get_post_type() ) ) {
 	?>
-	<div class="post-thumbnail">
-		<?php the_post_thumbnail( 'post-thumbnail', array( 'class' => 'skip-lazy' ) ); ?>
+	<div class="post-header-image">
+		<?php
+		the_post_thumbnail( 'wp-rig-content', array( 'class' => 'skip-lazy ' ) );
+		?>
 	</div><!-- .post-thumbnail -->
 	<?php
 } else {

@@ -42,12 +42,16 @@
 }
 
 .page-header {
-	background:var(--color-theme-darkgreen);
 	width: 100%;
 	margin-bottom: 2rem;
 	min-height: 5rem;
 	padding-top: 3rem;
 	padding-bottom: 3rem;
+}
+
+.page-header.has-background {
+	background: var(--color-theme-darkgreen);
+	background-image: url(../images/grass.jpg);
 }
 
 .page-header.has-background .page-title,
@@ -59,8 +63,7 @@
 	text-align: center;
 }
 
-.single .entry-header .post-thumbnail,
-.page-template-page-location_service .entry-header .post-thumbnail {
+.entry-header .post-header-image {
 	grid-area: image;
 	overflow: hidden;
 	max-height: clamp(400px, 50vh, 600px);
@@ -68,6 +71,10 @@
 	grid-template: "container";
 	place-items: center;
 	place-content: center;
+}
+
+.entry-header .post-header-image .wp-post-image {
+	max-width: 200vw;
 }
 
 .entry-header .entry-title-singular,
@@ -255,7 +262,7 @@
 .entry-footer {
 	clear: both;
 	padding: 1.5em 1.5rem 3em;
-	border-bottom: 1px solid var(--color-theme-primary);
+	/* border-bottom: 1px solid var(--color-theme-primary); */
 }
 
 @media (--content-query) {

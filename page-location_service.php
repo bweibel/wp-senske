@@ -21,6 +21,9 @@ $parent_service = get_field( 'parent_service' )[0];
 $yotpo_key = 'F0TPJxIYZcYzPN4sr9IFjlzNs8Inxb9VYjYRYT74';
 $yotpo_id = get_field('yotpo_id', $parent_location->ID);
 
+
+// get_template_part( 'template-parts/content/page_header' );
+
 ?>
 
 	<main id="primary" class="site-main">
@@ -28,6 +31,7 @@ $yotpo_id = get_field('yotpo_id', $parent_location->ID);
 		<?php
 		while ( have_posts() ) {
 			the_post();
+			get_template_part( 'template-parts/content/entry_header', get_post_type() );
 			get_template_part( 'template-parts/content/entry', 'location_service' );
 			get_template_part( 'template-parts/services/services_location_list', '', array('service' => $parent_service, 'location' => $parent_location) );
 		}
