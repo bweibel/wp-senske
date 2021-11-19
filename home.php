@@ -44,10 +44,9 @@ endif;
 			if ( have_posts() ) :
 			?>
 
-			<header class="blog-header">
+			<header class="blog-header pull-left">
 				<h4 class="subtitle">Learn from Senske</h4>
-				<h2 class="blog-heading">Recent Articles</h2>
-				<hr>
+				<h2 class="blog-heading underlined">Recent Articles</h2>
 			</header>
 
 			<div class="blog-posts">
