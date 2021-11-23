@@ -15,13 +15,13 @@ if ( ! wp_rig()->is_primary_nav_menu_active() ) {
 
 <nav id="site-navigation" class="main-navigation nav--toggle-sub nav--toggle-small" aria-label="<?php esc_attr_e( 'Main menu', 'wp-rig' ); ?>">
 
-	<button class="menu-toggle" aria-label="<?php esc_attr_e( 'Open menu', 'wp-rig' ); ?>" aria-controls="primary-menu" aria-expanded="false">
+	<!-- <button class="menu-toggle" aria-label="<?php esc_attr_e( 'Open menu', 'wp-rig' ); ?>" aria-controls="primary-menu" aria-expanded="false">
 		<div class="menu-icon">
 			<span></span>
 			<span></span>
 			<span></span>
 		</div>
-	</button>
+	</button> -->
 
 	<div class="primary-menu-container">
 

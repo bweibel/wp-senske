@@ -34,6 +34,7 @@
 	--color-link-menu: var(--color-theme-mediumgrey);
 	--color-dropshadow: #1c283333;
 	--color-dropshadow-heavy: #1c2833;
+	--color-dropshadow-light: #1c283311;
 
 	/* Custom editor colors */
 	--color-theme-primary: var(--color-theme-green);
@@ -48,6 +49,7 @@
 	--color-theme-black: #1c2833;
 	--color-theme-darkgrey: #505050;
 	--color-theme-mediumgrey: #707070;
+	--color-theme-lightgrey: #B5B5B5;
 	--color-theme-white: #fff;
 	--color-theme-off-white: #f7faf5;
 
@@ -56,4 +58,5 @@
 	--global-drop-shadow: 0 4px 8px var(--color-dropshadow);
 	--global-drop-shadow-raised: 0 6px 12px var(--color-dropshadow);
 	--global-drop-shadow-lowered: 0 0 4px var(--color-dropshadow);
+	--inner-menu-drop-shadow: 2px 0px 4px var(--color-dropshadow-light);
 }
