@@ -20,7 +20,7 @@ $address = get_field('address');
 
 <aside class="location-card">
 	<?php get_template_part( 'template-parts/components/googlemap', '', array() );?>
-	<hr>
+	<hr class="divider">
 	<h2>Senske <?php echo $location_name; ?> Lawn Care</h2>
 	<div class="contact-info">
 		<a class="phone" href="tel:<?php echo esc_html($phone); ?>" ><?php echo $phone; ?></a>

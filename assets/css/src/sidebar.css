@@ -15,24 +15,48 @@
     min-width: 20em;
 }
 
+.sidebar .button {
+	display: block;
+}
+
 .sidebar h2,
 .sidebar h3,
 .sidebar h4 {
 	margin-bottom: 0;
+	text-align: center;
 }
 
-
-@media (--content-query) {
-
-
+.sidebar h2::after,
+.sidebar h3::after,
+.sidebar h4::after {
+	position: relative;
+	content: "";
+	background: var(--color-theme-yellow);
+	height: 3px;
+	width: 8rem;
+	display: block;
+	margin: 0.5em auto 0.5em;
 }
+
 
 @media (--sidebar-query) {
 
 	.sidebar {
 		padding: 1em 0;
 		position: sticky;
-		top: 80px;
+		top: 60px;
+	}
+
+	.sidebar h2,
+	.sidebar h3,
+	.sidebar h4 {
+		text-align: left;
+	}
+
+	.sidebar h2::after,
+	.sidebar h3::after,
+	.sidebar h4::after {
+		margin: 0.5em 0;
 	}
 
 }

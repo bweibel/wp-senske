@@ -71,12 +71,11 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-front-page' );
 		<?php if ( have_rows( 'content_group' ) ) : ?>
 			<?php while ( have_rows( 'content_group' ) ) : the_row(); ?>
 				<section class="service-plans-content">
-					<header>
+					<header class="pull-left">
 						<?php if ( get_sub_field('subtitle') ) : ?>
 						<h4 class="small"><?php echo get_sub_field( 'subtitle' ) ?></h4>
 						<?php endif; ?>
-						<h3><?php echo get_sub_field( 'title' ); ?></h3>
-						<hr>
+						<h3 class="underlined"><?php echo get_sub_field( 'title' ); ?></h3>
 					</header>
 					<?php the_sub_field( 'content' ); ?>
 				</section>
@@ -100,7 +99,6 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-front-page' );
 				</header>
 				<div class="map">
 					<?php do_shortcode( '[wpgmza id="1"]' ); ?>
-
 				</div>
 				<?php
 				get_template_part( 'template-parts/components/button', '', $button_args );
@@ -124,8 +122,7 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-front-page' );
 						<?php if ( get_sub_field('subtitle') ) : ?>
 						<h4 class="small subtitle"><?php echo get_sub_field( 'subtitle' ); ?></h4>
 						<?php endif; ?>
-						<h3 class="title"><?php echo get_sub_field( 'title' ); ?></h3>
-						<hr>
+						<h3 class="title underlined"><?php echo get_sub_field( 'title' ); ?></h3>
 					</header>
 					<div class="grid-container">
 						<?php
@@ -169,8 +166,7 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-front-page' );
 				<?php if ( get_sub_field('sub_title') ) : ?>
 					<h4 class="small subtitle"><?php echo get_sub_field('sub_title') ?></h4>
 				<?php endif; ?>
-					<h3 class="title"><?php echo get_sub_field('title'); ?></h3>
-				<hr>
+					<h3 class="title underlined"><?php echo get_sub_field('title'); ?></h3>
 			</header>
 
 			<div class="entry-content">
@@ -193,8 +189,7 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-front-page' );
 				<?php if ( get_sub_field('subtitle') ) : ?>
 					<h4 class="small subtitle"><?php echo get_sub_field('subtitle') ?></h4>
 				<?php endif; ?>
-					<h3 class="title"><?php echo get_sub_field('title'); ?></h3>
-				<hr>
+					<h3 class="title underlined"><?php echo get_sub_field('title'); ?></h3>
 			</header>
 			<?php
 			$post = get_sub_field( 'featured_post' )[0];

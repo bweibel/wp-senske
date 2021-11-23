@@ -75,8 +75,7 @@ $yotpo_id = get_field('yotpo_id');
 				<?php if ( get_sub_field('sub_title') ) : ?>
 				<h4 class="small"><?php echo get_sub_field('sub_title') ?></h4>
 				<?php endif; ?>
-				<h3><?php echo get_sub_field('title') . ' ' . $location_name_full; ?></h3>
-				<hr>
+				<h3 class="underlined"><?php echo get_sub_field('title') . ' ' . $location_name_full; ?></h3>
 			</header>
 			<?php the_sub_field('content'); ?>
 
@@ -106,8 +105,8 @@ $yotpo_id = get_field('yotpo_id');
 				<?php if ( get_sub_field('sub_title') ) : ?>
 				<h4 class="small"><?php echo get_sub_field('sub_title') ?></h4>
 				<?php endif; ?>
-				<h3><?php echo get_sub_field('title') . ' ' . $location_name_full; ?></h3>
-				<hr>
+				<h3 class="underlined"><?php echo get_sub_field('title') . ' ' . $location_name_full; ?></h3>
+
 			</header>
 			<?php the_sub_field('content'); ?>
 			<?php
@@ -132,8 +131,7 @@ $yotpo_id = get_field('yotpo_id');
 				<?php if ( get_sub_field('sub_title') ) : ?>
 					<h4 class="small"><?php echo get_sub_field('sub_title') ?></h4>
 				<?php endif; ?>
-					<h3><?php echo get_sub_field('title'); ?></h3>
-				<hr>
+					<h3 class="underlined"><?php echo get_sub_field('title'); ?></h3>
 			</header>
 
 			<div class="entry-content">
@@ -152,8 +150,7 @@ $yotpo_id = get_field('yotpo_id');
 				<?php if ( get_sub_field('subtitle') ) : ?>
 				<h4 class="small"><?php echo get_sub_field('subtitle') ?></h4>
 				<?php endif; ?>
-				<h3><?php echo get_sub_field('title'); ?></h3>
-				<hr>
+				<h3 class="underlined"><?php echo get_sub_field('title'); ?></h3>
 			</header>
 
 				<div class="manager">

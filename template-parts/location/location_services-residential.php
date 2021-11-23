@@ -19,8 +19,7 @@ $sub_title = $args['sub_title'];
 <section class="services-cta location-section">
 	<header>
 		<h4><?php echo $sub_title ; ?></h4>
-		<h3><?php echo $title . ' ' . get_field('full_title'); ?></h3>
-		<hr>
+		<h3 class="underlined"><?php echo $title . ' ' . get_field('full_title'); ?></h3>
 	</header>
 
 	<div class="service-cards">

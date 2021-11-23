@@ -70,8 +70,7 @@ $taxonomy = 'service_category';
 			<?php if ( get_sub_field('sub_title') ) : ?>
 			<h4 class="small"><?php echo get_sub_field('sub_title') ?></h4>
 			<?php endif; ?>
-			<h3><?php echo get_sub_field('title') . ' ' . $location_name_full; ?></h3>
-			<hr>
+			<h3 class="underlined"><?php echo get_sub_field('title') . ' ' . $location_name_full; ?></h3>
 		</header>
 		<?php the_sub_field('content'); ?>
 
@@ -103,8 +102,7 @@ $taxonomy = 'service_category';
 				<?php if ( get_sub_field('sub_title') ) : ?>
 				<h4 class="small"><?php echo get_sub_field('sub_title') ?></h4>
 				<?php endif; ?>
-				<h3><?php echo get_sub_field('title') . ' ' . $location_name_full; ?></h3>
-				<hr>
+				<h3 class="underlined"><?php echo get_sub_field('title') . ' ' . $location_name_full; ?></h3>
 			</header>
 			<?php the_sub_field('content'); ?>
 			<?php

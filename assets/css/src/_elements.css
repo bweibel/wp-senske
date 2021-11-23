@@ -30,26 +30,16 @@ body {
 /* stylelint-disable */
 hr {
 	border: 0;
+    background-color: var(--color-theme-green);
+    height: 2px;
+}
+
+hr.divider {
+	border: 0;
+	width: 8rem;
     background-color: var(--color-theme-yellow);
-    width: 10em;
     height: 3px;
-	/* margin: 1rem auto; */
-}
-
-hr.pull-left {
-	margin-left: 0rem;
-}
-hr.pull-right {
-	margin-right: 0rem;
-}
-
-@media (--content-query) {
-	hr.desktop-left {
-		margin-left: 0rem;
-	}
-	hr.desktop-right {
-		margin-right: 0rem;
-	}
+	margin: 1.5rem auto;
 }
 
 /* stylelint-enable */

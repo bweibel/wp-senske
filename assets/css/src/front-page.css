@@ -87,6 +87,10 @@
 	font-size: 2.25em;
 }
 
+.home-section .pull-left h3.underlined::after {
+	margin-left: 0;
+}
+
 .home-section {
 	margin: 2rem auto;
 }

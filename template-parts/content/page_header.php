@@ -31,10 +31,9 @@ if ( is_404() ) {
 		if( $subtitle ) : ?>
 			<h2 class="subtitle"><?php echo esc_html( $subtitle ); ?></h2>
 		<?php endif; ?>
-		<h1 class="page-title">
+		<h1 class="page-title underlined">
 			<?php single_post_title(); ?>
 		</h1>
-		<hr>
 	</header><!-- .page-header -->
 	<?php
 } elseif ( is_search() ) {
@@ -53,11 +52,39 @@ if ( is_404() ) {
 	<?php
 } elseif ( is_archive() ) {
 	?>
-	<header class="page-header">
+	<header class="page-header  has-background">
 		<?php
 		the_archive_title( '<h1 class="page-title">', '</h1>' );
 		the_archive_description( '<div class="archive-description">', '</div>' );
 		?>
 	</header><!-- .page-header -->
 	<?php
+} else {
+	if ( has_post_thumbnail() ) {
+		?>
+		<header class="page-header has-background has-featured" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)">
+			<?php
+			if ( get_field('subtitle') ) echo '<h3 class="subtitle">' . get_field('subtitle') . '</h3>';
+
+			the_title( '<h1 class="page-title underlined">', '</h1>' );
+			if ( get_field('header_content') ) {
+				echo '<div class="content">';
+				the_field('header_content');
+				echo '</div>';
+			}
+			?>
+		</header><!-- .page-header -->
+		<?php
+	} else {
+	?>
+
+	<header class="page-header has-background">
+		<?php
+			if ( get_field('subtitle') ) echo '<h3 class="subtitle">' . get_field('subtitle') . '</h3>';
+			the_title( '<h1 class="page-title underlined">', '</h1>' );
+		?>
+	</header><!-- .page-header -->
+	<?php
+	}
+
 }

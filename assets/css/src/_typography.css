@@ -34,6 +34,32 @@ h3 {
 	font-family: var(--highlight-font-family);
 }
 
+h1.underlined::after,
+h2.underlined::after,
+h3.underlined::after,
+h4.underlined::after,
+h5.underlined::after,
+h6.underlined::after {
+	position: relative;
+	content: "";
+	background: var(--color-theme-yellow);
+	height: 3px;
+	width: 8rem;
+	display: block;
+	margin: 1.4rem auto 1.5rem;
+}
+
+@media (--content-query) {
+	.pull-left h1.underlined::after,
+	.pull-left h2.underlined::after,
+	.pull-left h3.underlined::after,
+	.pull-left h4.underlined::after,
+	.pull-left h5.underlined::after,
+	.pull-left h6.underlined::after {
+		margin: 1.3rem 0 1.5rem;
+	}
+}
+
 .entry-title-singular,
 .page-title {
 	font-size: 2.9rem;
@@ -59,6 +85,7 @@ h3 {
 	text-align: center;
 }
 
+
 .page-header.has-background .page-title {
 	font-weight: 600;
 }
@@ -68,7 +95,16 @@ h3 {
 	text-shadow: var(--global-text-shadow);
 }
 
+.section-title {
+	margin-top: 0;
+	font-size: 2.75rem;
+	line-height: 1;
+	text-align: center;
+}
+
+
 @media (--content-query) {
+
 	.page-title {
 		font-size: 3.4rem;
 		line-height: 1;
@@ -76,6 +112,12 @@ h3 {
 
 	.page-header .subtitle {
 		line-height: 1;
+	}
+
+	.pull-left .subtitle ,
+	.pull-left .section-title {
+		text-align: left;
+		padding-left: 0;
 	}
 }
 

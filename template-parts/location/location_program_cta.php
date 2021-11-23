@@ -15,8 +15,7 @@ $title = $args['title'];
 
 <section class="programs-cta fullwidth location-section" style="">
 	<header>
-		<h3><?php echo $title;?></h3>
-		<hr>
+		<h3 class="underlined"><?php echo $title;?></h3>
 	</header>
 	<div class="program-cards">
 		<?php

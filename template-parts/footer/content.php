@@ -17,7 +17,7 @@ $theme = get_template_directory_uri();
 		<?php get_template_part( 'template-parts/components/phone_link' ); ?>
 		<?php get_template_part( 'template-parts/components/social_links' ); ?>
 	</div>
-	<div class="services">
+	<div class="services-links">
 		<?php get_template_part( 'template-parts/components/services_list' ); ?>
 	</div>
 	<div class="find">

@@ -22,7 +22,7 @@ $location_link = get_permalink($location );
 
 <section class="location-card">
 	<?php get_template_part( 'template-parts/components/googlemap', '', array() );?>
-	<hr>
+	<hr class="divider">
 	<h2>Senske Services in <?php echo $location_name; ?></h2>
 	<a class="phone" href="tel:<?php echo esc_html($phone); ?>" ><?php echo $phone; ?></a>
 	<?php echo $hours; ?>
