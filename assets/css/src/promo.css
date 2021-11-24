@@ -1,0 +1,88 @@
+/**
+ * Custom styles for the single promos template.
+ */
+
+.promo-container {
+	display: grid;
+	grid-template-areas:
+		"hero"
+		"promo-content"
+		"form";
+		grid-template-columns: 1fr;
+		gap: 0;
+}
+
+@media (--content-query) {
+
+	.promo-container {
+		display: grid;
+		grid-template-areas:
+			". hero-content form ."
+			". promo-content form .";
+			grid-template-columns: 1fr minmax(0, calc(2*var(--content-width)/3)) min-content 1fr;
+			grid-template-rows: 1fr;
+			gap: 1rem;
+
+	}
+
+}
+
+.hero {
+	grid-column: 1/-1;
+	grid-row: 1/1;
+	background: var(--color-theme-darkgreen);
+	background-image: url(../images/placeholder-header-image.jpg);
+	background-size: cover;
+	background-position: center;
+	min-height: 20rem;
+	width: 100%;
+}
+
+
+.promo-container .entry.promotion {
+	grid-area: promo-content;
+}
+
+.promo-container .form {
+	grid-area: form;
+	max-width: 30em;
+	background: var(--color-theme-white);
+	margin-top: 2rem;
+	box-shadow: var(--global-drop-shadow);
+}
+
+.form .wpcf7 {
+	padding: 1rem;
+}
+
+.wpcf7-form {
+	grid-template-columns: auto;
+}
+
+.promo-container .form .form-title {
+	color: var(--color-theme-white);
+	font-size: 1.5rem;
+	padding: 1rem;
+	margin: 0;
+	text-align: center;
+	background-color: var(--color-theme-green);
+}
+
+.form .wpcf7-form {
+
+}
+
+.promo-container .hero-overlay {
+	grid-area: hero-content;
+	color: var(--color-theme-white);
+	align-self: center;
+	justify-content: center;
+	padding: 1.5rem;
+}
+
+.promo-container .hero-overlay h3 {
+	color: var(--color-theme-white);
+	font-size: 2.5rem;
+	margin: 0;
+}
+

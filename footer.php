@@ -12,7 +12,8 @@
 namespace WP_Rig\WP_Rig;
 
 ?>
-
+<?php get_template_part( 'template-parts/components/promos_flyout' ); ?>
+<?php get_template_part( 'template-parts/components/contact_cta' ); ?>
 	<footer id="colophon" class="site-footer">
 		<?php get_template_part( 'template-parts/footer/content' ); ?>
 		<?php get_template_part( 'template-parts/footer/info' ); ?>
