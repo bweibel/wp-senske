@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying the header branding
+ * Template part for displaying the featured article
  *
  * @package wp_rig
  */
@@ -16,7 +16,9 @@ $article = $args['article'];
 <div class="featured-article">
 	<div class="content">
 		<h3 class="post-title"><a href="<?php echo get_permalink( $article ); ?>"><?php echo $article->post_title; ?></a></h3>
+		<div class="excerpt">
 		<?php echo get_the_excerpt( $article ); ?>
+		</div>
 	</div>
 	<div class="thumbnail">
 		<a href="<?php echo get_permalink( $article ); ?>">
@@ -30,6 +32,6 @@ $article = $args['article'];
 		</a>
 	</div>
 
-	<a href="/blog" class="button">Read Our Blog</a>
+	<a href="/blog" class="button">Read The Senske Blog</a>
 
 </div>

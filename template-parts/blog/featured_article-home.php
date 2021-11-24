@@ -17,7 +17,6 @@ $theme = get_template_directory_uri();
 <div class="featured-article">
 	<div class="featured-header">
 		<h2 class="featured-heading">Featured Article</h2>
-		<hr class="desktop-left">
 	</div>
 
 	<div class="thumbnail">

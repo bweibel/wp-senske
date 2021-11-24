@@ -12,6 +12,7 @@ use function WP_Rig\WP_Rig\wp_rig;
 use function add_shortcode;
 use function get_theme_file_uri;
 use function get_theme_file_path;
+use WP_Query;
 
 /**
  * Class for adding the various shortcodes to the theme
@@ -32,6 +33,7 @@ class Component implements Component_Interface {
 	 */
 	public function initialize() {
 		add_shortcode( 'button', array( $this, 'handle_button_shortcode' ) );
+		add_shortcode( 'featured-article', array( $this, 'handle_featured_shortcode' ) );
 	}
 
 	public function handle_button_shortcode( $atts = array(), $content = 'Button Text' ) {
@@ -47,6 +49,28 @@ class Component implements Component_Interface {
 		}
 
 		return '<a href="' .  $button_link  . '" class="' . $button_class . '">' . $content . '</a>';
+	}
+
+	public function handle_featured_shortcode( $atts = array() ) {
+		// normalize attribute keys, lowercase
+		$atts = array_change_key_case( (array) $atts, CASE_LOWER );
+
+		$args = array(
+			'posts_per_page' => 1,
+			'category_name' => 'featured'
+
+		);
+		$featured_query = new WP_Query( $args );
+
+		if( $featured_query->posts ) :
+
+			ob_start();
+			get_template_part( 'template-parts/blog/featured_article', 'menu', array('article' => $featured_query->posts[0]) );
+
+			return ob_get_clean();
+
+		endif;
+
 	}
 
 }

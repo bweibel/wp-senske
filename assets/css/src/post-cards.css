@@ -1,0 +1,63 @@
+@import "_custom-properties.css";
+
+/*--------------------------------------------------------------
+# Post Cards
+--------------------------------------------------------------*/
+
+.post-card {
+	position: relative;
+	background: var(--color-theme-off-white);
+	flex-basis: 20em;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	box-shadow: var(--global-drop-shadow);
+	max-width: 20em;
+}
+
+.post-card:hover {
+	box-shadow: var(--global-drop-shadow-raised);
+}
+
+.post-card .thumbnail {
+	max-width: 100%;
+	height: 160px;
+    background: var(--color-theme-darkgreen);
+	overflow: hidden;
+	display: grid;
+	place-content: center;
+}
+
+.post-card .thumbnail .entry-image {
+	width: auto;
+	max-width: none;
+	max-height: 160px;
+	transition: max-height 0.25s;
+}
+
+.post-card:hover .thumbnail .entry-image {
+	max-height: 170px;
+}
+
+.post-card:hover .entry-title a {
+	color: var(--color-theme-highlight);
+}
+
+.post-card .card-link {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.post-card .entry-title {
+	font-family: var(--global-font-family);
+	padding: 0 1em;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+

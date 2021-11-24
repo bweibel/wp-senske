@@ -26,7 +26,6 @@ get_template_part( 'template-parts/content/page_header' );
 $args = array(
 	'posts_per_page' => 1,
 	'category_name' => 'featured'
-
 );
 $featured_query = new WP_Query( $args );
 
@@ -39,36 +38,36 @@ endif;
 ?>
 	<main id="primary" class="site-main">
 
+		<?php
+		get_post_type();
+		if ( have_posts() ) :
+		?>
+
+		<header class="blog-header pull-left">
+			<h4 class="subtitle">Learn from Senske</h4>
+			<h2 class="blog-heading underlined">Recent Articles</h2>
+		</header>
+
+		<div class="blog-posts">
+
 			<?php
-			get_post_type();
-			if ( have_posts() ) :
+			while ( have_posts() ) {
+				the_post();
+
+				get_template_part( 'template-parts/blog/post_card', get_post_type() );
+
+			}
+
 			?>
-
-			<header class="blog-header pull-left">
-				<h4 class="subtitle">Learn from Senske</h4>
-				<h2 class="blog-heading underlined">Recent Articles</h2>
-			</header>
-
-			<div class="blog-posts">
-
-				<?php
-				while ( have_posts() ) {
-					the_post();
-
-					get_template_part( 'template-parts/blog/post_card', get_post_type() );
-
-				}
-
-				?>
-			</div>
-				<?php
-				if ( ! is_singular() ) {
-					// get_template_part( 'template-parts/content/pagination' );
-				} else {
-				get_template_part( 'template-parts/content/error' );
-				}
-			endif;
-			?>
+		</div>
+			<?php
+			if ( ! is_singular() ) {
+				// get_template_part( 'template-parts/content/pagination' );
+			} else {
+			get_template_part( 'template-parts/content/error' );
+			}
+		endif;
+		?>
 	</main><!-- #primary -->
 <?php
 get_sidebar();

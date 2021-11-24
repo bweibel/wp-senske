@@ -1,0 +1,16 @@
+@import "_custom-properties.css";
+
+/*--------------------------------------------------------------
+# Related Posts
+--------------------------------------------------------------*/
+
+.related-posts {
+	padding: 0 1.5rem;
+}
+
+.post-list {
+	display: flex;
+	gap: 1.5rem;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
