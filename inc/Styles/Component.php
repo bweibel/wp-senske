@@ -340,7 +340,22 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return 'home.php' === basename( $template );
 				},
 			),
+			'wp-rig-post-cards' => array(
+				'file' => 'post-cards.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'true';
+				},
+			),
+			'wp-rig-promo' => array(
+				'file' => 'promo.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'single-senske_promotion.php' === basename( $template );
+				},
+			),
 		);
+
 
 		/**
 		 * Filters default CSS files.
@@ -387,8 +402,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		}
 
 		$google_fonts = array(
-			'Montserrat' => array( '400', '400i', '700', '700i' ),
-			'EB Garamond'     => array( '400', '400i', '600', '600i' ),
+			'Montserrat'     => array( '400', '400i', '700', '700i' ),
+			'EB Garamond'    => array( '400', '400i', '600', '600i' ),
 		);
 
 		/**

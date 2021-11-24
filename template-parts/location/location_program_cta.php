@@ -10,14 +10,17 @@ namespace WP_Rig\WP_Rig;
 
 $programs = $args['programs'];
 $title = $args['title'];
+$has_button = $args['has_button'];
 
 ?>
 
 <section class="programs-cta fullwidth location-section" style="">
-	<header>
-		<h3 class="underlined"><?php echo $title;?></h3>
-	</header>
-	<div class="program-cards">
+	<?php if( $title ) : ?>
+		<header>
+			<h3 class="underlined"><?php echo $title;?></h3>
+		</header>
+	<?php endif; ?>
+		<div class="program-cards">
 		<?php
 		if( $programs ) {
 			foreach( $programs as $program ) {
@@ -32,5 +35,8 @@ $title = $args['title'];
 		?>
 	</div>
 
+	<?php if( $has_button ) : ?>
 	<a href="/request-estimate/" class="button">Request an Estimate</a>
+	<?php endif; ?>
+
 </section>

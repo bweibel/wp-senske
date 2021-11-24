@@ -98,7 +98,7 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-front-page' );
 					<h3 class="tab-header__heading">Find Senske Near Me</h3>
 				</header>
 				<div class="map">
-					<?php do_shortcode( '[wpgmza id="1"]' ); ?>
+					<?php echo do_shortcode( '[display-map id="3456"]' ); ?>
 				</div>
 				<?php
 				get_template_part( 'template-parts/components/button', '', $button_args );
@@ -200,7 +200,7 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-front-page' );
 		</section>
 		<?php endwhile; ?>
 	<?php endif; ?>
-		<?php get_template_part( 'template-parts/components/yotpo' ); ?>
+	<?php get_template_part( 'template-parts/components/yotpo' ); ?>
 
 	</main><!-- #primary -->
 <?php

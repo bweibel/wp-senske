@@ -43,6 +43,7 @@ $yotpo_id = get_field('yotpo_id');
 			'programs' => $programs_cta['programs'],
 			'title'    => $programs_cta['title'],
 			'sub_title' => $programs_cta['sub_title'],
+			'has_button' => $programs_cta['has_quote_button']
 		);
 		get_template_part( 'template-parts/location/location_program_cta', '', $args );
 	}

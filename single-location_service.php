@@ -37,10 +37,6 @@ asdfasdfasdf
 		?>
 	</main><!-- #primary -->
 
-
-	<script type="text/javascript">
-		(function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/F0TPJxIYZcYzPN4sr9IFjlzNs8Inxb9VYjYRYT74/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
-	</script>
 <?php
 get_sidebar();
 get_footer();

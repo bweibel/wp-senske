@@ -76,9 +76,14 @@ if ( is_404() ) {
 		</header><!-- .page-header -->
 		<?php
 	} else {
+		if ( get_field('page_header_background') ) {
+			$class_name = 'page-header has-background';
+		} else {
+			$class_name = 'page-header';
+		}
 	?>
 
-	<header class="page-header has-background">
+	<header class="<?php echo $class_name; ?>">
 		<?php
 			if ( get_field('subtitle') ) echo '<h3 class="subtitle">' . get_field('subtitle') . '</h3>';
 			the_title( '<h1 class="page-title underlined">', '</h1>' );

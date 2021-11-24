@@ -2,12 +2,18 @@
  * Custom styles for the Single Location template.
  */
 
+@import "_program-cards.css";
+
+
 /* programs cta */
 .programs-cta {
 	background-color: var(--color-theme-darkgreen);
-	background-size: cover;
+	background-image: url(../images/grass.jpg);
+	background-attachment: fixed;
 	text-align: center;
 	padding: 4rem 2rem;
+	max-height: 25rem;
+	margin-bottom: 18rem;
 }
 
 .programs-cta > header h3 {
@@ -21,6 +27,7 @@
 	max-width: var(--content-width);
 	margin: 2rem auto;
 }
+
 
 /* services-cta */
 
@@ -111,11 +118,6 @@
 	font-weight: 300;
 }
 
-.services header h3 {
-	margin: 0;
-	font-size: 2em;
-}
-
 .services-list {
 	list-style: none;
 	padding: 1rem;
@@ -187,6 +189,7 @@
 .services-list .services-item .service-info {
 	grid-area: info;
 	text-align: center;
+	display: none;
 }
 
 @media (--content-query) {
@@ -236,16 +239,6 @@
 	margin-bottom: 2em;
 }
 
-.resources header h4 {
-	margin-bottom: 0;
-	font-family: var(--global-font);
-	font-weight: 300;
-}
-
-.resources header h3 {
-	margin: 0;
-	font-size: 2em;
-}
 
 .resources .entry-content {
 	max-width: 60em;

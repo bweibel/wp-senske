@@ -31,6 +31,15 @@
 	align-items: center;
 }
 
+.program-cards .card.popular {
+	background-color: var(--color-theme-off-white);
+	z-index: 5;
+}
+
+.program-cards .card.popular .icon {
+	background-color: transparent;
+}
+
 @media (--content-query) {
 	.program-cards .card {
 		/* width: auto; */

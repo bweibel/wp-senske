@@ -102,6 +102,12 @@ h6.underlined::after {
 	text-align: center;
 }
 
+.section-header .subtitle {
+	margin-bottom: 0.25rem;
+	font-family: var(--global-font);
+	font-weight: 300;
+}
+
 
 @media (--content-query) {
 
