@@ -159,7 +159,7 @@ class Theme {
 			new Resource_Slider\Component(),
 			new Services_List\Component(),
 			new Footer_Options\Component(),
-
+			new Remove_Comments\Component(),
 		);
 
 		if ( defined( 'JETPACK__VERSION' ) ) {
