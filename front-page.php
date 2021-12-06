@@ -29,7 +29,6 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-front-page' );
 
 
 	if ( $service_cards || $find_location ) :
-		if ( $service_cards ) :
 		?>
 		<section class="home-section services-map">
 			<section class="service-plan-cards">
@@ -38,20 +37,20 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-front-page' );
 				</header>
 				<div class="program-cards">
 				<?php
-				//
-				// Programs CTA.
-				//
-				$programs_cta = get_field( 'programs' );
-				if ( $programs_cta ) {
-					$args = array(
-						'programs' => $programs_cta,
-					);
-					get_template_part( 'template-parts/location/location_program_cta', 'homepage', $args );
-				}
-				?>
-			</div>
+					//
+					// Programs CTA.
+					//
+					$programs_cta = get_field( 'programs' );
+					if ( $programs_cta ) {
+						$args = array(
+							'programs' => $programs_cta,
+						);
+						get_template_part( 'template-parts/location/location_program_cta', 'homepage', $args );
+					}
+					?>
+				</div>
 			</section>
-		<?php endif; ?>
+
 		<?php if( have_rows('additional_service_content') ): ?>
 			<?php while( have_rows('additional_service_content') ): the_row();
 
@@ -98,7 +97,7 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-front-page' );
 					<h3 class="tab-header__heading">Find Senske Near Me</h3>
 				</header>
 				<div class="map">
-					<?php echo do_shortcode( '[display-map id="3456"]' ); ?>
+					<?php echo do_shortcode( '[display-map id="3554"]' ); ?>
 				</div>
 				<?php
 				get_template_part( 'template-parts/components/button', '', $button_args );
