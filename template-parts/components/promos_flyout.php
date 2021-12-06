@@ -1,13 +1,38 @@
 <?php
 /**
- * Template part for displaying a button
+ * Template part for displaying the promotions flyout
  *
  * @package wp_rig
  */
 
 namespace WP_Rig\WP_Rig;
+use WP_Query;
 
-// $social_links = arr('facebook' => 'http://www.facebook.com',	'twitter' => 'http://www.twitter.com',	'youtube' => 'http://www.youtube.com');
+
+// Find todays date in Ymd format.
+$today = date('Ymd');
+
+$post_type = 'senske_promotion';
+
+$args = array(
+	'posts_per_page' => 2,
+	'post_type' => $post_type,
+	'meta_query' => array(
+		array(
+			'key'     => 'start_date',
+			'compare' => '<=',
+			'value'   => $today,
+		),
+		array(
+			'key'     => 'end_date',
+			'compare' => '>=',
+			'value'   => $today,
+		)
+	),
+);
+
+
+$promo_query = new WP_Query( $args );
 
 ?>
 
@@ -15,7 +40,18 @@ namespace WP_Rig\WP_Rig;
 	<button id="promos-toggle"><h4 class="promos-title">Current Promos</h4></button>
 
 	<ul class="promos-list">
-	No active Promos at this time
+		<?php
+			if( $promo_query->have_posts() ) :
+				while( $promo_query->have_posts() ) : $promo_query->the_post();
+					?>
+					<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><?php the_field('seasonality'); ?></li>
+					<?php
+				endwhile;
+			else :
+		?>
+			<p>No active Promos at this time</p>
+			<?php endif; ?>
+			<?php wp_reset_postdata(); ?>
 	</ul>
 </aside>
 
