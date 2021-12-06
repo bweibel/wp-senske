@@ -34,6 +34,7 @@ class Component implements Component_Interface {
 	public function initialize() {
 		add_shortcode( 'button', array( $this, 'handle_button_shortcode' ) );
 		add_shortcode( 'featured-article', array( $this, 'handle_featured_shortcode' ) );
+		add_shortcode( 'senske-promise', array( $this, 'handle_promise_shortcode' ) );
 	}
 
 	public function handle_button_shortcode( $atts = array(), $content = 'Button Text' ) {
@@ -71,6 +72,13 @@ class Component implements Component_Interface {
 
 		endif;
 
+	}
+
+	public function handle_promise_shortcode( ) {
+		ob_start();
+		get_template_part( 'template-parts/components/senske_promise' );
+
+		return ob_get_clean();
 	}
 
 }
