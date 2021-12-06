@@ -12,8 +12,10 @@
 namespace WP_Rig\WP_Rig;
 
 ?>
-<?php get_template_part( 'template-parts/components/promos_flyout' ); ?>
-<?php get_template_part( 'template-parts/components/contact_cta' ); ?>
+<?php
+get_template_part( 'template-parts/components/promos_flyout' );
+get_template_part( 'template-parts/components/contact_cta' );
+?>
 	<footer id="colophon" class="site-footer">
 		<?php get_template_part( 'template-parts/footer/content' ); ?>
 		<?php get_template_part( 'template-parts/footer/info' ); ?>
@@ -21,7 +23,7 @@ namespace WP_Rig\WP_Rig;
 </div><!-- #page -->
 
 <script type="text/javascript">
-    (function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/F0TPJxIYZcYzPN4sr9IFjlzNs8Inxb9VYjYRYT74/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
+	(function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/F0TPJxIYZcYzPN4sr9IFjlzNs8Inxb9VYjYRYT74/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
 </script>
 
 <?php wp_footer(); ?>

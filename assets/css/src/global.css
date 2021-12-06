@@ -83,6 +83,7 @@
 		"main"
 		"sidebar"
 		"after-main"
+		"before-footer"
 		"footer";
 	margin: 0 auto;
 	max-width: 100%;
@@ -123,6 +124,7 @@
 			"page-header page-header page-header page-header"
 			". main sidebar ."
 			". after-main after-main ."
+			"before-footer before-footer before-footer before-footer"
 			"footer footer footer footer";
 		column-gap: 1em;
 		min-height: 100vh;
@@ -687,7 +689,11 @@
 }
 
 .get-in-touch {
+	grid-area: before-footer;
+	padding: 1rem;
+	margin: 1rem 0;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
 	gap: 1rem;
@@ -697,6 +703,7 @@
 
 .get-in-touch .title {
 	font-size: 1.75rem;
+	margin: 0;
 }
 
 #yotpo_testimonials_btn {
