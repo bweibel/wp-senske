@@ -45,7 +45,7 @@
 
 .page-header {
 	width: 100%;
-	margin-bottom: 2rem;
+	/* margin-bottom: 2rem; */
 	min-height: 5rem;
 	padding-top: 3rem;
 	padding-bottom: 3rem;
@@ -65,6 +65,13 @@
 .page-header.has-background {
 	background: var(--color-theme-darkgreen);
 	background-image: url(../images/grass.jpg);
+	background-repeat: repeat;
+	margin-bottom: 2rem;
+}
+
+.page-header.has-background.has-featured {
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .page-header.has-background .page-title,

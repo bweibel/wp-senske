@@ -17,7 +17,10 @@ namespace WP_Rig\WP_Rig;
 		get_template_part( 'template-parts/content/entry_header', get_post_type() );
 		get_template_part( 'template-parts/content/entry_summary', get_post_type() );
 	} else {
-		// Standard Content.
+		// Standard Content and Blog Page have page
+		if ( ! get_field('page_header_background') || is_singular( 'post' ) ) {
+			get_template_part( 'template-parts/content/entry_header', get_post_type() );
+		}
 		get_template_part( 'template-parts/content/entry_content', get_post_type() );
 		// Additional Page Content (ACF).
 		get_template_part( 'template-parts/acf/flexible', get_post_type(), array( 'row_group' => 'page_blocks' ) );

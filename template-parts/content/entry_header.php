@@ -30,7 +30,11 @@ namespace WP_Rig\WP_Rig;
 				get_template_part( 'template-parts/services/service_icon', '', array( 'icon_url' => $icon_url, 'el' => 'div' ) );
 			}
 		}
-		get_template_part( 'template-parts/content/entry_title', get_post_type() );
+		//if this is a standard page, the title will be in the page header.
+		if ( get_post_type() != 'page' && !is_singular('post') ){
+			get_template_part( 'template-parts/content/entry_title', get_post_type() );
+		}
+
 		?>
 
 		<?php
