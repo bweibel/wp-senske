@@ -172,7 +172,7 @@
 		grid-area: top;
 		background-color: var(--color-theme-primary);
 		max-height: 100vh;
-		padding: 1rem;
+		padding: 0.75rem;
 		transition: 0.25s padding;
 	}
 
@@ -190,13 +190,47 @@
 	}
 
 	.top-bar .links li {
-		margin: 0 0.5em;
+		margin: 0 0.75em;
 	}
 
 	.top-bar .links a {
 		color: var(--color-theme-white);
 		text-decoration: none;
-		font-size: 0.8em;
+	}
+
+	.top-bar .links a:hover {
+		text-decoration: underline;
+	}
+
+	.top-bar .links a:hover .icon-account,
+	.top-bar .links a:hover .icon-careers,
+	.top-bar .links a:hover .icon-phone {
+		opacity: .8;
+	}
+
+	.top-bar .links .icon-account,
+	.top-bar .links .icon-careers,
+	.top-bar .links .icon-phone {
+		width: 1.5em;
+		height: 1.5em;
+		display: inline-block;
+		background-size: auto;
+		background-size: contain;
+		background-repeat: no-repeat;
+		vertical-align: middle;
+		margin-right: 0.5em;
+	}
+
+	.top-bar .links .icon-account {
+		background-image: url(../images/senske-my-account.svg);
+	}
+
+	.top-bar .links .icon-careers {
+		background-image: url(../images/senske-careers.svg);
+	}
+
+	.top-bar .links .icon-phone {
+		background-image: url(../images/senske-call-today.svg);
 	}
 
 }
@@ -209,16 +243,10 @@
 	.site-branding {
 		margin-top: -2.2rem;
 	}
+
 }
 
-.main-navigation {
-	max-width: 60em;
-	grid-area: nav;
-	align-items: center;
-	align-self: stretch;
-	display: flex;
-	justify-content: flex-end;
-}
+
 
 
 .top-bar .links .phone {
@@ -290,9 +318,39 @@
 ## Basic navigation menus - handles submenu and small screen toggle
 --------------------------------------------------------------*/
 
+#mega-menu-wrap-primary {
+	display: none;
+}
+
+#mega-menu-wrap-mobile {
+	display: flex;
+}
+
+@media (--wide-menu-query) {
+
+	#mega-menu-wrap-primary {
+		display: flex;
+	}
+
+	#mega-menu-wrap-mobile {
+		display: none;
+	}
+
+}
+
+
 /*--------------------------------------------------------------
 ## Main navigation menu
 --------------------------------------------------------------*/
+
+.main-navigation {
+	max-width: 60em;
+	grid-area: nav;
+	align-items: center;
+	align-self: stretch;
+	display: flex;
+	justify-content: flex-end;
+}
 
 /*--------------------------------------------------------------
 # Content navigation
@@ -782,7 +840,52 @@
 	border-bottom: none;
 }
 
+.archive .senske_resource .entry-header {
+	display: grid;
+	grid-template-areas: "image";
 
+}
+
+.archive .senske_resource .post-thumbnail,
+.archive .senske_resource .entry-title {
+	grid-area: image;
+	align-self: center;
+	justify-self: center;
+}
+
+.archive .senske_resource .post-thumbnail {
+	max-height: 14rem;
+	overflow: hidden;
+	position: relative;
+}
+
+.archive .senske_resource .post-thumbnail::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background: black;
+	opacity: 0.3;
+	z-index: 0;
+}
+
+.archive .senske_resource .entry-title,
+.archive .senske_resource .entry-title a {
+	color: var(--color-theme-white);
+	font-size: 3rem;
+	text-align: center;
+	z-index: 10;
+}
+
+.archive .senske_resource .entry-title.underlined::after {
+	margin: auto;
+}
+
+.archive .rank-math-breadcrumb {
+	margin: 1.5rem 0;
+}
 
 /*--------------------------------------------------------------
 # Infinite scroll

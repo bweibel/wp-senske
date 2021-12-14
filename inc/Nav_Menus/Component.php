@@ -57,6 +57,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		return array(
 			'is_primary_nav_menu_active' => array( $this, 'is_primary_nav_menu_active' ),
 			'display_primary_nav_menu'   => array( $this, 'display_primary_nav_menu' ),
+			'is_mobile_nav_menu_active' => array( $this, 'is_mobile_nav_menu_active' ),
+			'display_mobile_nav_menu'   => array( $this, 'display_mobile_nav_menu' ),
 		);
 	}
 
@@ -117,6 +119,15 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	}
 
 	/**
+	 * Checks whether the primary navigation menu is active.
+	 *
+	 * @return bool True if the primary navigation menu is active, false otherwise.
+	 */
+	public function is_mobile_nav_menu_active() : bool {
+		return (bool) has_nav_menu( static::MOBILE_NAV_MENU_SLUG );
+	}
+
+	/**
 	 * Displays the primary navigation menu.
 	 *
 	 * @param array $args Optional. Array of arguments. See `wp_nav_menu()` documentation for a list of supported
@@ -128,6 +139,22 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		}
 
 		$args['theme_location'] = static::PRIMARY_NAV_MENU_SLUG;
+
+		wp_nav_menu( $args );
+	}
+
+	/**
+	 * Displays the mobile navigation menu.
+	 *
+	 * @param array $args Optional. Array of arguments. See `wp_nav_menu()` documentation for a list of supported
+	 *                    arguments.
+	 */
+	public function display_mobile_nav_menu( array $args = array() ) {
+		if ( ! isset( $args['container'] ) ) {
+			$args['container'] = '';
+		}
+
+		$args['theme_location'] = static::MOBILE_NAV_MENU_SLUG;
 
 		wp_nav_menu( $args );
 	}

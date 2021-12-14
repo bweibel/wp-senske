@@ -3,6 +3,103 @@
 /*--------------------------------------------------------------
 # Mega Menu Plugin Overrides
 --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## Basic navigation menus - handles submenu and small screen toggle
+--------------------------------------------------------------*/
+#mega-menu-wrap-mobile #mega-menu-mobile {
+	top: 5rem;
+	height: calc(100vh - 5rem);
+}
+
+.sticky #mega-menu-wrap-mobile #mega-menu-mobile {
+	top: 4rem;
+	height: calc(100vh - 4rem);
+}
+
+#mega-menu-wrap-mobile #mega-menu-mobile > li.mega-menu-item {
+	border-bottom: 2px solid var(--color-theme-lightgrey);
+	padding: 1rem;
+}
+
+#mega-menu-wrap-mobile #mega-menu-mobile > li.mega-menu-item > a.mega-menu-link {
+	font-family: var(--highlight-font-family);
+	text-align: left;
+	width: 100%;
+	max-width: 20em;
+	margin: auto;
+}
+
+#mega-menu-wrap-mobile #mega-menu-mobile > li.mega-menu-item.my-account,
+#mega-menu-wrap-mobile #mega-menu-mobile > li.mega-menu-item.careers {
+	color: var(--color-theme-white);
+	background: var(--color-theme-green);
+	border-bottom: none;
+	width: 50%;
+	display: inline-block;
+	padding: 0.75rem 0;
+}
+
+#mega-menu-wrap-mobile #mega-menu-mobile > li.mega-menu-item.my-account > a.mega-menu-link,
+#mega-menu-wrap-mobile #mega-menu-mobile > li.mega-menu-item.careers > a.mega-menu-link {
+	text-align: center;
+}
+
+#mega-menu-wrap-mobile #mega-menu-mobile > li.mega-menu-item.my-account > a.mega-menu-link::before,
+#mega-menu-wrap-mobile #mega-menu-mobile > li.mega-menu-item.careers > a.mega-menu-link::before {
+	content: '';
+	display: inline-block;
+	width: 1.5em;
+	height: 1.5em;
+	margin-right: 0.5em;
+	vertical-align: middle;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+#mega-menu-wrap-mobile #mega-menu-mobile > li.mega-menu-item.my-account > a.mega-menu-link::before {
+	background-image: url(../images/senske-my-account.svg);
+}
+
+#mega-menu-wrap-mobile #mega-menu-mobile > li.mega-menu-item.careers > a.mega-menu-link::before {
+	background-image: url(../images/senske-careers.svg);
+}
+
+#mega-menu-wrap-mobile #mega-menu-mobile > li.mega-menu-item.my-account > a.mega-menu-link,
+#mega-menu-wrap-mobile #mega-menu-mobile > li.mega-menu-item.careers > a.mega-menu-link {
+	color: var(--color-theme-white);
+	font-family: var(--global-font-family);
+	font-size: 1.25rem;
+	font-weight: 400;
+}
+
+#mega-menu-wrap-mobile #mega-menu-mobile > li.mega-menu-item.free-estimate {
+	background: var(--color-theme-yellow);
+	border-bottom: none;
+	margin: .2rem;
+}
+
+#mega-menu-wrap-mobile #mega-menu-mobile > li.mega-menu-item.free-estimate > a.mega-menu-link {
+	color: var(--color-theme-white);
+	font-family: var(--global-font-family);
+	font-size: 1.25rem;
+	text-align: center;
+}
+
+#mega-menu-wrap-mobile #mega-menu-mobile > li.mega-menu-item.promos {
+	background: var(--color-theme-darkgreen);
+	border-bottom: none;
+	margin: 1rem;
+}
+
+#mega-menu-wrap-mobile #mega-menu-mobile > li.mega-menu-item.promos > a.mega-menu-link {
+	color: var(--color-theme-white);
+	text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Desktop navigation menus - handles submenu and small screen toggle
+--------------------------------------------------------------*/
 @media (--wide-menu-query) {
 
 	#mega-menu-wrap-primary,
@@ -151,13 +248,15 @@
 		align-content: center;
 		gap: 0 2rem;
 		cursor: pointer;
+		position: relative;
 	}
 
 	@media (--content-query) {
 		.primary-menu-container .menu-services-list .services-item {
 			grid-template-areas: "icon info";
-			row-gap: 0;
 			grid-template-columns: 1fr 9fr;
+			grid-template-rows: auto;
+			row-gap: 0;
 			justify-items: flex-start;
 			align-content: stretch;
 		}
@@ -168,12 +267,12 @@
 		grid-row: 1/1;
 	}
 
-	.primary-menu-container .menu-services-list .services-item .services-link {
-		display: block;
-		grid-column: 1/-1;
-		grid-row: 1/-1;
-		width: 100%;
-		z-index: 10;
+	.primary-menu-container .menu-services-list .services-item .service-link {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
 	}
 
 	.primary-menu-container .menu-services-list .services-item .icon {
@@ -205,24 +304,34 @@
 		text-align: center;
 	}
 
-	.primary-menu-container .individual-services {
+	.services-wrap {
+		/* display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap; */
 		text-align: center;
 	}
 
-	.primary-menu-container .individual-services h3 {
-		font-family: var(--global-font-family);
-		font-size: 1.25rem;
-	}
-
-	.primary-menu-container .individual-services .individual-services-list {
-		list-style: none;
+	.primary-menu-container .individual-services {
+		text-align: center;
 		display: flex;
 		flex-direction: column;
-		max-height: 6rem;
-		flex-wrap: wrap;
-		gap: .5em 2em;
-		text-align: left;
-		align-content: space-around;
+		justify-content: space-between;
+	}
+
+	.primary-menu-container .services-wrap h3 {
+		width: 100%;
+	}
+
+	.primary-menu-container .individual-services-list {
+		list-style: none;
+		column-count: 2;
+		padding: .5rem 2rem;
+	}
+
+	.primary-menu-container .estimate.button {
+		display: block;
+		margin: auto;
+		max-width: 14em;
 	}
 
 	/*  Locations */
@@ -267,6 +376,7 @@
 		display: grid;
 		place-content: center;
 		max-width: 100%;
+		max-height: 200px;
 	}
 
 	#mega-menu-wrap-primary #mega-menu-primary .featured-article .thumbnail img {
@@ -291,28 +401,33 @@
 	}
 
 	.primary-menu-container .learn-links {
-		display: flex;
+		/* display: flex;
 		gap: 2rem;
-		justify-content: space-around;
+		justify-content: space-around; */
 	}
 
 	.primary-menu-container .experts,
 	.primary-menu-container .answers {
-		width: 50%;
+		/* width: 50%; */
 	}
 
 	.primary-menu-container .experts .learn-button-list {
 		list-style: none;
 		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1em;
 	}
 
 	.primary-menu-container .learn-button-list .img-button {
 		display: grid;
-		height: 7rem;
+		height: 5rem;
 		overflow: hidden;
 		margin-bottom: 1rem;
 		align-content: center;
 		justify-content: center;
+		flex-basis: 15em;
+		flex-grow: 1;
 	}
 
 	.primary-menu-container .learn-button-list .img-button > * {
@@ -353,7 +468,6 @@
 
 	.primary-menu-container .answers a {
 		display: block;
-		font-size: 1.25em;
 		margin-bottom: 1rem;
 	}
 
@@ -387,8 +501,8 @@
 
 	.primary-menu-container .about-links {
 		display: flex;
-		justify-content: space-between;
-		align-items: center;
+		justify-content: space-around;
+		align-items: flex-start;
 		min-height: 15rem;
 	}
 
