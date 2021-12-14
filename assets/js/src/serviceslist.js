@@ -23,7 +23,7 @@ function ServicesList ( servieListEL ) {
 
 	Array.from( servicesItems ).forEach( service => {
 		console.log(service);
-		addClickToggle( service )
+		addClickToggle( service );
 	});
 
 	function addClickToggle(el, target=el ) {

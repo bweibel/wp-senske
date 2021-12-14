@@ -10,6 +10,11 @@ use WP_Query;
 
 $service = $args['service'];
 
+// If there's no connected service, do nothing.
+if ( ! $service ) {
+	return;
+}
+
 $service_title = $service->post_title;
 $service_link = get_the_permalink( $service->ID );
 

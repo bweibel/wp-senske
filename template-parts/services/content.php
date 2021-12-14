@@ -61,12 +61,12 @@ $taxonomy = 'service_category';
 	?>
 <?php if ( have_rows( 'services_individual' ) ) : ?>
 		<?php while ( have_rows( 'services_individual' ) ) : the_row(); ?>
-	<section class="individual-services services services-section">
+	<section id="individual" class="individual-services services services-section">
 		<header class="section-header">
 			<?php if ( get_sub_field('sub_title') ) : ?>
 			<h4 class="small subtitle"><?php echo get_sub_field('sub_title') ?></h4>
 			<?php endif; ?>
-			<h3 class="section-title underlined"><?php echo get_sub_field('title') . ' ' . $location_name_full; ?></h3>
+			<h3 class="section-title underlined"><?php echo get_sub_field('title'); ?></h3>
 		</header>
 		<?php the_sub_field('content'); ?>
 
@@ -74,10 +74,10 @@ $taxonomy = 'service_category';
 		$args = array(
 			'services' => get_sub_field('services'),
 			'title'    => get_sub_field('title'),
-			'sub_title' => get_sub_field('sub_title'),
+			'sub_title' => get_sub_field('sub_title')
 		);
 
-		get_template_part( 'template-parts/services/service_list', 'location', $args );
+		get_template_part( 'template-parts/services/service_list', '', $args );
 		?>
 	</section>
 	<?php endwhile; ?>
@@ -89,15 +89,16 @@ $taxonomy = 'service_category';
 	// Senske Difference.
 	if ( have_rows( 'senske_difference' ) ) : ?>
 		<?php while ( have_rows( 'senske_difference' ) ) : the_row(); ?>
+		<section class="services-section">
 		<header class="section-header">
 			<?php if ( get_sub_field('subtitle') ) : ?>
 			<h4 class="small subtitle"><?php echo get_sub_field('subtitle') ?></h4>
 			<?php endif; ?>
 			<h3 class="section-title underlined"><?php echo get_sub_field('title') . ' ' . $location_name_full; ?></h3>
 		</header>
-		<?php
-		the_sub_field('content');
-		endwhile;
+		<?php the_sub_field('content'); ?>
+		</section>
+		<?php endwhile;
 	endif;
 	?>
 
@@ -108,7 +109,7 @@ $taxonomy = 'service_category';
 	?>
 	<?php if ( have_rows( 'services_commercial' ) ) : ?>
 		<?php while ( have_rows( 'services_commercial' ) ) : the_row(); ?>
-		<section class="commercial-services services location-section">
+		<section id="commercial" class="commercial-services services services-section">
 			<header >
 				<?php if ( get_sub_field('sub_title') ) : ?>
 				<h4 class="small subtitle"><?php echo get_sub_field('sub_title') ?></h4>
@@ -133,14 +134,18 @@ $taxonomy = 'service_category';
 
 	<?php if ( have_rows( 'feedback' ) ) : ?>
 		<?php while ( have_rows( 'feedback' ) ) : the_row(); ?>
-		<header class="section-header">
-			<?php if ( get_sub_field('subtitle') ) : ?>
-			<h4 class="small subtitle"><?php echo get_sub_field('subtitle') ?></h4>
-			<?php endif; ?>
-			<h3 class="section-title underlined"><?php echo get_sub_field('title') . ' ' . $location_name_full; ?></h3>
-		</header>
+		<section class="services-section">
+			<header class="section-header">
+				<?php if ( get_sub_field('subtitle') ) : ?>
+				<h4 class="small subtitle"><?php echo get_sub_field('subtitle') ?></h4>
+				<?php endif; ?>
+				<h3 class="section-title underlined"><?php echo get_sub_field('title') . ' ' . $location_name_full; ?></h3>
+			</header>
+			<?php
+			get_template_part( 'template-parts/components/yotpo' );
+			?>
+		</section>
 		<?php
-		get_template_part( 'template-parts/components/yotpo' );
 		endwhile;
 	endif;
 	?>

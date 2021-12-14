@@ -38,7 +38,9 @@ if ( $popular ) {
 	<header>
 		<?php if( $icon_url ) : ?>
 			<div class="icon">
-				<?php echo file_get_contents( $icon_url ); ?>
+				<?php
+				echo file_get_contents( $icon_url );
+				?>
 			</div>
 		<?php else : ?>
 			<div class="icon"></div>
