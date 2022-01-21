@@ -2,7 +2,7 @@
 /**
  * Template part for displaying a post's content
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
@@ -15,7 +15,7 @@ namespace WP_Rig\WP_Rig;
 		sprintf(
 			wp_kses(
 				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'wp-rig' ),
+				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'senske' ),
 				array(
 					'span' => array(
 						'class' => array(),
@@ -28,7 +28,7 @@ namespace WP_Rig\WP_Rig;
 
 	wp_link_pages(
 		array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wp-rig' ),
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'senske' ),
 			'after'  => '</div>',
 		)
 	);

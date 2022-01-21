@@ -2,7 +2,7 @@
 /**
  * Template part for displaying the page content when an error has occurred
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
@@ -20,7 +20,7 @@ namespace WP_Rig\WP_Rig;
 				printf(
 					wp_kses(
 						/* translators: 1: link to WP admin new post page. */
-						__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'wp-rig' ),
+						__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'senske' ),
 						array(
 							'a' => array(
 								'href' => array(),
@@ -35,13 +35,13 @@ namespace WP_Rig\WP_Rig;
 		} elseif ( is_search() ) {
 			?>
 			<p>
-				<?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'wp-rig' ); ?>
+				<?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'senske' ); ?>
 			</p>
 			<?php
 		} else {
 			?>
 			<p>
-				<?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'wp-rig' ); ?>
+				<?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'senske' ); ?>
 			</p>
 			<?php
 		}

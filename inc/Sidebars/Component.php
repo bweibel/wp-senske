@@ -2,7 +2,7 @@
 /**
  * WP_Rig\WP_Rig\Sidebars\Component class
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig\Sidebars;
@@ -20,8 +20,8 @@ use function dynamic_sidebar;
  * Class for managing sidebars.
  *
  * Exposes template tags:
- * * `wp_rig()->is_primary_sidebar_active()`
- * * `wp_rig()->display_primary_sidebar()`
+ * * `senske()->is_primary_sidebar_active()`
+ * * `senske()->display_primary_sidebar()`
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/
  */
@@ -51,7 +51,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	}
 
 	/**
-	 * Gets template tags to expose as methods on the Template_Tags class instance, accessible through `wp_rig()`.
+	 * Gets template tags to expose as methods on the Template_Tags class instance, accessible through `senske()`.
 	 *
 	 * @return array Associative array of $method_name => $callback_info pairs. Each $callback_info must either be
 	 *               a callable or an array with key 'callable'. This approach is used to reserve the possibility of
@@ -72,9 +72,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	public function action_register_sidebars() {
 		register_sidebar(
 			array(
-				'name'          => esc_html__( 'Global Sidebar', 'wp-rig' ),
+				'name'          => esc_html__( 'Global Sidebar', 'senske' ),
 				'id'            => static::PRIMARY_SIDEBAR_SLUG,
-				'description'   => esc_html__( 'Add widgets here.', 'wp-rig' ),
+				'description'   => esc_html__( 'Add widgets here.', 'senske' ),
 				'before_widget' => '<section id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</section>',
 				'before_title'  => '<h3 class="widget-title">',
@@ -84,9 +84,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 
 		register_sidebar(
 			array(
-				'name'          => esc_html__( 'Resources Sidebar', 'wp-rig' ),
+				'name'          => esc_html__( 'Resources Sidebar', 'senske' ),
 				'id'            => static::RESOURCES_SIDEBAR_SLUG,
-				'description'   => esc_html__( 'Add widgets here.', 'wp-rig' ),
+				'description'   => esc_html__( 'Add widgets here.', 'senske' ),
 				'before_widget' => '<section id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</section>',
 				'before_title'  => '<h3 class="widget-title">',
@@ -96,9 +96,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 
 		register_sidebar(
 			array(
-				'name'          => esc_html__( 'Services Sidebar', 'wp-rig' ),
+				'name'          => esc_html__( 'Services Sidebar', 'senske' ),
 				'id'            => static::SERVICES_SIDEBAR_SLUG,
-				'description'   => esc_html__( 'Add widgets here.', 'wp-rig' ),
+				'description'   => esc_html__( 'Add widgets here.', 'senske' ),
 				'before_widget' => '<section id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</section>',
 				'before_title'  => '<h3 class="widget-title">',
@@ -108,9 +108,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 
 		register_sidebar(
 			array(
-				'name'          => esc_html__( 'Blog Sidebar', 'wp-rig' ),
+				'name'          => esc_html__( 'Blog Sidebar', 'senske' ),
 				'id'            => static::BLOG_SIDEBAR_SLUG,
-				'description'   => esc_html__( 'Add widgets here.', 'wp-rig' ),
+				'description'   => esc_html__( 'Add widgets here.', 'senske' ),
 				'before_widget' => '<section id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</section>',
 				'before_title'  => '<h3 class="widget-title">',
@@ -131,6 +131,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			'archive.php',
 			'category.php',
 			'single-senske_resource.php',
+			'taxonomy.php',
+			'taxonomy-resource_category.php',
 			'404.php',
 			'500.php',
 			'archive.php',

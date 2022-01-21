@@ -2,56 +2,42 @@
 /**
  * Template part for displaying main services page
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
 use WP_Query;
 
-wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-services' );
+senske()->print_styles( 'senske-content', 'senske-services' );
+wp_enqueue_script('senske-optionslist');
+
 
 $post_type = 'senske_services';
 $taxonomy = 'service_category';
 
 ?>
 
+
 	<?php
 	//
 	// Programs CTA.
 	//
-	$programs_cta = get_field( 'programs_cta' );
-	if ( $programs_cta ) {
-		$args = array(
-			'programs' => $programs_cta['programs'],
-			'title'    => $programs_cta['title'],
-			'sub_title' => $programs_cta['sub_title'],
-		);
-		get_template_part( 'template-parts/location/location_program_cta', '', $args );
+	if( get_field('show_programs') ) {
+		$programs_cta = get_field( 'programs_cta' );
+		if ( $programs_cta ) {
+			$args = array(
+				'programs' => $programs_cta['programs'],
+				'title'    => $programs_cta['title'],
+				'sub_title' => $programs_cta['sub_title'],
+			);
+			get_template_part( 'template-parts/services/services_program_cta', '', $args );
+		}
 	}
-	?>
-	<?php
-	//
-	// Residential Services.
-	//
-	$args = array(
-		'post_type' => $post_type,
-		'tax_query' => array(
-			array(
-				'taxonomy' => $taxonomy,
-				'field' => 'slug',
-				'terms' => 'individual-services'
-			)
-		)
-	);
-	$residential_query = new WP_Query( $args );
-	$services_residential = $residential_query->posts;
 
-	if ( $services_residential ) {
-		$args = array(
-			'services' => $services_residential,
-		);
-		get_template_part( 'template-parts/services/service_list', '', $args );
-	}
+	?>
+
+	<?php
+	get_template_part( 'template-parts/content/entry', 'page' );
 	?>
 
 	<?php
@@ -59,7 +45,7 @@ $taxonomy = 'service_category';
 	// Individual Residential Services.
 	//
 	?>
-<?php if ( have_rows( 'services_individual' ) ) : ?>
+<?php if ( have_rows( 'services_individual' ) && get_field('show_individual_services') ) : ?>
 		<?php while ( have_rows( 'services_individual' ) ) : the_row(); ?>
 	<section id="individual" class="individual-services services services-section">
 		<header class="section-header">
@@ -83,18 +69,16 @@ $taxonomy = 'service_category';
 	<?php endwhile; ?>
 	<?php endif; ?>
 
-	<?php get_template_part( 'template-parts/components/senske_promise' ); ?>
-
 	<?php
 	// Senske Difference.
-	if ( have_rows( 'senske_difference' ) ) : ?>
+	if ( have_rows( 'senske_difference' ) && get_field('show_general_content') ) : ?>
 		<?php while ( have_rows( 'senske_difference' ) ) : the_row(); ?>
 		<section class="services-section">
 		<header class="section-header">
 			<?php if ( get_sub_field('subtitle') ) : ?>
 			<h4 class="small subtitle"><?php echo get_sub_field('subtitle') ?></h4>
 			<?php endif; ?>
-			<h3 class="section-title underlined"><?php echo get_sub_field('title') . ' ' . $location_name_full; ?></h3>
+			<h3 class="section-title underlined"><?php echo get_sub_field('title')  ?></h3>
 		</header>
 		<?php the_sub_field('content'); ?>
 		</section>
@@ -107,14 +91,14 @@ $taxonomy = 'service_category';
 	// Individual Commercial Services.
 	//
 	?>
-	<?php if ( have_rows( 'services_commercial' ) ) : ?>
+	<?php if ( have_rows( 'services_commercial' ) && get_field('show_individual_services') ) : ?>
 		<?php while ( have_rows( 'services_commercial' ) ) : the_row(); ?>
 		<section id="commercial" class="commercial-services services services-section">
 			<header >
 				<?php if ( get_sub_field('sub_title') ) : ?>
 				<h4 class="small subtitle"><?php echo get_sub_field('sub_title') ?></h4>
 				<?php endif; ?>
-				<h3 class="section-title underlined"><?php echo get_sub_field('title') . ' ' . $location_name_full; ?></h3>
+				<h3 class="section-title underlined"><?php echo get_sub_field('title')  ?></h3>
 			</header>
 			<?php
 
@@ -139,7 +123,7 @@ $taxonomy = 'service_category';
 				<?php if ( get_sub_field('subtitle') ) : ?>
 				<h4 class="small subtitle"><?php echo get_sub_field('subtitle') ?></h4>
 				<?php endif; ?>
-				<h3 class="section-title underlined"><?php echo get_sub_field('title') . ' ' . $location_name_full; ?></h3>
+				<h3 class="section-title underlined"><?php echo get_sub_field('title')  ?></h3>
 			</header>
 			<?php
 			get_template_part( 'template-parts/components/yotpo' );

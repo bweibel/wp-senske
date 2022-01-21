@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
@@ -17,7 +17,7 @@ use WP_Query;
 
 get_header();
 
-wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-blog' );
+senske()->print_styles( 'senske-content', 'senske-blog' );
 
 get_template_part( 'template-parts/content/page_header' );
 
@@ -30,9 +30,7 @@ $args = array(
 $featured_query = new WP_Query( $args );
 
 if( $featured_query->posts ) :
-
 	get_template_part( 'template-parts/blog/featured_article', 'home', array('article' => $featured_query->posts[0]) );
-
 endif;
 
 ?>
@@ -64,7 +62,7 @@ endif;
 			if ( ! is_singular() ) {
 				// get_template_part( 'template-parts/content/pagination' );
 			} else {
-			get_template_part( 'template-parts/content/error' );
+				get_template_part( 'template-parts/content/error' );
 			}
 		endif;
 		?>

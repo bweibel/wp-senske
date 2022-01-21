@@ -2,12 +2,12 @@
 /**
  * Template part for displaying a locations's neighbors
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
 
-wp_enqueue_script('wp-rig-serviceslist');
+wp_enqueue_script('senske-serviceslist');
 
 $services = $args['services'];
 $location = $args['location'];
@@ -26,6 +26,7 @@ $full_content = $args['full_content'];
 				'full_content' => false,
 				'location'     => $location,
 			);
+			// If this list has a location, use the location specific service items
 			if ( $location ) {
 				get_template_part( 'template-parts/services/service_item-location', '', $args );
 			} else {

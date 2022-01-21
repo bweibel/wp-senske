@@ -2,11 +2,12 @@
 /**
  * Template part for displaying a locations content
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
 use WP_Query;
+
 
 $location_name = get_field('short_title');
 $location_name_full = get_field('full_title');
@@ -83,7 +84,7 @@ $yotpo_id = get_field('yotpo_id');
 
 	<?php if ( have_rows( 'resources' ) ) : ?>
 		<?php while ( have_rows( 'resources' ) ) : the_row(); ?>
-		<section class="resources location-section fullwidth" id="resources">
+		<section class="resources location-section" id="resources">
 			<header>
 				<?php if ( get_sub_field('sub_title') ) : ?>
 					<h4 class="small"><?php echo get_sub_field('sub_title') ?></h4>
@@ -104,7 +105,6 @@ $yotpo_id = get_field('yotpo_id');
 
 
 	<?php get_template_part( 'template-parts/acf/flexible', get_post_type(), array( 'row_group' => 'page_blocks' ) ); ?>
-
 
 
 <?php

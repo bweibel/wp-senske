@@ -2,7 +2,7 @@
 /**
  * WP_Rig\WP_Rig\Localization\Component class
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig\Localization;
@@ -59,6 +59,6 @@ class Component implements Component_Interface {
 		 * should not bundle translations in your theme. In that case you also need to get rid of the
 		 * second parameter in the following function call.
 		 */
-		load_theme_textdomain( 'wp-rig', $this->translation_directory );
+		load_theme_textdomain( 'senske', $this->translation_directory );
 	}
 }

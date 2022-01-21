@@ -2,7 +2,7 @@
 /**
  * WP_Rig\WP_Rig\Nav_Menus\Component class
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig\Nav_Menus;
@@ -21,8 +21,8 @@ use function wp_nav_menu;
  * Class for managing navigation menus.
  *
  * Exposes template tags:
- * * `wp_rig()->is_primary_nav_menu_active()`
- * * `wp_rig()->display_primary_nav_menu( array $args = array() )`
+ * * `senske()->is_primary_nav_menu_active()`
+ * * `senske()->display_primary_nav_menu( array $args = array() )`
  */
 class Component implements Component_Interface, Templating_Component_Interface {
 
@@ -47,7 +47,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	}
 
 	/**
-	 * Gets template tags to expose as methods on the Template_Tags class instance, accessible through `wp_rig()`.
+	 * Gets template tags to expose as methods on the Template_Tags class instance, accessible through `senske()`.
 	 *
 	 * @return array Associative array of $method_name => $callback_info pairs. Each $callback_info must either be
 	 *               a callable or an array with key 'callable'. This approach is used to reserve the possibility of
@@ -68,8 +68,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	public function action_register_nav_menus() {
 		register_nav_menus(
 			array(
-				static::PRIMARY_NAV_MENU_SLUG => esc_html__( 'Primary', 'wp-rig' ),
-				static::MOBILE_NAV_MENU_SLUG => esc_html__( 'Mobile', 'wp-rig' ),
+				static::PRIMARY_NAV_MENU_SLUG => esc_html__( 'Primary', 'senske' ),
+				static::MOBILE_NAV_MENU_SLUG => esc_html__( 'Mobile', 'senske' ),
 			)
 		);
 	}

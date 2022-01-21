@@ -2,14 +2,14 @@
 /**
  * Template part for displaying a blog post card
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
 
 $theme = get_template_directory_uri();
 
-wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-post-cards' );
+senske()->print_styles( 'senske-content', 'senske-post-cards' );
 
 ?>
 
@@ -18,14 +18,14 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-post-cards' );
 	<div class="thumbnail">
 	<?php
 		if( has_post_thumbnail() ){
-			the_post_thumbnail( 'wp-rig-featured', array( 'class' => 'entry-image' ) );
+			the_post_thumbnail( 'senske-featured', array( 'class' => 'entry-image' ) );
 		} else {
 			echo '<img class="entry-image" src="' . $theme . '/assets/images/placeholder-header-image.jpg" alt="A Grass lawn" />';
 		}
 	?>
 	</div>
 	<?php
-	the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+	the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
 	?>
 
 </article>

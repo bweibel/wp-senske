@@ -3,7 +3,7 @@
 /**
  * Template part for displaying an acf Google Map
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;

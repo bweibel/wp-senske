@@ -2,7 +2,7 @@
 /**
  * Template part for displaying the promotions flyout
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
@@ -49,7 +49,7 @@ $promo_query = new WP_Query( $args );
 				endwhile;
 			else :
 		?>
-			<p>No active Promos at this time</p>
+			<a href="/why-senske/senske-promise/#referral">Share us with Friends & Family and you'll get $25</a>
 			<?php endif; ?>
 			<?php wp_reset_postdata(); ?>
 	</ul>
@@ -57,7 +57,7 @@ $promo_query = new WP_Query( $args );
 
 <script>
 	const promoButton = document.getElementById('promos-toggle');
-	const promoTab= document.getElementById('promos-tab');
+	const promoTab = document.getElementById('promos-tab');
 	addClickToggle( promoButton );
 
 	function addClickToggle(el, target=el ) {
@@ -69,8 +69,17 @@ $promo_query = new WP_Query( $args );
 	function promoClickHandler( target ) {
 		if (! target.classList.contains( 'open' ) ) {
 			target.classList.add( 'open' );
+			document.addEventListener( 'scroll', promoScrollHandler );
 		} else {
 			target.classList.remove( 'open' );
+		}
+	}
+
+	function promoScrollHandler( ) {
+		console.log("scroll");
+		if ( promoTab.classList.contains( 'open' ) ) {
+			promoTab.classList.remove( 'open' );
+			document.removeEventListener( 'scroll', promoScrollHandler );
 		}
 	}
 

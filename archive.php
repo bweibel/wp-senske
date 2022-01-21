@@ -4,22 +4,23 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
 
 get_header();
 
-wp_rig()->print_styles( 'wp-rig-content' );
+senske()->print_styles( 'senske-content' );
+
+get_template_part( 'template-parts/content/page_header' );
+
 
 ?>
 	<main id="primary" class="site-main">
 		<?php
 		if (function_exists('rank_math_the_breadcrumbs')) rank_math_the_breadcrumbs();
 		if ( have_posts() ) {
-
-			get_template_part( 'template-parts/content/page_header' );
 
 			while ( have_posts() ) {
 				the_post();

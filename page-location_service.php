@@ -5,14 +5,14 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
 
 get_header();
 
-wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-service-landing' );
+senske()->print_styles( 'senske-content', 'senske-service-landing' );
 
 $parent_location = get_field( 'parent_location' )[0];
 $parent_service = get_field( 'parent_service' )[0];
@@ -36,6 +36,8 @@ $yotpo_id = get_field('yotpo_id', $parent_location->ID);
 		}
 
 		?>
+		<a name="fullreviews"></a>
+		<div class="yotpo yotpo-main-widget" data-product-id="<?php echo $yotpo_id; ?>"></div>
 	</main><!-- #primary -->
 
 

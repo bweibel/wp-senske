@@ -4,7 +4,7 @@
  *
  * @link https://github.com/xwp/pwa-wp#offline--500-error-handling
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
@@ -14,7 +14,7 @@ add_filter( 'has_nav_menu', '__return_false' );
 
 get_header();
 
-wp_rig()->print_styles( 'wp-rig-content' );
+senske()->print_styles( 'senske-content' );
 
 ?>
 	<main id="primary" class="site-main">

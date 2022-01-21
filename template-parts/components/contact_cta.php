@@ -2,7 +2,7 @@
 /**
  * Template part for displaying a button
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
@@ -13,6 +13,6 @@ namespace WP_Rig\WP_Rig;
 
 <div class="get-in-touch">
 	<h3 class="title">How Can We Help You?</h3>
-	<a class="button" href="/contact">Lets Get In Touch</a>
+	<a class="button" href="/contact">Let's Get In Touch</a>
 </div>
 

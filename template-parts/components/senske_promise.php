@@ -2,7 +2,7 @@
 /**
  * Template part for displaying the senske promise
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
@@ -17,7 +17,7 @@ namespace WP_Rig\WP_Rig;
 			<h3 class="section-title underlined">The Senske Promise</h3>
 		</header>
 		<p>At Senske, customer satisfaction is our top priority. Our work is completed when you're satisfied with a job well done. In short, we're happy when you're happy.</p>
-		<p>Senske offers full service Lawn Care, Tree Care and Pest Control year around. We serve parts of your community from Utah, Idaho, and Washington. Plans include a comprehensive 8-round lawn care program, a year-round pest control program, and a year-round tree care program. Senske ensures that you experience the beauty of your property and the peace of mind knowing that your home is pest-free.</p>
+		<p>Senske offers full service Lawn Care, Tree Care and Pest Control year around. We serve parts of your community from Colorado, Utah, Idaho, and Washington. Plans include a comprehensive lawn care program, a year-round pest control program, and a year-round tree care program. Senske ensures that you experience the beauty of your property and the peace of mind knowing that your home is pest-free.</p>
 		<p><a href="/request-estimate/">Request a free estimate</a> for any one of our services and we will be in touch shortly.</p>
 	</div>
 	<div class="seal column size-1">

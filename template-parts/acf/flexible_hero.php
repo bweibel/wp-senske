@@ -2,7 +2,7 @@
 /**
  * Template part for displaying a hero image area
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;

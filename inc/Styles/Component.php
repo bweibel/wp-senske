@@ -2,14 +2,14 @@
 /**
  * WP_Rig\WP_Rig\Styles\Component class
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig\Styles;
 
 use WP_Rig\WP_Rig\Component_Interface;
 use WP_Rig\WP_Rig\Templating_Component_Interface;
-use function WP_Rig\WP_Rig\wp_rig;
+use function WP_Rig\WP_Rig\senske;
 use function add_action;
 use function add_filter;
 use function wp_enqueue_style;
@@ -36,7 +36,7 @@ use function add_query_arg;
  * Class for managing stylesheets.
  *
  * Exposes template tags:
- * * `wp_rig()->print_styles()`
+ * * `senske()->print_styles()`
  */
 class Component implements Component_Interface, Templating_Component_Interface {
 
@@ -81,7 +81,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	}
 
 	/**
-	 * Gets template tags to expose as methods on the Template_Tags class instance, accessible through `wp_rig()`.
+	 * Gets template tags to expose as methods on the Template_Tags class instance, accessible through `senske()`.
 	 *
 	 * @return array Associative array of $method_name => $callback_info pairs. Each $callback_info must either be
 	 *               a callable or an array with key 'callable'. This approach is used to reserve the possibility of
@@ -103,7 +103,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		// Enqueue Google Fonts.
 		$google_fonts_url = $this->get_google_fonts_url();
 		if ( ! empty( $google_fonts_url ) ) {
-			wp_enqueue_style( 'wp-rig-fonts', $google_fonts_url, array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
+			wp_enqueue_style( 'senske-fonts', $google_fonts_url, array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
 		}
 
 		$css_uri = get_theme_file_uri( '/assets/css/' );
@@ -114,7 +114,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		$css_files = $this->get_css_files();
 		foreach ( $css_files as $handle => $data ) {
 			$src     = $css_uri . $data['file'];
-			$version = wp_rig()->get_asset_version( $css_dir . $data['file'] );
+			$version = senske()->get_asset_version( $css_dir . $data['file'] );
 
 			/*
 			 * Enqueue global stylesheets immediately and register the other ones for later use
@@ -198,7 +198,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 * @return array URLs to print for resource hints.
 	 */
 	public function filter_resource_hints( array $urls, string $relation_type ) : array {
-		if ( 'preconnect' === $relation_type && wp_style_is( 'wp-rig-fonts', 'queue' ) ) {
+		if ( 'preconnect' === $relation_type && wp_style_is( 'senske-fonts', 'queue' ) ) {
 			$urls[] = array(
 				'href' => 'https://fonts.gstatic.com',
 				'crossorigin',
@@ -234,7 +234,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				$is_valid = isset( $css_files[ $handle ] ) && ! $css_files[ $handle ]['global'];
 				if ( ! $is_valid ) {
 					/* translators: %s: stylesheet handle */
-					_doing_it_wrong( __CLASS__ . '::print_styles()', esc_html( sprintf( __( 'Invalid theme stylesheet handle: %s', 'wp-rig' ), $handle ) ), 'WP Rig 2.0.0' );
+					_doing_it_wrong( __CLASS__ . '::print_styles()', esc_html( sprintf( __( 'Invalid theme stylesheet handle: %s', 'senske' ), $handle ) ), 'Senske 2.0.0' );
 				}
 				return $is_valid;
 			}
@@ -253,19 +253,19 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 * Using this technique generally improves performance, however may not be preferred under certain circumstances.
 	 * For example, since AMP will include all style rules directly in the head, it must not be used in that context.
 	 * By default, this method returns true unless the page is being served in AMP. The
-	 * {@see 'wp_rig_preloading_styles_enabled'} filter can be used to tweak the return value.
+	 * {@see 'senske_preloading_styles_enabled'} filter can be used to tweak the return value.
 	 *
 	 * @return bool True if preloading stylesheets and injecting them is enabled, false otherwise.
 	 */
 	protected function preloading_styles_enabled() {
-		$preloading_styles_enabled = ! wp_rig()->is_amp();
+		$preloading_styles_enabled = ! senske()->is_amp();
 
 		/**
 		 * Filters whether to preload stylesheets and inject their link tags within the page content.
 		 *
 		 * @param bool $preloading_styles_enabled Whether preloading stylesheets and injecting them is enabled.
 		 */
-		return apply_filters( 'wp_rig_preloading_styles_enabled', $preloading_styles_enabled );
+		return apply_filters( 'senske_preloading_styles_enabled', $preloading_styles_enabled );
 	}
 
 	/**
@@ -279,75 +279,82 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		}
 
 		$css_files = array(
-			'wp-rig-global'     => array(
+			'senske-global'     => array(
 				'file'   => 'global.min.css',
 				'global' => true,
 			),
-			'wp-rig-comments'   => array(
+			'senske-comments'   => array(
 				'file'             => 'comments.min.css',
 				'preload_callback' => function() {
 					return ! post_password_required() && is_singular() && ( comments_open() || get_comments_number() );
 				},
 			),
-			'wp-rig-content'    => array(
+			'senske-content'    => array(
 				'file'             => 'content.min.css',
 				'preload_callback' => '__return_true',
 			),
-			'wp-rig-sidebar'    => array(
+			'senske-sidebar'    => array(
 				'file'             => 'sidebar.min.css',
 				'preload_callback' => function() {
-					return wp_rig()->is_primary_sidebar_active();
+					return senske()->is_primary_sidebar_active();
 				},
 			),
-			'wp-rig-widgets'    => array(
+			'senske-widgets'    => array(
 				'file'             => 'widgets.min.css',
 				'preload_callback' => function() {
-					return wp_rig()->is_primary_sidebar_active();
+					return senske()->is_primary_sidebar_active();
 				},
 			),
-			'wp-rig-front-page' => array(
+			'senske-front-page' => array(
 				'file' => 'front-page.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'front-page.php' === basename( $template );
 				},
 			),
-			'wp-rig-location' => array(
+			'senske-location' => array(
 				'file' => 'location.min.css',
 				'preload_callback' => function() {
 					global $template;
-					return 'single-senske_location.php' === basename( $template );
+					return 'page-location.php' === basename( $template );
 				},
 			),
-			'wp-rig-services' => array(
+			'senske-service-landing' => array(
+				'file' => 'service-landing.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'page-service_landing.php' === basename( $template );
+				},
+			),
+			'senske-services' => array(
 				'file' => 'services.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'page-services.php' === basename( $template );
 				},
 			),
-			'wp-rig-flexslider' => array(
+			'senske-flexslider' => array(
 				'file' => 'flexslider.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'singe-senske_location.php' === basename( $template );
 				},
 			),
-			'wp-rig-blog' => array(
+			'senske-blog' => array(
 				'file' => 'blog.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'home.php' === basename( $template );
 				},
 			),
-			'wp-rig-post-cards' => array(
+			'senske-post-cards' => array(
 				'file' => 'post-cards.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'true';
 				},
 			),
-			'wp-rig-promo' => array(
+			'senske-promo' => array(
 				'file' => 'promo.min.css',
 				'preload_callback' => function() {
 					global $template;
@@ -366,7 +373,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		 *                         enqueued instead of just being registered) and 'preload_callback' (callback)
 		 *                         function determining whether the file should be preloaded for the current request).
 		 */
-		$css_files = apply_filters( 'wp_rig_css_files', $css_files );
+		$css_files = apply_filters( 'senske_css_files', $css_files );
 
 		$this->css_files = array();
 		foreach ( $css_files as $handle => $data ) {
@@ -411,7 +418,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		 *
 		 * @param array $google_fonts Associative array of $font_name => $font_variants pairs.
 		 */
-		$this->google_fonts = (array) apply_filters( 'wp_rig_google_fonts', $google_fonts );
+		$this->google_fonts = (array) apply_filters( 'senske_google_fonts', $google_fonts );
 
 		return $this->google_fonts;
 	}

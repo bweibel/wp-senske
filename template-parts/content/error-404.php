@@ -2,7 +2,7 @@
 /**
  * Template part for displaying the page content when a 404 error has occurred
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
@@ -20,18 +20,18 @@ $theme = get_template_directory_uri();
 
 
 		<p>
-			<?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'wp-rig' ); ?>
+			<?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'senske' ); ?>
 		</p>
 
 		<?php
 		get_search_form();
 
-		wp_rig()->print_styles( 'wp-rig-widgets' );
+		senske()->print_styles( 'senske-widgets' );
 		the_widget( 'WP_Widget_Recent_Posts' );
 		?>
 
 		<div class="widget widget_categories">
-			<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'wp-rig' ); ?></h2>
+			<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'senske' ); ?></h2>
 			<ul>
 			<?php
 			wp_list_categories(

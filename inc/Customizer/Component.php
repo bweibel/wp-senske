@@ -2,13 +2,13 @@
 /**
  * WP_Rig\WP_Rig\Customizer\Component class
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig\Customizer;
 
 use WP_Rig\WP_Rig\Component_Interface;
-use function WP_Rig\WP_Rig\wp_rig;
+use function WP_Rig\WP_Rig\senske;
 use WP_Customize_Manager;
 use function add_action;
 use function bloginfo;
@@ -75,7 +75,7 @@ class Component implements Component_Interface {
 		$wp_customize->add_section(
 			'theme_options',
 			array(
-				'title'    => __( 'Theme Options', 'wp-rig' ),
+				'title'    => __( 'Theme Options', 'senske' ),
 				'priority' => 130, // Before Additional CSS.
 			)
 		);
@@ -86,10 +86,10 @@ class Component implements Component_Interface {
 	 */
 	public function action_enqueue_customize_preview_js() {
 		wp_enqueue_script(
-			'wp-rig-customizer',
+			'senske-customizer',
 			get_theme_file_uri( '/assets/js/customizer.min.js' ),
 			array( 'customize-preview' ),
-			wp_rig()->get_asset_version( get_theme_file_path( '/assets/js/customizer.min.js' ) ),
+			senske()->get_asset_version( get_theme_file_path( '/assets/js/customizer.min.js' ) ),
 			true
 		);
 	}

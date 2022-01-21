@@ -7,7 +7,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
@@ -21,7 +21,7 @@ if ( post_password_required() ) {
 	return;
 }
 
-wp_rig()->print_styles( 'wp-rig-comments' );
+senske()->print_styles( 'senske-comments' );
 
 ?>
 <div id="comments" class="comments-area">
@@ -35,13 +35,13 @@ wp_rig()->print_styles( 'wp-rig-comments' );
 			if ( 1 === $comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'wp-rig' ),
+					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'senske' ),
 					'<span>' . get_the_title() . '</span>' // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				);
 			} else {
 				printf(
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'wp-rig' ) ),
+					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'senske' ) ),
 					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					number_format_i18n( $comment_count ),
 					'<span>' . get_the_title() . '</span>' // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -52,12 +52,12 @@ wp_rig()->print_styles( 'wp-rig-comments' );
 
 		<?php the_comments_navigation(); ?>
 
-		<?php wp_rig()->the_comments(); ?>
+		<?php senske()->the_comments(); ?>
 
 		<?php
 		if ( ! comments_open() ) {
 			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'wp-rig' ); ?></p>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'senske' ); ?></p>
 			<?php
 		}
 	}

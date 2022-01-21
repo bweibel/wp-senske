@@ -2,13 +2,13 @@
 /**
  * WP_Rig\WP_Rig\Accessibility\Component class
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig\ContactFormTweaks;
 
 use WP_Rig\WP_Rig\Component_Interface;
-use function WP_Rig\WP_Rig\wp_rig;
+use function WP_Rig\WP_Rig\senske;
 
 
 /**

@@ -2,7 +2,7 @@
 /**
  * Template part for displaying a Service Program Card
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
@@ -25,14 +25,14 @@ $price_dollars = $price_arr[0];
 $price_cents = $price_arr[1];
 
 $card_class = 'program card';
-if ( $popular ) {
+if ( 'true' === $popular ) {
 	$card_class = $card_class . ' popular';
 }
 ?>
 
 <article <?php post_class( $card_class  ); ?>>
 
-	<?php if ( $popular ) : ?>
+	<?php if ( 'true' === $popular ) : ?>
 		<div class="popular-tag">Most Popular</div>
 	<?php endif; ?>
 	<header>
@@ -57,7 +57,7 @@ if ( $popular ) {
 			<span class="small"><?php echo $program_fields['price_text']; ?></span>
 		</div>
 
-		<a href="<?php echo get_permalink($program) ?>">Learn More</a>
+		<!-- <a href="<?php echo get_permalink($program) ?>">Learn More</a> -->
 	<?php
 	endif;
 	?>

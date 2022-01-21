@@ -2,7 +2,7 @@
 /**
  * Template part for displaying Resources in a list
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;

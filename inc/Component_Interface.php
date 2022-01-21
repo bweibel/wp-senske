@@ -2,7 +2,7 @@
 /**
  * WP_Rig\WP_Rig\Component_Interface interface
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;

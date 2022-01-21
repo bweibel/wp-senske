@@ -2,7 +2,7 @@
 /**
  * Template part for displaying a locations's card
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
@@ -23,7 +23,7 @@ $theme = get_template_directory_uri();
 	<div class="thumbnail">
 		<?php
 			if( get_the_post_thumbnail( $article ) ) {
-				$image = get_the_post_thumbnail( $article, 'wp-rig-content', array( 'class' => 'featured-image' ) );
+				$image = get_the_post_thumbnail( $article, 'senske-content', array( 'class' => 'featured-image' ) );
 				print_r( $image );
 				$size = 'full';
 			} else {

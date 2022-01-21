@@ -2,13 +2,13 @@
 /**
  * Template part for displaying a slider of resources
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
 
-wp_enqueue_script('wp-rig-resourcelist');
-wp_rig()->print_styles( 'wp-rig-flexslider' );
+wp_enqueue_script('senske-resourcelist');
+senske()->print_styles( 'senske-flexslider' );
 
 
 

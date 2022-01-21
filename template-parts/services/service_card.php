@@ -2,7 +2,7 @@
 /**
  * Template part for displaying a service Card
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;

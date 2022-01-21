@@ -2,13 +2,13 @@
 /**
  * WP_Rig\WP_Rig\Accessibility\Component class
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig\Accessibility;
 
 use WP_Rig\WP_Rig\Component_Interface;
-use function WP_Rig\WP_Rig\wp_rig;
+use function WP_Rig\WP_Rig\senske;
 use WP_Post;
 use function add_action;
 use function add_filter;
@@ -48,26 +48,26 @@ class Component implements Component_Interface {
 	public function action_enqueue_navigation_script() {
 
 		// If the AMP plugin is active, return early.
-		if ( wp_rig()->is_amp() ) {
+		if ( senske()->is_amp() ) {
 			return;
 		}
 
 		// Enqueue the navigation script.
 		wp_enqueue_script(
-			'wp-rig-navigation',
+			'senske-navigation',
 			get_theme_file_uri( '/assets/js/navigation.min.js' ),
 			array(),
-			wp_rig()->get_asset_version( get_theme_file_path( '/assets/js/navigation.min.js' ) ),
+			senske()->get_asset_version( get_theme_file_path( '/assets/js/navigation.min.js' ) ),
 			false
 		);
-		wp_script_add_data( 'wp-rig-navigation', 'async', true );
-		wp_script_add_data( 'wp-rig-navigation', 'precache', true );
+		wp_script_add_data( 'senske-navigation', 'async', true );
+		wp_script_add_data( 'senske-navigation', 'precache', true );
 		wp_localize_script(
-			'wp-rig-navigation',
-			'wpRigScreenReaderText',
+			'senske-navigation',
+			'senskeScreenReaderText',
 			array(
-				'expand'   => __( 'Expand child menu', 'wp-rig' ),
-				'collapse' => __( 'Collapse child menu', 'wp-rig' ),
+				'expand'   => __( 'Expand child menu', 'senske' ),
+				'collapse' => __( 'Collapse child menu', 'senske' ),
 			)
 		);
 	}
@@ -85,7 +85,7 @@ class Component implements Component_Interface {
 	public function action_print_skip_link_focus_fix() {
 
 		// If the AMP plugin is active, return early.
-		if ( wp_rig()->is_amp() ) {
+		if ( senske()->is_amp() ) {
 			return;
 		}
 

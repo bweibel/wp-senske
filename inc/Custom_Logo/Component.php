@@ -2,7 +2,7 @@
 /**
  * WP_Rig\WP_Rig\Custom_Logo\Component class
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig\Custom_Logo;
@@ -42,7 +42,7 @@ class Component implements Component_Interface {
 		add_theme_support(
 			'custom-logo',
 			apply_filters(
-				'wp_rig_custom_logo_args',
+				'senske_custom_logo_args',
 				array(
 					'height'      => 100,
 					'width'       => 320,

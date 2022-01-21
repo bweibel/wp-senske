@@ -4,14 +4,14 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
 
 get_header();
 
-wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-location' );
+senske()->print_styles( 'senske-content', 'senske-location' );
 
 $parent_location = get_field( 'parent_location' )[0];
 $parent_service = get_field( 'parent_service' )[0];
@@ -24,9 +24,7 @@ $yotpo_id = get_field('yotpo_id', $parent_location->ID);
 get_template_part( 'template-parts/content/page_header' );
 
 ?>
-asdfasdfa
 	<main id="primary" class="site-main">
-asdfasdfasdf
 		<?php
 		while ( have_posts() ) {
 			the_post();

@@ -2,7 +2,7 @@
 /**
  * Template part for displaying a post's comment and edit links
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
@@ -18,7 +18,7 @@ namespace WP_Rig\WP_Rig;
 				sprintf(
 					wp_kses(
 						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'wp-rig' ),
+						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'senske' ),
 						array(
 							'span' => array(
 								'class' => array(),
@@ -37,7 +37,7 @@ namespace WP_Rig\WP_Rig;
 		sprintf(
 			wp_kses(
 				/* translators: %s: post title */
-				__( 'Edit <span class="screen-reader-text">%s</span>', 'wp-rig' ),
+				__( 'Edit <span class="screen-reader-text">%s</span>', 'senske' ),
 				array(
 					'span' => array(
 						'class' => array(),

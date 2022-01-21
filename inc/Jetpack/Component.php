@@ -2,7 +2,7 @@
 /**
  * WP_Rig\WP_Rig\Jetpack\Component class
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig\Jetpack;
@@ -73,7 +73,7 @@ class Component implements Component_Interface {
 			'jetpack-content-options',
 			array(
 				'post-details' => array(
-					'stylesheet' => 'wp-rig-content',
+					'stylesheet' => 'senske-content',
 					'date'       => '.posted-on',
 					'categories' => '.category-links',
 					'tags'       => '.tag-links',

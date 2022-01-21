@@ -2,7 +2,7 @@
 /**
  * Template part for displaying the custom header media
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;

@@ -2,7 +2,7 @@
 /**
  * Template part for displaying Yotpo
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;

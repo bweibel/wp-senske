@@ -2,7 +2,7 @@
 /**
  * WP_Rig\WP_Rig\Post_Thumbnails\Component class
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig\Post_Thumbnails;
@@ -47,7 +47,7 @@ class Component implements Component_Interface {
 	 * Adds custom image sizes.
 	 */
 	public function action_add_image_sizes() {
-		add_image_size( 'wp-rig-content', 1280, 480, true );
-		add_image_size( 'wp-rig-featured', 640, 240, true );
+		add_image_size( 'senske-content', 1280, 480, true );
+		add_image_size( 'senske-featured', 640, 240, true );
 	}
 }

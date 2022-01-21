@@ -2,7 +2,7 @@
 /**
  * WP_Rig\WP_Rig\Social_Media\Component class
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig\Custom_Background;
@@ -41,7 +41,7 @@ class Component implements Social_Media {
 		add_theme_support(
 			'social_media',
 			apply_filters(
-				'wp_rig_social_media_args',
+				'senske_social_media_args',
 				array()
 			)
 		);

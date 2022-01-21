@@ -2,14 +2,14 @@
 /**
  * WP_Rig\WP_Rig\Comments\Component class
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig\Comments;
 
 use WP_Rig\WP_Rig\Component_Interface;
 use WP_Rig\WP_Rig\Templating_Component_Interface;
-use function WP_Rig\WP_Rig\wp_rig;
+use function WP_Rig\WP_Rig\senske;
 use function add_action;
 use function is_singular;
 use function comments_open;
@@ -27,7 +27,7 @@ use function esc_html_e;
  * Class for managing comments UI.
  *
  * Exposes template tags:
- * * `wp_rig()->the_comments( array $args = array() )`
+ * * `senske()->the_comments( array $args = array() )`
  *
  * @link https://wordpress.org/plugins/amp/
  */
@@ -50,7 +50,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	}
 
 	/**
-	 * Gets template tags to expose as methods on the Template_Tags class instance, accessible through `wp_rig()`.
+	 * Gets template tags to expose as methods on the Template_Tags class instance, accessible through `senske()`.
 	 *
 	 * @return array Associative array of $method_name => $callback_info pairs. Each $callback_info must either be
 	 *               a callable or an array with key 'callable'. This approach is used to reserve the possibility of
@@ -68,7 +68,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	public function action_enqueue_comment_reply_script() {
 
 		// If the AMP plugin is active, return early.
-		if ( wp_rig()->is_amp() ) {
+		if ( senske()->is_amp() ) {
 			return;
 		}
 
@@ -114,7 +114,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			)
 		);
 
-		$amp_live_list = wp_rig()->using_amp_live_list_comments();
+		$amp_live_list = senske()->using_amp_live_list_comments();
 
 		if ( $amp_live_list ) {
 			$comment_order     = get_option( 'comment_order' );
@@ -146,7 +146,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 
 			?>
 				<div update>
-					<button class="button" on="tap:amp-live-comments-list-<?php the_ID(); ?>.update"><?php esc_html_e( 'New comment(s)', 'wp-rig' ); ?></button>
+					<button class="button" on="tap:amp-live-comments-list-<?php the_ID(); ?>.update"><?php esc_html_e( 'New comment(s)', 'senske' ); ?></button>
 				</div>
 			</amp-live-list>
 			<?php

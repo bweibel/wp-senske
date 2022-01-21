@@ -2,7 +2,7 @@
 /**
  * WP_Rig\WP_Rig\Custom_Header\Component class
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig\Custom_Header;
@@ -46,7 +46,7 @@ class Component implements Component_Interface {
 		add_theme_support(
 			'custom-header',
 			apply_filters(
-				'wp_rig_custom_header_args',
+				'senske_custom_header_args',
 				array(
 					'default-image'      => '',
 					'default-text-color' => '000000',

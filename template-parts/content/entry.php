@@ -2,7 +2,7 @@
 /**
  * Template part for displaying a post
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
@@ -17,7 +17,7 @@ namespace WP_Rig\WP_Rig;
 		get_template_part( 'template-parts/content/entry_header', get_post_type() );
 		get_template_part( 'template-parts/content/entry_summary', get_post_type() );
 	} else {
-		// Standard Content and Blog Page have page
+		// Standard Content and Blog Page have page headers
 		if ( ! get_field('page_header_background') || is_singular( 'post' ) ) {
 			get_template_part( 'template-parts/content/entry_header', get_post_type() );
 		}
@@ -26,7 +26,9 @@ namespace WP_Rig\WP_Rig;
 		get_template_part( 'template-parts/acf/flexible', get_post_type(), array( 'row_group' => 'page_blocks' ) );
 	}
 
-	get_template_part( 'template-parts/content/entry_footer', get_post_type() );
+	if ( is_search() || ! is_singular( get_post_type() ) ) {
+		get_template_part( 'template-parts/content/entry_footer', get_post_type() );
+	}
 	?>
 </article><!-- #post-<?php the_ID(); ?> -->
 

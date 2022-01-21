@@ -1,8 +1,8 @@
 <?php
 /**
- * The `wp_rig()` function.
+ * The `senske()` function.
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
@@ -14,7 +14,7 @@ namespace WP_Rig\WP_Rig;
  *
  * @return Template_Tags Template tags instance exposing template tag methods.
  */
-function wp_rig() : Template_Tags {
+function senske() : Template_Tags {
 	static $theme = null;
 
 	if ( null === $theme ) {

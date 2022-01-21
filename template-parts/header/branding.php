@@ -2,7 +2,7 @@
 /**
  * Template part for displaying the header branding
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
@@ -25,11 +25,11 @@ namespace WP_Rig\WP_Rig;
 	?>
 
 	<?php
-	$wp_rig_description = get_bloginfo( 'description', 'display' );
-	if ( $wp_rig_description || is_customize_preview() ) {
+	$senske_description = get_bloginfo( 'description', 'display' );
+	if ( $senske_description || is_customize_preview() ) {
 		?>
 		<p class="site-description">
-			<?php echo $wp_rig_description; /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
+			<?php echo $senske_description; /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
 		</p>
 		<?php
 	}

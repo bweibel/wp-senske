@@ -2,21 +2,24 @@
 /**
  * Template part for displaying a Service Expert Card
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
 
 // Program Data.
 $expert = $args['expert'];
-$expert_fields = get_fields( $program );
 $expert_image = $expert['image'];
 $expert_small_image = $expert['secondary_image'];
+$expert_link = $expert['link'];
 
 $card_class = 'card expert-card';
 ?>
 
 <article <?php post_class( $card_class  ); ?>>
+	<?php if ( $expert_link ) : ?>
+		<a href="<?php echo $expert_link; ?>" class="card-link"></a>
+	<?php endif; ?>
 	<div class="image-box">
 		<img class="card-image" src="<?php echo $expert['image']['url'];?>" alt="<?php echo $expert['image']['alt'];?>">
 	</div>

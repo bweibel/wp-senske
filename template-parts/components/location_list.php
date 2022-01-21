@@ -2,7 +2,7 @@
 /**
  * Template part for displaying a button
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
@@ -15,7 +15,7 @@ namespace WP_Rig\WP_Rig;
     Colorado
     <ul class="state">
         <li><a href="/denver-east">Denver East</a></li>
-        <li><a href="/denver-east">Denver West</a></li>
+        <li><a href="/denver-west">Denver West</a></li>
     </ul>
 </li>
 
@@ -24,7 +24,7 @@ namespace WP_Rig\WP_Rig;
     <ul class="state">
         <li><a href="/boise">Boise</a></li>
         <li><a href="/coeur-dalene">Coeur d'Alene</a></li>
-        <li><a href="/coeur-dalene">Idaho Falls</a></li>
+        <li><a href="/idaho-falls">Idaho Falls</a></li>
     </ul>
 </li>
 <li>
@@ -39,6 +39,7 @@ namespace WP_Rig\WP_Rig;
 <li>
     Washington
     <ul class="state">
+		<li><a href="/clarkston/">Clarkston</a></li>
         <li><a href="/kennewick/">Kennewick</a></li>
         <li><a href="/seattle">Seattle</a></li>
         <li><a href="/spokane/">Spokane</a></li>

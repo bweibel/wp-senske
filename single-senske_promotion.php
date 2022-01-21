@@ -4,14 +4,14 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
 
 get_header();
 
-wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-promo' );
+senske()->print_styles( 'senske-content', 'senske-promo' );
 
 
 ?>
@@ -25,8 +25,12 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-promo' );
 
 	<main id="primary" class="site-main" >
 		<div class="promo-container fullwidth">
-			<div class="hero">
-				</div>
+			<?php
+			if( has_post_thumbnail() ){
+				$style='background-image: url(' . get_the_post_thumbnail_url() . ')';
+			}
+			?>
+			<div class="hero" style="<?php echo $style; ?>"></div>
 			<div class="hero-overlay">
 			<?php
 				if ( get_field('hero_content') ) echo get_field('hero_content');
@@ -47,10 +51,12 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-promo' );
 		?>
 		</div>
 		<?php
-		get_template_part( 'template-parts/components/senske_promise' );
 
 		// Additional Page Content (ACF).
 		get_template_part( 'template-parts/acf/flexible', get_post_type(), array( 'row_group' => 'page_blocks' ) );
+
+		get_template_part( 'template-parts/components/senske_promise' );
+
 		?>
 
 

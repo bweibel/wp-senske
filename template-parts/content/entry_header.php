@@ -2,14 +2,14 @@
 /**
  * Template part for displaying a post's header
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
 
 ?>
 
-<header class="entry-header <?php if(!is_single()) echo 'pull-left'; ?>">
+<header class="entry-header <?php if( !is_single() ) echo 'pull-left'; ?>">
 	<?php
 
 	if ( ! is_search() ) {

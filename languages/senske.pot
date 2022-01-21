@@ -1,0 +1,379 @@
+# Copyright (C) 2022 Senske
+# This file is distributed under the same license as the Senske package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Senske\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: Smartz\n"
+"Report-Msgid-Bugs-To: Senske\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. translators: 1: comment count number, 2: title.
+#: ../senske/comments.php:44
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../senske/comments.php:38
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#: ../senske/comments.php:60
+msgid "Comments are closed."
+msgstr ""
+
+#: ../senske/header.php:53
+msgid "Skip to content"
+msgstr ""
+
+#: ../senske/page-location.php:3
+msgid "Location Page"
+msgstr ""
+
+#: ../senske/page-location_service.php:3
+msgid "Location Service Subpage"
+msgstr ""
+
+#: ../senske/page-review.php:3
+msgid "Location Reveiw Page"
+msgstr ""
+
+#: ../senske/page-services.php:3
+msgid "Services Page"
+msgstr ""
+
+#: ../senske/page-service_landing.php:3
+msgid "Service Landing Page"
+msgstr ""
+
+#: ../senske/sidebar.php:22
+msgid "Asides"
+msgstr ""
+
+#: ../senske/sidebar.php:51
+msgid "Previous"
+msgstr ""
+
+#: ../senske/sidebar.php:52
+msgid "Next"
+msgstr ""
+
+#. translators: 1: required WP version number, 2: required PHP version number, 3: available WP version number, 4: available PHP version number
+#: ../senske/inc/back-compat.php:25
+msgid "Senske requires at least WordPress version %1$s and PHP version %2$s. You are running versions %3$s and %3$s respectively. Please update and try again."
+msgstr ""
+
+#. translators: 1: required WP version number, 2: available WP version number
+#: ../senske/inc/back-compat.php:30
+msgid "Senske requires at least WordPress version %1$s. You are running version %2$s. Please update and try again."
+msgstr ""
+
+#. translators: 1: required PHP version number, 2: available PHP version number
+#: ../senske/inc/back-compat.php:35
+msgid "Senske requires at least PHP version %1$s. You are running version %2$s. Please update and try again."
+msgstr ""
+
+#. translators: 1: classname/type of the variable, 2: interface name
+#: ../senske/inc/Template_Tags.php:54
+msgid "The theme templating component %1$s does not implement the %2$s interface."
+msgstr ""
+
+#. translators: %s: template tag name
+#: ../senske/inc/Template_Tags.php:81
+msgid "The template tag %s does not exist."
+msgstr ""
+
+#. translators: 1: template tag method name, 2: component class name
+#: ../senske/inc/Template_Tags.php:110
+msgid "The template tag method %1$s registered by theme component %2$s must either be a callable or an array."
+msgstr ""
+
+#. translators: 1: template tag method name, 2: component class name
+#: ../senske/inc/Template_Tags.php:121
+msgid "The template tag method %1$s registered by theme component %2$s conflicts with an already registered template tag of the same name."
+msgstr ""
+
+#. translators: 1: classname/type of the variable, 2: interface name
+#: ../senske/inc/Theme.php:58
+msgid "The theme component %1$s does not implement the %2$s interface."
+msgstr ""
+
+#. translators: %s: slug
+#: ../senske/inc/Theme.php:121
+msgid "No theme component with the slug %s exists."
+msgstr ""
+
+#: ../senske/inc/Accessibility/Component.php:69
+msgid "Expand child menu"
+msgstr ""
+
+#: ../senske/inc/Accessibility/Component.php:70
+msgid "Collapse child menu"
+msgstr ""
+
+#: ../senske/inc/Comments/Component.php:149
+msgid "New comment(s)"
+msgstr ""
+
+#: ../senske/inc/Customizer/Component.php:78
+msgid "Theme Options"
+msgstr ""
+
+#: ../senske/inc/Editor/Component.php:65, ../senske/inc/Nav_Menus/Component.php:71
+msgid "Primary"
+msgstr ""
+
+#: ../senske/inc/Editor/Component.php:70
+msgid "Secondary"
+msgstr ""
+
+#: ../senske/inc/Editor/Component.php:75
+msgid "Red"
+msgstr ""
+
+#: ../senske/inc/Editor/Component.php:80
+msgid "Green"
+msgstr ""
+
+#: ../senske/inc/Editor/Component.php:85
+msgid "Blue"
+msgstr ""
+
+#: ../senske/inc/Editor/Component.php:90
+msgid "Yellow"
+msgstr ""
+
+#: ../senske/inc/Editor/Component.php:95
+msgid "Black"
+msgstr ""
+
+#: ../senske/inc/Editor/Component.php:100
+msgid "Grey"
+msgstr ""
+
+#: ../senske/inc/Editor/Component.php:105
+msgid "White"
+msgstr ""
+
+#: ../senske/inc/Editor/Component.php:110
+msgid "Dusty daylight"
+msgstr ""
+
+#: ../senske/inc/Editor/Component.php:115
+msgid "Dusty sun"
+msgstr ""
+
+#: ../senske/inc/Editor/Component.php:132
+msgid "Small"
+msgstr ""
+
+#: ../senske/inc/Editor/Component.php:133
+msgid "S"
+msgstr ""
+
+#: ../senske/inc/Editor/Component.php:138
+msgid "Medium"
+msgstr ""
+
+#: ../senske/inc/Editor/Component.php:139
+msgid "M"
+msgstr ""
+
+#: ../senske/inc/Editor/Component.php:144
+msgid "Large"
+msgstr ""
+
+#: ../senske/inc/Editor/Component.php:145
+msgid "L"
+msgstr ""
+
+#: ../senske/inc/Editor/Component.php:150
+msgid "Larger"
+msgstr ""
+
+#: ../senske/inc/Editor/Component.php:151
+msgid "XL"
+msgstr ""
+
+#: ../senske/inc/Nav_Menus/Component.php:72
+msgid "Mobile"
+msgstr ""
+
+#: ../senske/inc/Sidebars/Component.php:75
+msgid "Global Sidebar"
+msgstr ""
+
+#: ../senske/inc/Sidebars/Component.php:77, ../senske/inc/Sidebars/Component.php:89, ../senske/inc/Sidebars/Component.php:101, ../senske/inc/Sidebars/Component.php:113
+msgid "Add widgets here."
+msgstr ""
+
+#: ../senske/inc/Sidebars/Component.php:87
+msgid "Resources Sidebar"
+msgstr ""
+
+#: ../senske/inc/Sidebars/Component.php:99
+msgid "Services Sidebar"
+msgstr ""
+
+#: ../senske/inc/Sidebars/Component.php:111
+msgid "Blog Sidebar"
+msgstr ""
+
+#. translators: %s: stylesheet handle
+#: ../senske/inc/Styles/Component.php:237
+msgid "Invalid theme stylesheet handle: %s"
+msgstr ""
+
+#: ../senske/template-parts/content/entry-attachment.php:33
+msgid "Previous:"
+msgstr ""
+
+#: ../senske/template-parts/content/entry-attachment.php:43
+msgid "Next:"
+msgstr ""
+
+#: ../senske/template-parts/content/entry-attachment.php:49
+msgid "Post navigation"
+msgstr ""
+
+#. translators: %s: post title
+#: ../senske/template-parts/content/entry_actions.php:21
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#. translators: %s: post title
+#: ../senske/template-parts/content/entry_actions.php:40
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: ../senske/template-parts/content/entry_content.php:18
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: ../senske/template-parts/content/entry_content.php:31
+msgid "Pages:"
+msgstr ""
+
+#. translators: %s: post date
+#: ../senske/template-parts/content/entry_meta.php:63
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr ""
+
+#. translators: %s: post author
+#: ../senske/template-parts/content/entry_meta.php:76
+msgctxt "post author"
+msgid "By %s"
+msgstr ""
+
+#. translators: %s: post author
+#: ../senske/template-parts/content/entry_meta.php:79
+msgctxt "post author"
+msgid "by %s"
+msgstr ""
+
+#. translators: %s: post parent title
+#: ../senske/template-parts/content/entry_meta.php:95
+msgctxt "post parent"
+msgid "In %s"
+msgstr ""
+
+#. translators: %s: post parent title
+#: ../senske/template-parts/content/entry_meta.php:98
+msgctxt "post parent"
+msgid "in %s"
+msgstr ""
+
+#. translators: separator between taxonomy terms
+#: ../senske/template-parts/content/entry_taxonomies.php:24
+msgctxt "list item separator"
+msgid ", "
+msgstr ""
+
+#. translators: %s: list of taxonomy terms
+#: ../senske/template-parts/content/entry_taxonomies.php:31
+msgid "Posted in %s"
+msgstr ""
+
+#. translators: %s: list of taxonomy terms
+#: ../senske/template-parts/content/entry_taxonomies.php:37
+msgid "Tagged %s"
+msgstr ""
+
+#. translators: %s: taxonomy name
+#: ../senske/template-parts/content/entry_taxonomies.php:44
+msgid "%s:"
+msgstr ""
+
+#: ../senske/template-parts/content/error-404.php:23
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr ""
+
+#: ../senske/template-parts/content/error-404.php:34
+msgid "Most Used Categories"
+msgstr ""
+
+#: ../senske/template-parts/content/error-500.php:17
+msgid "Oops! Something went wrong."
+msgstr ""
+
+#: ../senske/template-parts/content/error-offline.php:14
+msgid "Oops! We can&#8217;t find your internet connection. It looks like you&#8217;re offline."
+msgstr ""
+
+#: ../senske/template-parts/content/error.php:44
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: ../senske/template-parts/content/error.php:38
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: ../senske/template-parts/content/error.php:23
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#. translators: %s: search query
+#: ../senske/template-parts/content/page_header.php:46
+msgid "Search Results for: %s"
+msgstr ""
+
+#: ../senske/template-parts/content/page_header.php:22
+msgid "Nothing Found"
+msgstr ""
+
+#: ../senske/template-parts/content/page_header.php:14
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: ../senske/template-parts/content/pagination.php:13
+msgctxt "previous set of search results"
+msgid "Previous"
+msgstr ""
+
+#: ../senske/template-parts/content/pagination.php:14
+msgctxt "next set of search results"
+msgid "Next"
+msgstr ""
+
+#: ../senske/template-parts/content/pagination.php:15
+msgid "Page navigation"
+msgstr ""
+
+#: ../senske/template-parts/header/navigation.php:16
+msgid "Main menu"
+msgstr ""
+
+#: ../senske/template-parts/header/navigation.php:18
+msgid "Open menu"
+msgstr ""

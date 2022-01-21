@@ -2,7 +2,7 @@
 /**
  * WP_Rig\WP_Rig\Editor\Component class
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig\Editor;
@@ -62,57 +62,57 @@ class Component implements Component_Interface {
 			'editor-color-palette',
 			array(
 				array(
-					'name'  => __( 'Primary', 'wp-rig' ),
+					'name'  => __( 'Primary', 'senske' ),
 					'slug'  => 'theme-primary',
 					'color' => '#e36d60',
 				),
 				array(
-					'name'  => __( 'Secondary', 'wp-rig' ),
+					'name'  => __( 'Secondary', 'senske' ),
 					'slug'  => 'theme-secondary',
 					'color' => '#41848f',
 				),
 				array(
-					'name'  => __( 'Red', 'wp-rig' ),
+					'name'  => __( 'Red', 'senske' ),
 					'slug'  => 'theme-red',
 					'color' => '#C0392B',
 				),
 				array(
-					'name'  => __( 'Green', 'wp-rig' ),
+					'name'  => __( 'Green', 'senske' ),
 					'slug'  => 'theme-green',
 					'color' => '#27AE60',
 				),
 				array(
-					'name'  => __( 'Blue', 'wp-rig' ),
+					'name'  => __( 'Blue', 'senske' ),
 					'slug'  => 'theme-blue',
 					'color' => '#2980B9',
 				),
 				array(
-					'name'  => __( 'Yellow', 'wp-rig' ),
+					'name'  => __( 'Yellow', 'senske' ),
 					'slug'  => 'theme-yellow',
 					'color' => '#F1C40F',
 				),
 				array(
-					'name'  => __( 'Black', 'wp-rig' ),
+					'name'  => __( 'Black', 'senske' ),
 					'slug'  => 'theme-black',
 					'color' => '#1C2833',
 				),
 				array(
-					'name'  => __( 'Grey', 'wp-rig' ),
+					'name'  => __( 'Grey', 'senske' ),
 					'slug'  => 'theme-grey',
 					'color' => '#95A5A6',
 				),
 				array(
-					'name'  => __( 'White', 'wp-rig' ),
+					'name'  => __( 'White', 'senske' ),
 					'slug'  => 'theme-white',
 					'color' => '#ECF0F1',
 				),
 				array(
-					'name'  => __( 'Dusty daylight', 'wp-rig' ),
+					'name'  => __( 'Dusty daylight', 'senske' ),
 					'slug'  => 'custom-daylight',
 					'color' => '#97c0b7',
 				),
 				array(
-					'name'  => __( 'Dusty sun', 'wp-rig' ),
+					'name'  => __( 'Dusty sun', 'senske' ),
 					'slug'  => 'custom-sun',
 					'color' => '#eee9d1',
 				),
@@ -129,26 +129,26 @@ class Component implements Component_Interface {
 			'editor-font-sizes',
 			array(
 				array(
-					'name'      => __( 'Small', 'wp-rig' ),
-					'shortName' => __( 'S', 'wp-rig' ),
+					'name'      => __( 'Small', 'senske' ),
+					'shortName' => __( 'S', 'senske' ),
 					'size'      => 16,
 					'slug'      => 'small',
 				),
 				array(
-					'name'      => __( 'Medium', 'wp-rig' ),
-					'shortName' => __( 'M', 'wp-rig' ),
+					'name'      => __( 'Medium', 'senske' ),
+					'shortName' => __( 'M', 'senske' ),
 					'size'      => 25,
 					'slug'      => 'medium',
 				),
 				array(
-					'name'      => __( 'Large', 'wp-rig' ),
-					'shortName' => __( 'L', 'wp-rig' ),
+					'name'      => __( 'Large', 'senske' ),
+					'shortName' => __( 'L', 'senske' ),
 					'size'      => 31,
 					'slug'      => 'large',
 				),
 				array(
-					'name'      => __( 'Larger', 'wp-rig' ),
-					'shortName' => __( 'XL', 'wp-rig' ),
+					'name'      => __( 'Larger', 'senske' ),
+					'shortName' => __( 'XL', 'senske' ),
 					'size'      => 39,
 					'slug'      => 'larger',
 				),

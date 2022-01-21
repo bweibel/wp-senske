@@ -2,12 +2,10 @@
 /**
  * Template part for displaying Columns
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
-
-
 
 ?>
 
@@ -19,15 +17,16 @@ namespace WP_Rig\WP_Rig;
 		if ( have_rows( 'column_content' ) ) :
 
 			// Loop through rows.
-			while ( have_rows('column_content') ) : the_row();
+			while ( have_rows( 'column_content' ) ) :
+				the_row();
 
 				$class_name = 'column';
-				$col_size = get_sub_field('size');
-				if( $col_size ) {
+				$col_size = get_sub_field( 'size' );
+				if ( $col_size ) {
 					$class_name = $class_name . ' size-' . $col_size;
 				}
-				$vertical_alignment = get_sub_field('vertical_alignment');
-				if( $vertical_alignment ) {
+				$vertical_alignment = get_sub_field( 'vertical_alignment' );
+				if ( $vertical_alignment ) {
 					$class_name = $class_name . ' ' . $vertical_alignment;
 				}
 				?>
@@ -44,8 +43,6 @@ namespace WP_Rig\WP_Rig;
 			endwhile;
 
 			// No value.
-		else :
-			// Do something...
 		endif;
 		?>
 	</div>

@@ -2,7 +2,7 @@
 /**
  * Template part for displaying a post's featured image
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
@@ -25,7 +25,7 @@ if ( is_singular( get_post_type() ) ) {
 	?>
 	<div class="post-header-image">
 		<?php
-		the_post_thumbnail( 'wp-rig-content', array( 'class' => 'skip-lazy ' ) );
+		the_post_thumbnail( 'senske-content', array( 'class' => 'skip-lazy ' ) );
 		?>
 	</div><!-- .post-thumbnail -->
 	<?php

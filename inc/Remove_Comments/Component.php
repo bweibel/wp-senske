@@ -2,7 +2,7 @@
 /**
  * WP_Rig\WP_Rig\Remove_Comments\Component class
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig\Remove_Comments;

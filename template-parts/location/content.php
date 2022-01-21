@@ -2,7 +2,7 @@
 /**
  * Template part for displaying a locations content
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
@@ -190,15 +190,8 @@ $yotpo_id = get_field('yotpo_id');
 		</section>
 		<?php endwhile; ?>
 	<?php endif; ?>
+<a name="fullreviews"></a>
 
-
-
-<div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-	<span itemprop="itemReviewed">Product Title</span> has a rating of
-	<span itemprop="ratingValue">Average Rating Data</span> stars based on
-	<span itemprop="ratingCount">Review Count Data</span> reviews.
-</div>
-
-<div class="yotpo yotpo-main-widget" data-product-id="PDP_Boise" data-name="Boise" data-url="https://www.senske.com/locations/boise/"></div>
+<div class="yotpo yotpo-main-widget" data-product-id="<?php echo $yotpo_id; ?>"></div>
 
 <?php

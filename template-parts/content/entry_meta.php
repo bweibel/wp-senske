@@ -2,7 +2,7 @@
 /**
  * Template part for displaying a post's metadata
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig;
@@ -60,7 +60,7 @@ if ( ! empty( $post->post_parent ) && 'attachment' === get_post_type() ) {
 			<?php
 			printf(
 				/* translators: %s: post date */
-				esc_html_x( 'Posted on %s', 'post date', 'wp-rig' ),
+				esc_html_x( 'Posted on %s', 'post date', 'senske' ),
 				$time_string // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			);
 			?>
@@ -73,10 +73,10 @@ if ( ! empty( $post->post_parent ) && 'attachment' === get_post_type() ) {
 		<span class="posted-by">
 			<?php
 			/* translators: %s: post author */
-			$author_byline = _x( 'By %s', 'post author', 'wp-rig' );
+			$author_byline = _x( 'By %s', 'post author', 'senske' );
 			if ( ! empty( $time_string ) ) {
 				/* translators: %s: post author */
-				$author_byline = _x( 'by %s', 'post author', 'wp-rig' );
+				$author_byline = _x( 'by %s', 'post author', 'senske' );
 			}
 			printf(
 				esc_html( $author_byline ),
@@ -92,10 +92,10 @@ if ( ! empty( $post->post_parent ) && 'attachment' === get_post_type() ) {
 		<span class="posted-in">
 			<?php
 			/* translators: %s: post parent title */
-			$parent_note = _x( 'In %s', 'post parent', 'wp-rig' );
+			$parent_note = _x( 'In %s', 'post parent', 'senske' );
 			if ( ! empty( $time_string ) || ! empty( $author_string ) ) {
 				/* translators: %s: post parent title */
-				$parent_note = _x( 'in %s', 'post parent', 'wp-rig' );
+				$parent_note = _x( 'in %s', 'post parent', 'senske' );
 			}
 			printf(
 				esc_html( $parent_note ),

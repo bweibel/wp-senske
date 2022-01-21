@@ -2,13 +2,13 @@
 /**
  * WP_Rig\WP_Rig\Shortcodes\Component class
  *
- * @package wp_rig
+ * @package senske
  */
 
 namespace WP_Rig\WP_Rig\Shortcodes;
 
 use WP_Rig\WP_Rig\Component_Interface;
-use function WP_Rig\WP_Rig\wp_rig;
+use function WP_Rig\WP_Rig\senske;
 use function add_shortcode;
 use function get_theme_file_uri;
 use function get_theme_file_path;
@@ -35,6 +35,7 @@ class Component implements Component_Interface {
 		add_shortcode( 'button', array( $this, 'handle_button_shortcode' ) );
 		add_shortcode( 'featured-article', array( $this, 'handle_featured_shortcode' ) );
 		add_shortcode( 'senske-promise', array( $this, 'handle_promise_shortcode' ) );
+		add_shortcode( 'location-links', array( $this , 'handle_location_links_shortcode') );
 	}
 
 	public function handle_button_shortcode( $atts = array(), $content = 'Button Text' ) {
@@ -78,6 +79,12 @@ class Component implements Component_Interface {
 		ob_start();
 		get_template_part( 'template-parts/components/senske_promise' );
 
+		return ob_get_clean();
+	}
+
+	public function handle_location_links_shortcode( $atts = array() ) {
+		ob_start();
+		get_template_part( 'template-parts/components/location_list-fancy');
 		return ob_get_clean();
 	}
 
