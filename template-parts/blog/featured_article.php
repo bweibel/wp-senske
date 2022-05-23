@@ -24,9 +24,8 @@ $article = $args['article'];
 		<a href="<?php echo get_permalink( $article ); ?>">
 		<?php
 			if( get_the_post_thumbnail( $article ) ) {
-				$image = get_the_post_thumbnail( $article );
+				$image = get_the_post_thumbnail( $article, 'senske-featured');
 				print_r( $image );
-				$size = 'full';
 			}
 		?>
 		</a>
