@@ -12,6 +12,7 @@ wp_enqueue_script('senske-serviceslist');
 $services = $args['services'];
 $location = $args['location'];
 $full_content = $args['full_content'];
+$has_links = $args['has_links'];
 
 ?>
 
@@ -25,6 +26,7 @@ $full_content = $args['full_content'];
 				'service'      => $service,
 				'full_content' => false,
 				'location'     => $location,
+				'has_link'	   => $has_links
 			);
 			// If this list has a location, use the location specific service items
 			if ( $location ) {

@@ -19,7 +19,7 @@ $theme = get_template_directory_uri();
 			<a href="https://www.tcia.org/" rel="nofollow" target="_blank"><img src="<?php echo $theme . '/assets/images/tcia-white-logo.png'; ?>" class="footer-logo" alt="TCIA logo"></a>
 		</span>
 		<span>
-			<span><a href="/pest-control-sds/">Pest Conrtol Label/SDS</a></span><span class="sep"> | </span><span><a href="/turf-and-ornamental-sds/">Turf & Ornamental SDS</a></span><br>
+			<span><a href="/pest-control-sds/">Pest Control Label/SDS</a></span><span class="sep"> | </span><span><a href="/turf-and-ornamental-sds/">Turf & Ornamental SDS</a></span><br>
 			<span><a href="/terms-conditions/">Terms and Conditions</a></span><span class="sep"> | </span><span><a href="/site-map">Site Map</a></span>
 		</span>
 	</div>

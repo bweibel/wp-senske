@@ -148,6 +148,7 @@
 	flex-basis: 30em;
 	display: grid;
 	grid-template-areas: "icon" "info";
+	grid-template-columns: min-content auto;
 	justify-items: center;
 	align-content: center;
 	gap: 1rem;

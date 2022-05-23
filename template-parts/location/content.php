@@ -43,9 +43,12 @@ $yotpo_id = get_field('yotpo_id');
 			'programs' => $programs_cta['programs'],
 			'title'    => $programs_cta['title'],
 			'sub_title' => $programs_cta['sub_title'],
-			'has_button' => $programs_cta['has_quote_button']
+			'has_button' => $programs_cta['has_quote_button'],
+			'full_content' => true,
+			'card_links' => true
+
 		);
-		get_template_part( 'template-parts/location/location_program_cta', '', $args );
+		get_template_part( 'template-parts/services/services_program_cta', '', $args );
 	}
 	?>
 	<?php
@@ -117,6 +120,7 @@ $yotpo_id = get_field('yotpo_id');
 				'title'     => get_sub_field('title'),
 				'sub_title' => get_sub_field('sub_title'),
 				'location'  => $post,
+				'has_links' => true
 			);
 
 			get_template_part( 'template-parts/services/service_list', 'location', $args );
@@ -192,6 +196,11 @@ $yotpo_id = get_field('yotpo_id');
 	<?php endif; ?>
 <a name="fullreviews"></a>
 
-<div class="yotpo yotpo-main-widget" data-product-id="<?php echo $yotpo_id; ?>"></div>
+<div class="yotpo yotpo-main-widget" 
+	data-name="<?php echo $location_name; ?>"
+	data-product-id="<?php echo $yotpo_id; ?>"
+	data-currency="USD"
+	data-url="<?php echo get_page_link(); ?>">
+</div>
 
 <?php
