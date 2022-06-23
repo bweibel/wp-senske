@@ -23,9 +23,10 @@ $yotpo_id = get_field('yotpo_id');
 ?>
 
 	<section class="location-info ">
+		<?php get_template_part( 'template-parts/location/location_header' ); ?>
+
 		<section class="location-content">
 			<?php
-			get_template_part( 'template-parts/location/location_header' );
 			get_template_part( 'template-parts/content/entry_content', get_post_type() );
 			get_template_part( 'template-parts/location/location_neighbors' );
 			?>
