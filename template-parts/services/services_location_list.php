@@ -11,7 +11,7 @@ use WP_Query;
 $service = $args['service'];
 
 // If there's no connected service, do nothing.
-if ( ! $service ) {
+if ( ! $service || get_field('hide_locations', $service->ID ) ) {
 	return;
 }
 
@@ -46,7 +46,6 @@ if ( $service ) {
 	</header>
 	<ul class="locations-list">
 		<?php
-		echo $service_category;
 		// Loop through each Location and figure out if it has this service (ugly, I know)
 		while ( $locations_query->have_posts() ) : $locations_query->the_post();
 
@@ -77,8 +76,6 @@ if ( $service ) {
 			endif;
 			?>
 			
-
-
 
 	<?php endwhile; ?>
 	</ul>
