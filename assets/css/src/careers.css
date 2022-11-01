@@ -1,0 +1,199 @@
+/* stylelint-disable indentation */
+/**
+ * Custom styles for the template.
+ */
+
+ @import "_custom-properties.css";
+ @import "_program-cards.css";
+ @import "_resource_slider.css";
+
+ .career-section {
+    margin-block: 4rem;
+
+ }
+
+ .career-section.lifted {
+    box-shadow:
+         0 -10px 10px -10px rgba(0, 0, 0, 0.5),
+         0 10px 10px -10px rgba(0, 0, 0, 0.5);
+    padding: 3rem 0;
+    width: 100%;
+	background-color: var(--color-theme-slightly-not-white);
+}
+
+.career-section.lifted > * {
+    max-width: var(--content-width);
+    margin-inline: auto;
+}
+
+@media (--content-query) {
+
+    .career-section.lifted {
+        padding: 6rem 0;
+    }
+}
+
+ .cta-wrap {
+    display: flex;
+    justify-content: center;
+    background: url(../images/career-page-hero.jpg);
+    padding: 4rem 0;
+    margin-bottom: 4rem;
+}
+
+@media (--content-query) {
+	.cta-wrap {
+		padding: 6rem 0;
+	}
+}
+
+.careers-cta_bottom .cta-wrap {
+    display: block;
+	margin-bottom: 0;
+}
+
+.cta-wrap .content {
+    max-width: var(--content-width);
+    padding-inline: 2rem;
+}
+
+.cta-wrap  p,
+.cta-wrap  h3 {
+    color: white;
+    text-align: center;
+}
+
+.cta-wrap .content p {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.cta-wrap .content p a {
+    font-size: 1rem;
+}
+
+.cta-wrap .content h3 {
+    margin-block: 0;
+}
+
+.career-cards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    max-width: var(--content-width);
+	gap: 1rem;
+}
+
+@media (--content-query) {
+
+    .career-cards {
+        justify-content: space-between;
+    }
+}
+
+.career-cards .card {
+    background: var(--color-theme-off-white);
+    box-shadow: 0 0 6px rgba(51, 51, 51, 0.2);
+    flex-basis: 16em;
+    margin-block: 1rem;
+
+}
+
+.career-cards .card .card-image {
+    height: 200px;
+    overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.career-cards .card .icon {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 1.2em;
+    background: var(--color-theme-white);
+    border: transparent;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(51, 51, 51, 0.2);
+    width: 5em;
+    height: 5em;
+    margin-top: -2em;
+    overflow: hidden;
+}
+
+.career-cards .card .icon svg * {
+    fill: var(--color-theme-green);
+}
+
+.career-cards .card .title {
+    font-size: 1em;
+    font-family: var(--global-font);
+    color: var(--color-theme-green);
+    margin: 0.5em auto;
+    text-transform: uppercase;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.career-cards .card .entry-content {
+    padding: 0 1em 2em;
+    text-align: left;
+}
+
+.get-in-touch {
+    display: none;
+}
+
+.process-icons {
+	margin-block: 4rem;
+	padding-block: 1rem;
+}
+
+.process-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+}
+
+.process-icon .icon-wrap {
+
+}
+
+.icon-wrap {
+	display: flex;
+	height: 7rem;
+    width: 7rem;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    padding: 1rem;
+    border-radius: 50%;
+	box-shadow: var(--global-drop-shadow-raised);
+}
+
+.why-work .column-container {
+	gap: 2em;
+}
+
+.icon-wrap img {
+	object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+	margin: auto;
+}
+
+.process-icon h4 {
+	color: var(--color-theme-primary);
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.slider {
+	margin-bottom: 0;
+}
+
+.flexslider.resource-slider {
+	background-color: transparent;
+	border: none;
+}
