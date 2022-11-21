@@ -23,15 +23,19 @@ if ( have_rows( $args['row_group'] ) ) :
 			get_template_part( '/template-parts/acf/flexible_generic' );
 		endif;
 
-		// Case: Generic WYSIWYG Content.
+		// Case: Generic Columns Content.
 		if ( get_row_layout() == 'column_layout' ) :
 			get_template_part( '/template-parts/acf/flexible_columns' );
 		endif;
 
-		// Case: Generic WYSIWYG Content.
+		// Case: Generic CTA Content.
 		if ( get_row_layout() == 'cta_box_group' ) :
 				get_template_part( '/template-parts/acf/flexible_cta-group' );
 		endif;
+		// Case: Generic Post List.
+		if ( get_row_layout() == 'cta_box_group' ) :
+			get_template_part( '/template-parts/acf/flexible_post-list' );
+	endif;
 		// End loop.
 	endwhile;
 

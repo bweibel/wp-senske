@@ -11,6 +11,7 @@ use get_the_permalink;
 
 // Service post, handed down from the list
 $service = $args['service'];
+$has_link = $args['has_link'] ? $args['has_link'] : false;
 $service_fields = get_fields( $service );
 $icon_url = $service_fields['icon']['url'];
 
@@ -56,7 +57,12 @@ if( $location_service ) {
 
 <li class="<?php echo $serivice_class; ?>" id=<?php echo $service->ID; ?>>
 	<?php get_template_part( 'template-parts/services/service_icon', '', array( 'icon_url' => $icon_url ) ); ?>
-	<h4 class="service-title"><?php echo  esc_html( $service->post_title ); ?></h4>
+	<h4 class="service-title">
+		<?php 
+		if( $has_link && !$location_service ) echo '<a href="' . $link . '">';
+			echo esc_html( $service->post_title );
+		if( $has_link && !$location_service ) echo '</a>'; ?>
+	</h4>
 	<?php if ( $location_service ) : ?>
 		<div class="service-info">
 			<?php

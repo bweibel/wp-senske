@@ -84,7 +84,7 @@
 
 .home-section header h3 {
 	margin: 0;
-	font-size: 2.25em;
+	font-size: 2em;
 }
 
 .home-section .pull-left h3.underlined::after {
@@ -137,6 +137,7 @@
 
 	.tab-header {
 		margin-top: -5rem;
+		display: grid;
 	}
 
 }
@@ -163,6 +164,7 @@
 .program-cards .card {
 	padding-bottom: 0;
 	flex-basis: 10em;
+	position: relative;
 }
 
 .program-cards .card.popular {
@@ -180,6 +182,14 @@
 .program-cards .card header {
 	flex-direction: column;
 	justify-content: space-around;
+}
+
+.program-cards .card a.fullcard-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .program-cards .card .icon {
@@ -218,7 +228,7 @@
 }
 
 .find-location {
-	display: none;
+	/* display: none; */
 }
 
 @media (--content-query) {
@@ -405,6 +415,13 @@
 	align-items: center;
 	margin: 1em auto;
 	max-width: 25em;
+	position: relative;
+	transition: box-shadow 0.1s;
+}
+
+.expert-card:hover {
+	box-shadow: 0 0 4px rgba(28, 40, 51, 0.2);
+    box-shadow: var(--global-drop-shadow-raised);
 }
 
 .expert-card .image-box {
@@ -422,13 +439,23 @@
 	align-self: center;
 }
 
+.expert-card .card-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
 .expert-card .secondary-image {
 	border-radius: 50%;
 	height: 8em;
 	width: 8em;
-	border: .3rem solid var(--color-theme-white);
+	border: 0.3rem solid var(--color-theme-white);
 	grid-area: secondary;
 	position: absolute;
+	overflow: hidden;
 }
 
 .expert-card .expert-title,

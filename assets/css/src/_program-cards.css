@@ -13,9 +13,13 @@
 
 @media (--content-query) {
 	.program-cards {
-		flex-flow: row wrap;
+		flex-flow: row;
 	}
 }
+
+.program-cards .card-wrapper {
+    width: 100%;
+} 
 
 .program-cards .card {
 	background-color: var(--color-theme-white);
@@ -24,24 +28,28 @@
 	width: 100%;
 	max-width: 30em;
 	box-shadow: var(--global-drop-shadow-raised);
-
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
+	transition: box-shadow 0.1s;
 }
 
-.program-cards .card.popular {
-	background-color: var(--color-theme-off-white);
+.program-cards .card:hover {
+    box-shadow: var(--global-drop-shadow-raised);
+}
+
+.program-cards .card-wrapper.popular {
+	/* background-color: var(--color-theme-off-white); */
 	z-index: 5;
 }
 
-.program-cards .card.popular .icon {
+.program-cards .card-wrapper.popular .icon {
 	background-color: transparent;
 }
 
 @media (--content-query) {
-	.program-cards .card {
+	.program-cards .card-wrapper {
 		/* width: auto; */
 		flex-basis: 20em;
 		flex-grow: 1;
@@ -50,8 +58,8 @@
 
 /* Getting the popular card to display in the middle/top */
 
-.program-cards .card:not(.popular),
-.program-cards .card:not(.popular):nth-child(2) {
+.program-cards .card-wrapper:not(.popular),
+.program-cards .card-wrapper:not(.popular):nth-child(2) {
 	order: 1;
 }
 
@@ -61,15 +69,15 @@
 
 @media (--content-query) {
 
-	.program-cards .card:not(.popular) {
+	.program-cards .card-wrapper:not(.popular) {
 		order: 1;
 	}
 
-	.program-cards .card:not(.popular):last-child {
+	.program-cards .card-wrapper:not(.popular):last-child {
 		order: 3;
 	}
 
-	.program-cards .card.popular {
+	.program-cards .card-wrapper.popular {
 		order: 2;
 	}
 }
@@ -97,8 +105,7 @@
 
 .program-cards .card .icon {
 	flex-basis: 3em;
-	padding: 0;
-	margin-right: 1em;
+	margin-right: 0.5em;
 }
 
 .program-cards .card header .icon svg * {

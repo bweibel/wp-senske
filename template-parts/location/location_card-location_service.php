@@ -25,8 +25,9 @@ if ( !$estimate_button_text ) {
 
 
 <section class="location-card">
-	<?php get_template_part( 'template-parts/components/googlemap', '', array() );?>
-	<hr class="divider">
+	<?php 
+	// get_template_part( 'template-parts/components/googlemap', '', array() );
+	?>
 	<h2>Senske Services in <?php echo $location_name; ?></h2>
 	<a class="phone" href="tel:<?php echo esc_html($phone); ?>" ><?php echo $phone; ?></a>
 	<?php echo $hours; ?>

@@ -30,7 +30,6 @@ namespace WP_Rig\WP_Rig;
 <li>
     Utah
     <ul class="state">
-        <li><a href="/logan/">Logan</a></li>
         <li><a href="/ogden">Ogden</a></li>
         <li><a href="/provo">Provo</a></li>
         <li><a href="/salt-lake-city">Salt Lake City</a></li>

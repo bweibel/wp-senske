@@ -11,6 +11,9 @@ namespace WP_Rig\WP_Rig;
 $programs = $args['programs'];
 $title = $args['title'];
 $has_button = $args['has_button'];
+$full_content = $args['full_content'];
+$card_links = $args['card_links'];
+$show_options = $args['show_options'];
 
 ?>
 
@@ -27,31 +30,17 @@ $has_button = $args['has_button'];
 				foreach( $programs as $program ) {
 					$args= array(
 						'program'      => $program,
-						'full_content' => true,
-						'el_tag'           => 'li',
+						'full_content' => $full_content ,
+						'card_link'		=> $card_links,
+						'show_options'	=> $show_options,
+						'el_tag'           => 'li'
 					);
-					get_template_part( 'template-parts/services/program_card', '', $args );
+					get_template_part( 'template-parts/services/program_card', get_post_type(), $args );
 				}
 			}
 			?>
 		</div>
-		<?php
-		if ( have_rows( 'program_options' ) ) :
-			?>
-			<div class="options">
-				<?php
-				while ( have_rows( 'program_options' ) ) : the_row();
-				$args = array(
-					'title' => get_sub_field('options_list_title'),
-					'options'    => get_sub_field('options'),
-				);
-				get_template_part( 'template-parts/services/options-list', '', $args );
-				endwhile;
-				?>
-			</div>
-			<?php
-		endif;
-?>
+		
 	<?php if( $has_button ) : ?>
 	<a href="/request-estimate/" class="button">Request an Estimate</a>
 	<?php endif; ?>

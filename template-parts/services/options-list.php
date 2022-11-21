@@ -9,11 +9,12 @@ namespace WP_Rig\WP_Rig;
 
 
 $title = $args['title'];
+
 $options = $args['options'];
 ?>
 
 <section class="options-section">
-	<h4 class="options-title"><?php echo $title; ?></h4>
+	<h4 class="options-title"><?php echo esc_html( $title ); ?></h4>
 	<ul class="options-list">
 		<?php foreach ( $options as $option ) : ?>
 			<li class="option-item">

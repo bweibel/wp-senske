@@ -44,6 +44,7 @@
 	--color-theme-green: #098751;
 	--color-theme-mediumgreen: #006432;
 	--color-theme-darkgreen: #043b23;
+	--color-theme-darkgreen-transparent: rgba(22, 58, 37, 0.6);
 	--color-theme-yellow: #f5ab34;
 	--color-theme-yellow-dark: #dd8d0d;
 	--color-theme-black: #1c2833;
@@ -52,6 +53,7 @@
 	--color-theme-lightgrey: #B5B5B5;
 	--color-theme-superlightgrey: #E8EAE8;
 	--color-theme-white: #fff;
+	--color-theme-slightly-not-white: #fafafa;
 	--color-theme-off-white: #f7faf5;
 
 	/* Extras */

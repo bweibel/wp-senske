@@ -57,13 +57,16 @@ $yotpo_id = get_field('yotpo_id');
 	?>
 	<?php if ( have_rows( 'services_individual' ) ) : ?>
 		<?php while ( have_rows( 'services_individual' ) ) : the_row(); ?>
+
 		<section class="individual-services services location-section">
+			<?php if ( get_sub_field('sub_title') ||  get_sub_field('title') ) : ?>
 			<header>
 				<?php if ( get_sub_field('sub_title') ) : ?>
 				<h4 class="small"><?php echo get_sub_field('sub_title') ?></h4>
 				<?php endif; ?>
 				<h3 class="underlined"><?php echo get_sub_field('title');  ?></h3>
 			</header>
+			<?php endif; ?>
 			<?php the_sub_field('content'); ?>
 
 			<?php
@@ -80,18 +83,17 @@ $yotpo_id = get_field('yotpo_id');
 		<?php endwhile; ?>
 	<?php endif; ?>
 
-
-
-	<?php if ( have_rows( 'resources' ) ) : ?>
+	<?php if ( have_rows( 'resources' ) && get_field( 'show_resources' ) ) : ?>
 		<?php while ( have_rows( 'resources' ) ) : the_row(); ?>
 		<section class="resources location-section" id="resources">
+		<?php if ( get_sub_field('sub_title') ||  get_sub_field('sub_title') ) : ?>
 			<header>
 				<?php if ( get_sub_field('sub_title') ) : ?>
 					<h4 class="small"><?php echo get_sub_field('sub_title') ?></h4>
 				<?php endif; ?>
 					<h3 class="underlined"><?php echo get_sub_field('title'); ?></h3>
 			</header>
-
+			<?php endif; ?>
 			<div class="entry-content">
 				<?php the_sub_field('content'); ?>
 			</div>
@@ -102,6 +104,38 @@ $yotpo_id = get_field('yotpo_id');
 	<?php endif; ?>
 
 	<?php get_template_part( 'template-parts/components/senske_promise' ); ?>
+
+	<?php
+	//
+	// Individual Commercial Services.
+	//
+	?>
+	<?php if ( have_rows( 'services_commercial' ) && get_field('show_commercial_services') ) : ?>
+		<?php while ( have_rows( 'services_commercial' ) ) : the_row(); ?>
+		<section id="commercial" class="commercial-services services services-section">
+			<header >
+				<?php if ( get_sub_field('sub_title') ) : ?>
+				<h4 class="small subtitle"><?php echo get_sub_field('sub_title') ?></h4>
+				<?php endif; ?>
+				<h3 class="section-title underlined"><?php echo get_sub_field('title')  ?></h3>
+			</header>
+			<?php
+
+			the_sub_field('content');
+
+			$args = array(
+				'services'  => get_sub_field('services'),
+				'title'     => get_sub_field('title'),
+				'sub_title' => get_sub_field('sub_title'),
+			);
+
+			get_template_part( 'template-parts/services/service_list', 'location', $args );
+			?>
+		</section>
+		<?php endwhile; ?>
+	<?php endif; ?>
+
+
 
 
 	<?php get_template_part( 'template-parts/acf/flexible', get_post_type(), array( 'row_group' => 'page_blocks' ) ); ?>

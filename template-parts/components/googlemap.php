@@ -10,7 +10,15 @@ namespace WP_Rig\WP_Rig;
 
 ?>
 
-<div class="map acf-map"></div>
+
+<?php 
+$location = get_field('location');
+if( $location ): ?>
+
+    <div class="map acf-map" data-zoom="16">
+        <div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>
+    </div>
+<?php endif; ?>
 
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDV0m2Kp7D_W42pBcrgsduMM1paOO5I3DE"></script>
@@ -46,6 +54,7 @@ namespace WP_Rig\WP_Rig;
 			// Add markers.
 			map.markers = [];
 			$markers.each(function() {
+				console.log('creating markers');
 				initMarker($(this), map);
 			});
 

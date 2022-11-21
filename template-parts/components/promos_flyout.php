@@ -15,7 +15,7 @@ $today = date('Ymd');
 $post_type = 'senske_promotion';
 
 $args = array(
-	'posts_per_page' => 2,
+	'posts_per_page' => 4,
 	'post_type' => $post_type,
 	'meta_query' => array(
 		array(
@@ -44,7 +44,7 @@ $promo_query = new WP_Query( $args );
 			if( $promo_query->have_posts() ) :
 				while( $promo_query->have_posts() ) : $promo_query->the_post();
 					?>
-					<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><?php the_field('seasonality'); ?></li>
+					<li><a class="" href="<?php the_permalink(); ?>"><?php the_title(); ?></a><?php the_field('seasonality'); ?></li>
 					<?php
 				endwhile;
 			else :

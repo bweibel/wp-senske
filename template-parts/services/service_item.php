@@ -11,12 +11,9 @@ use get_the_permalink;
 
 // Service post, handed down from the list
 $service = $args['service'];
-$has_link = $args['has_link'] ? $args['has_link'] : false;
 $service_fields = get_fields( $service );
 $icon_url = $service_fields['icon']['url'];
-
-// Location post, handed down from the list
-$location = $args['location'];
+$link = get_permalink( $service );
 
 // Find the location specific service attached to this generic service
 $args = array(
@@ -29,55 +26,31 @@ $args = array(
 			'value'  =>  $service->ID,
 			'compare'=> 'LIKE',
 		),
-		// the parent location
-		array(
-			'key'    => 'parent_location',
-			'value'  =>  $location->ID,
-			'compare'=> 'LIKE',
-		),
 	)
 );
 
-$location_service_links = get_posts( $args );
-// There should only be one result on this query, so we'll take the first one.
-$location_service = $location_service_links[0];
 
-if( $location_service ) {
-	$link = get_the_permalink( $location_service );
-} else {
-	$link = get_the_permalink( $service );
-}
+$service_class = 'services-item';
 
-$serivice_class = 'services-item';
-if( $location_service ) {
-	$serivice_class = $serivice_class . ' has-info';
-}
 ?>
 
 
-<li class="<?php echo $serivice_class; ?>" id=<?php echo $service->ID; ?>>
+<li class="<?php echo $service_class; ?>" id=<?php echo $service->ID; ?>>
 	<?php get_template_part( 'template-parts/services/service_icon', '', array( 'icon_url' => $icon_url ) ); ?>
-	<h4 class="service-title">
-		<?php 
-		if( $has_link && !$location_service ) echo '<a href="' . $link . '">';
-			echo esc_html( $service->post_title );
-		if( $has_link && !$location_service ) echo '</a>'; ?>
-	</h4>
-	<?php if ( $location_service ) : ?>
+	<h4 class="service-title"><a href="<?php echo esc_html( $link ); ?>"><?php echo esc_html( $service->post_title ); ?></a></h4>
+	<?php if ( $service ) : ?>
 		<div class="service-info">
 			<?php
-			if ( get_field( 'excerpt', $location_service ) ) {
-				echo esc_html( get_field( 'excerpt', $location_service ) );
+			if ( get_field( 'excerpt', $service ) ) {
+				echo esc_html( get_field( 'excerpt' ) );
 			} else {
-				echo get_the_excerpt( $location_service );
+				echo get_the_excerpt( $service );
 			}
 			?>
 			<a class="services-link" href="<?php echo esc_html( $link ); ?>" aria-label="Link to Service <?php echo esc_html( $service->post_title ); ?>">Read More ></a>
 		</div>
 	<?php endif; ?>
-	<?php if ( $location_service ) : ?>
-				<span class="indicator"></span>
-	<?php endif; ?>
+
 </li>
 
 

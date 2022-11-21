@@ -13,7 +13,7 @@ $theme = get_template_directory_uri();
 
 <div class="site-info">
 	<div class="footer-content">
-		<span>Copyright 2021 Senske, Inc. All Rights Reserved</span>
+		<span>Copyright 2022 Senske, Inc. All Rights Reserved</span>
 		<span>
 			<a href="https://www.isa-arbor.com/Credentials" rel="nofollow" target="_blank"><img src="<?php echo $theme . '/assets/images/isa.png'; ?>" class="footer-logo" alt="ISA logo"></a>
 			<a href="https://www.tcia.org/" rel="nofollow" target="_blank"><img src="<?php echo $theme . '/assets/images/tcia-white-logo.png'; ?>" class="footer-logo" alt="TCIA logo"></a>

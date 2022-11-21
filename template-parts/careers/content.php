@@ -42,7 +42,7 @@ use WP_Query;
 					<h4 class="title">Teamwork</h4>
 				</header>
 				<div class="entry-content">
-					<p>Senske Services provides quality lawn care services in Provo and the surrounding area. Contact our professional lawn maintenance technicians to take over your lawn care so you can get back to enjoying your yard.</p>
+					<p>We value every member of our team and will be intentional to engage with and challenge one another to ensure that we win as a team …and have fun doing it!</p>
 				</div>
 			</article>
 			<article class="career card">

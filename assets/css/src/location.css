@@ -132,11 +132,18 @@
  }
  
  .location-info .location-card .map {
-	 background-color: var(--color-theme-white);
-	 min-height: 20em;
-	 display: flex;
-	 flex-direction: column;
-	 justify-content: center;
+	display: none;
+	 
+ }
+
+ @media (--content-query) { 
+	.location-info .location-card .map {
+		display: flex;
+		background-color: var(--color-theme-white);
+		min-height: 20em;
+		flex-direction: column;
+		justify-content: center;
+	}
  }
  
  .location-info .location-card .phone:hover {

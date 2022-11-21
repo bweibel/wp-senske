@@ -22,7 +22,7 @@ $title = $service->post_title;
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'service card' ); ?>>
 	<header>
-		<img src="http://senske.local/wp-content/uploads/senske-tree-care-program.svg" alt="">
+		<img src="http://senske.com/wp-content/uploads/senske-tree-care-program.svg" alt="">
 		<?php echo $title; ?>
 	</header>
 

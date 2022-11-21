@@ -25,5 +25,5 @@ senske()->print_styles( 'senske-content' );
 		?>
 	</main><!-- #primary -->
 <?php
-get_sidebar();
+get_sidebar('resource');
 get_footer();
