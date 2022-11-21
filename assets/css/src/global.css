@@ -204,13 +204,15 @@
 
 	.top-bar .links a:hover .icon-account,
 	.top-bar .links a:hover .icon-careers,
-	.top-bar .links a:hover .icon-phone {
+	.top-bar .links a:hover .icon-phone,
+	.top-bar .links a:hover .icon-search {
 		opacity: .8;
 	}
 
 	.top-bar .links .icon-account,
 	.top-bar .links .icon-careers,
-	.top-bar .links .icon-phone {
+	.top-bar .links .icon-phone,
+	.top-bar .links .icon-search {
 		width: 1.5em;
 		height: 1.5em;
 		display: inline-block;
@@ -231,6 +233,37 @@
 
 	.top-bar .links .icon-phone {
 		background-image: url(../images/senske-call-today.svg);
+	}
+
+	.top-bar .links .icon-search {
+		background-image: url(../images/search-icon-white.svg);
+	}
+
+	button#search-toggle {
+		background-color: transparent;
+		color: var(--color-theme-white);
+		border: none;
+	}
+	button#search-toggle:hover {
+		cursor: pointer;
+	}
+
+	.search-container {
+		height: 0;
+		overflow: hidden;
+		display: flex;
+		justify-content: end;
+		max-width: var(--content-width);
+		margin: auto;
+		transition: height 0.2s;
+	}
+
+	.search-container.open {
+		height: 50px;
+	}
+
+	.search-submit{
+		font-size: 0.8rem;
 	}
 
 }

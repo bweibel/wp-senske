@@ -23,6 +23,7 @@ function initNavigation() {
 	initNavToggleSubmenus();
 	initNavToggleSmall();
 	initStickyMasthead();
+	initSearchToggle();
 }
 
 /**
@@ -178,6 +179,26 @@ function initStickyMasthead() {
 			header.classList.remove( 'sticky' );
 		}
 	} );
+}
+
+/**
+ * Initiate the script to process sticky header
+ */
+function initSearchToggle() {
+	const searchToggle = document.getElementById( 'search-toggle' );
+	const searchContainer = document.getElementById('search-container');
+	console.log(searchContainer);
+	searchToggle.addEventListener( 'click', () => {
+		searchClickHandler( searchContainer );
+	} );
+}
+
+function searchClickHandler( target ) {
+	if (! target.classList.contains( 'open' ) ) {
+		target.classList.add( 'open' );
+	} else {
+		target.classList.remove( 'open' );
+	}
 }
 
 /**
