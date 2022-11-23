@@ -13,12 +13,14 @@ get_header();
 
 senske()->print_styles( 'senske-content' );
 
+
+get_template_part( 'template-parts/content/page_header' );
 ?>
 	<main id="primary" class="site-main">
 		<?php
 		if ( have_posts() ) {
 
-			get_template_part( 'template-parts/content/page_header' );
+			
 
 			while ( have_posts() ) {
 				the_post();
