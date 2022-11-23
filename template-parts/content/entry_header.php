@@ -12,7 +12,7 @@ namespace WP_Rig\WP_Rig;
 <header class="entry-header <?php if( !is_single() ) echo 'pull-left'; ?>">
 	<?php
 
-	if ( ! is_search() ) {
+	if ( ! is_search() && ! is_category() ) {
 		get_template_part( 'template-parts/content/entry_thumbnail', get_post_type() );
 	}
 

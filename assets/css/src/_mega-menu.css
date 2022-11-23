@@ -497,6 +497,11 @@
 
 	.yotpo-wrap {
 		pointer-events: none;
+		text-align: center;
+	}
+
+	.yotpo-wrap .button {
+		
 	}
 
 	.primary-menu-container .about-links {

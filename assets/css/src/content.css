@@ -215,7 +215,8 @@
 		justify-content: flex-start;
 	}
 
-	.archive .entry-header.pull-left  {
+	.archive .entry-header.pull-left,
+	.search .entry-header.pull-left  {
 		padding: 0 1.5rem;
 		text-align: left;
 	}
