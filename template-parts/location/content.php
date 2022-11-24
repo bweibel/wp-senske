@@ -15,7 +15,7 @@ $hours = get_field('hours');
 
 $services = get_field('services');
 
-$post_type = $senske_services;
+// $post_type = $senske_services;
 $taxonomy = 'service_category';
 
 $yotpo_id = get_field('yotpo_id');

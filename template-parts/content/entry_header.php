@@ -16,7 +16,9 @@ namespace WP_Rig\WP_Rig;
 		get_template_part( 'template-parts/content/entry_thumbnail', get_post_type() );
 	}
 
-	if ( ! is_front_page() ) {
+	if ( is_search() ){
+		get_template_part( 'template-parts/content/entry_title', get_post_type() );
+	} elseif ( ! is_front_page() ) {
 		if (get_post_type() == 'senske_services' || get_post_type() == 'location_service' ) {
 			// Icon Header
 			if ( get_post_type() == 'senske_services' ) {
