@@ -62,7 +62,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			'is_primary_sidebar_active' => array( $this, 'is_primary_sidebar_active' ),
 			'display_primary_sidebar'   => array( $this, 'display_primary_sidebar' ),
 			'display_services_sidebar'   => array( $this, 'display_services_sidebar' ),
+			'is_services_sidebar_active'   => array( $this, 'is_services_sidebar_active' ),
 			'display_blog_sidebar'   => array( $this, 'display_blog_sidebar' ),
+			'is_blog_sidebar_active'   => array( $this, 'is_blog_sidebar_active' ),
 		);
 	}
 
@@ -172,10 +174,28 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	}
 
 	/**
+	 * Checks whether the Services sidebar is active.
+	 *
+	 * @return bool True if the services sidebar is active, false otherwise.
+	 */
+	public function is_services_sidebar_active() : bool {
+		return (bool) is_active_sidebar( static::SERVICES_SIDEBAR_SLUG );
+	}
+
+	/**
 	 * Displays the services sidebar.
 	 */
 	public function display_services_sidebar() {
 		dynamic_sidebar( static::SERVICES_SIDEBAR_SLUG );
+	}
+
+	/**
+	 * Checks whether the Services sidebar is active.
+	 *
+	 * @return bool True if the services sidebar is active, false otherwise.
+	 */
+	public function is_blog_sidebar_active() : bool {
+		return (bool) is_active_sidebar( static::Blog_SIDEBAR_SLUG );
 	}
 
 	/**

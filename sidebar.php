@@ -23,22 +23,16 @@ senske()->print_styles( 'senske-sidebar', 'senske-widgets' );
 		<?php
 
 		if ( get_post_type() === 'senske_location' ) {
-			senske()->display_services_sidebar();
-			?>
-			<a href="/pricing-service-plans/" class="button button-green">< All Senske Services</a>
-			<?php
-		} elseif ( get_post_type() === 'senske_service' ) {
-			senske()->display_services_sidebar();
-			?>
-			<a href="/pricing-service-plans/" class="button button-green">< All Senske Services</a>
+				senske()->display_services_sidebar();
 
-			<?php
-		}   elseif ( get_post_type() === 'location_service' || get_page_template_slug() === 'page-location_service.php' ) {
+		} elseif ( get_post_type() === 'senske_services' ) {
+			senske()->display_services_sidebar();
+		} elseif ( get_post_type() === 'location_service' || get_page_template_slug() === 'page-location_service.php' ) {
 			// Location service
 			$parent_location = get_field('parent_location')[0];
 			// senske()->display_services_sidebar();
 			get_template_part( 'template-parts/location/location_card', 'location_service', array('location' => $parent_location) );
-
+			get_template_part( 'template-parts/components/related_posts' );
 			?>
 			<?php
 		} else {
