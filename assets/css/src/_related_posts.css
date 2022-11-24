@@ -4,13 +4,17 @@
 # Related Posts
 --------------------------------------------------------------*/
 
-.related-posts {
+.after-main .related-posts {
 	padding: 0 1.5rem;
 }
 
-.post-list {
+.after-main .post-list {
 	display: flex;
 	gap: 1.5rem;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: space-between;
+}
+
+.sidebar .post-list .title::after {
+	display: none;
 }
