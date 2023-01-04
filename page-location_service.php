@@ -17,7 +17,6 @@ senske()->print_styles( 'senske-content', 'senske-service-landing' );
 $parent_location = get_field( 'parent_location' )[0];
 $parent_service = get_field( 'parent_service' )[0];
 
-
 $yotpo_key = 'F0TPJxIYZcYzPN4sr9IFjlzNs8Inxb9VYjYRYT74';
 $yotpo_id = get_field('yotpo_id', $parent_location->ID);
 

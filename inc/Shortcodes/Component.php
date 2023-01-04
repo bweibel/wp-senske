@@ -36,6 +36,7 @@ class Component implements Component_Interface {
 		add_shortcode( 'featured-article', array( $this, 'handle_featured_shortcode' ) );
 		add_shortcode( 'senske-promise', array( $this, 'handle_promise_shortcode' ) );
 		add_shortcode( 'location-links', array( $this , 'handle_location_links_shortcode') );
+		add_shortcode( 'related-posts', array( $this , 'handle_related_posts_shortcode') );
 	}
 
 	public function handle_button_shortcode( $atts = array(), $content = 'Button Text' ) {
@@ -78,13 +79,18 @@ class Component implements Component_Interface {
 	public function handle_promise_shortcode( ) {
 		ob_start();
 		get_template_part( 'template-parts/components/senske_promise' );
-
 		return ob_get_clean();
 	}
 
 	public function handle_location_links_shortcode( $atts = array() ) {
 		ob_start();
 		get_template_part( 'template-parts/components/location_list-fancy');
+		return ob_get_clean();
+	}
+
+	public function handle_related_posts_shortcode( $atts = array() ) {
+		ob_start();
+		get_template_part( 'template-parts/components/related_posts');
 		return ob_get_clean();
 	}
 

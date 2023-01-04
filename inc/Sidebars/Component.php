@@ -139,7 +139,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			'500.php',
 			'archive.php',
 			'category.php',
-			'search.php',
+			// 'search.php',
 			'single-location_service.php',
 			'single-senske_services.php',
 			'page-location_service.php',

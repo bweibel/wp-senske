@@ -12,6 +12,13 @@ use WP_Query;
 $terms_blog =  get_field( 'related_categories_blog' ) ? get_field( 'related_categories_blog' ) : array();
 $terms_learn = get_field( 'related_categories_learn' ) ? get_field( 'related_categories_learn' ) : array() ;
 
+$parent_service = get_field( 'parent_service' )[0];
+
+if ( $parent_service ) {
+    $terms_blog =  get_field( 'related_categories_blog', $parent_service->ID ) ? get_field( 'related_categories_blog', $parent_service->ID ) : array();
+    $terms_learn = get_field( 'related_categories_learn', $parent_service->ID ) ? get_field( 'related_categories_learn', $parent_service->ID ) : array() ;
+}
+
 $related_count = 5;
 
 $related_args = array(

@@ -30,9 +30,8 @@ senske()->print_styles( 'senske-sidebar', 'senske-widgets' );
 		} elseif ( get_post_type() === 'location_service' || get_page_template_slug() === 'page-location_service.php' ) {
 			// Location service
 			$parent_location = get_field('parent_location')[0];
-			// senske()->display_services_sidebar();
 			get_template_part( 'template-parts/location/location_card', 'location_service', array('location' => $parent_location) );
-			get_template_part( 'template-parts/components/related_posts' );
+			// senske()->display_services_sidebar();
 			?>
 			<?php
 		} else {
