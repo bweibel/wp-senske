@@ -20,7 +20,6 @@ $parent_service = get_field( 'parent_service' )[0];
 $yotpo_key = 'F0TPJxIYZcYzPN4sr9IFjlzNs8Inxb9VYjYRYT74';
 $yotpo_id = get_field('yotpo_id', $parent_location->ID);
 
-
 // get_template_part( 'template-parts/content/page_header' );
 
 ?>
@@ -38,7 +37,6 @@ $yotpo_id = get_field('yotpo_id', $parent_location->ID);
 		<a name="fullreviews"></a>
 		<div class="yotpo yotpo-main-widget" data-product-id="<?php echo $yotpo_id; ?>"></div>
 	</main><!-- #primary -->
-
 
 <?php
 get_sidebar();
