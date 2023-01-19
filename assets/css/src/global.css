@@ -356,7 +356,10 @@
 }
 
 #mega-menu-wrap-mobile {
+	width: 100vw;
+	max-width: 30em;
 	display: flex;
+	justify-content: end;
 }
 
 @media (--wide-menu-query) {
@@ -371,6 +374,17 @@
 
 }
 
+@media (--narrow-menu-query) {
+	
+	.main-navigation {
+		min-height: 115px;
+	}
+
+	.sticky .main-navigation {
+		min-height: 82px;
+	}
+
+}
 
 /*--------------------------------------------------------------
 ## Main navigation menu

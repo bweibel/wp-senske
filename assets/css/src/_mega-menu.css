@@ -7,27 +7,37 @@
 /*--------------------------------------------------------------
 ## Basic navigation menus - handles submenu and small screen toggle
 --------------------------------------------------------------*/
+
 #mega-menu-wrap-mobile #mega-menu-mobile {
-	top: 5rem;
+	right: -1em;
+	top: 88px;
 	height: calc(100vh - 5rem);
+	box-shadow: var(--global-drop-shadow);
 }
 
 .sticky #mega-menu-wrap-mobile #mega-menu-mobile {
-	top: 4rem;
+	top: 70px;
 	height: calc(100vh - 4rem);
 }
 
 #mega-menu-wrap-mobile #mega-menu-mobile > li.mega-menu-item {
 	border-bottom: 2px solid var(--color-theme-lightgrey);
-	padding: 1rem;
+	
 }
 
 #mega-menu-wrap-mobile #mega-menu-mobile > li.mega-menu-item > a.mega-menu-link {
 	font-family: var(--highlight-font-family);
 	text-align: left;
+	padding:0.5rem 1rem;
 	width: 100%;
 	max-width: 20em;
 	margin: auto;
+	height: auto;
+}
+
+#mega-menu-wrap-mobile #mega-menu-mobile > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item a.mega-menu-link {
+	font-size: 1.2rem;
+	padding-block: 0.5rem;
 }
 
 #mega-menu-wrap-mobile #mega-menu-mobile > li.mega-menu-item.my-account,
@@ -76,7 +86,7 @@
 #mega-menu-wrap-mobile #mega-menu-mobile > li.mega-menu-item.free-estimate {
 	background: var(--color-theme-yellow);
 	border-bottom: none;
-	margin: .2rem;
+	margin: 0.25rem;
 }
 
 #mega-menu-wrap-mobile #mega-menu-mobile > li.mega-menu-item.free-estimate > a.mega-menu-link {
@@ -501,7 +511,7 @@
 	}
 
 	.yotpo-wrap .button {
-		
+		pointer-events: all;
 	}
 
 	.primary-menu-container .about-links {
