@@ -13,6 +13,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+	align-items: start;
 }
 
  .location-info .location-content {
@@ -30,11 +31,6 @@
         grid-template-rows: min-content 1fr;
 	 }
  
-	 .location-info .location-content,
-	 .location-info .location-card {
-		 /* margin: 1rem; */
-	 }
-
 	 /* margin fix for grid */
 	 .location-info h1.underlined:after {
         margin-bottom: 0;
